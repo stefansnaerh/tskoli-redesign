@@ -12,10 +12,13 @@ function App() {
     <div className="App">
        <AuthProvider>
         <Navbar/>
+<<<<<<< HEAD
         <Profile />
       <GetGuides></GetGuides>
        <GetReturns></GetReturns> 
        <GetReviews></GetReviews> 
+=======
+>>>>>>> b7112519a3098459a4eba6dbdbfa85a93b4bc65c
      </AuthProvider>
     </div>
   );
