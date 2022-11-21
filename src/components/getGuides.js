@@ -13,19 +13,32 @@ function GetGuides() {
     }
     getGuides();
   },[])
-  console.log(guides[1])
-  console.log(loading)
+  console.log(guides)
 
   return (
     <>
     {loading ? (<p>loading</p>) 
     : (<div className="App">
-        {guides.map(guide => (
+        {guides.sort((a, b) => (a.order > b.order ? 1 : -1)).map(guide => (
         <h1>{guide.Title}</h1>
           ) )} 
       </div> )}
          </>
   );
 }
+
+
+/*return (
+  <>
+  {loading ? (<p>loading</p>) 
+  : (<div className="App">
+      {guides.sort((a, b) => (a.order > b.order ? 1 : -1)).map(guide => (
+      <h1>{guide.Title}</h1>
+        ) )} 
+    </div> )}
+       </>
+);
+}
+*/
 
 export default GetGuides;
