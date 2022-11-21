@@ -1,5 +1,197 @@
-@import '/src/variables.scss'
+@import '/src/variables.scss';
 
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    height: 8rem;
+  }
+  
+
+
+  .logo {
+    position: fixed;
+    top: 10px;
+    left: 40px;
+    z-index: 6;
+    font-size: $mediumFontSize;
+    font-weight: $regularFW;
+    font-family: $mainFont;
+    color: $fontColor;
+    text-transform: uppercase;
+  }
+    input + label {
+      position: fixed;
+      top: 35px;
+      right: 40px;
+      height: 20px;
+      width: 25px; 
+      z-index: 5;
+      span {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        top: 50%;
+        margin-top: -1px;
+        left: 0;
+        display: block;
+        background: $fontColor;
+        transition: .5s;
+      }
+      span:first-child {
+        top: 3px; 
+      }
+      span:last-child {
+        top: 16px; 
+      }      
+    }
+    label:hover {
+      cursor: pointer;
+    }
+    input:checked + label { 
+      span {
+        opacity: 0;
+        top: 50%;
+      }
+      span:first-child {
+        opacity: 1;
+        transform: rotate(405deg);
+      }
+      span:last-child {
+        opacity: 1;
+        transform: rotate(-405deg);
+      }
+    }
+    input ~ nav {
+      background: $backgroundColor;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 8rem;
+      z-index: 3;
+      transition: .5s;
+      transition-delay: .5s;
+      overflow: hidden;
+      > ul {
+        text-align: left;
+        position: absolute;
+        top: 15%;
+        left: 0%;
+        right: 10%;
+        > li {
+          list-style: none;  
+          opacity: 0;
+          transition: .5s;
+          transition-delay: 0s;
+          > .link {
+            text-decoration: none;
+            color: $backgroundColor;
+            font-family: $mainFont;
+            font-weight: $bolderFW;
+            font-size: $mediumFontSize;
+            letter-spacing: $letterSpacing;
+            color: $fontColor;
+            display: block;
+            padding-top: 4rem;
+          }
+        }
+      }
+    }
+    input:checked ~ nav { 
+      height: 100%;
+      transition-delay: 0s;
+      > ul {
+        > li {
+          opacity: 1;
+          transition-delay: .5s;
+        }
+      }
+    } 
+    
+  
+  
+    .gray-line {
+      align-self: center;
+      justify-self: center;
+      position: absolute;
+      height: 1px;
+      width: 95%;
+      mix-blend-mode: normal;
+      background-color: #000000;
+      left: 0; 
+      right: 0; 
+      margin-left: 5%; 
+      margin-right: auto; 
+    }
+  
+
+  
+    @media (min-width: 768px) {
+      
+    .logo {
+     left: 0;
+     right: 0;
+    }
+  
+     span {
+      display: none;
+     }
+     label {
+      display: none
+     }
+     input{
+      display: none;
+     }
+     input ~ nav {
+      display: flex;
+      height: 130px;
+      transition: none;
+      transition-delay: 0s;
+       ul {
+        display: flex;
+        width: 100vw;
+        align-content: center;
+        padding: 0;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 7rem;
+        img {
+          display: none;
+          }
+        li {
+          opacity: 1;
+          .link {
+            font-size: $smallFontSize;
+            padding: 0;
+          }
+        }
+      }
+     }
+     input:checked ~ nav {
+      height: 120px;
+     }
+    }
+  
+  
+    @media (min-width: 1366px) {
+      .logo {
+        right: auto;
+        top: 10px;
+        left: 40px;
+      }
+      input ~ nav {
+        height: 100px;
+        justify-content: flex-end;
+        ul {
+          position: static;
+          width: 70vw;
+        }
+      }
+    }
+  
+  
 
 
 

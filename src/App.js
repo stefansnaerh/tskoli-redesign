@@ -11,9 +11,6 @@ function App() {
     <div className="App">
        <AuthProvider>
         <Navbar/>
-      <GetGuides></GetGuides>
-       <GetReturns></GetReturns> 
-       <GetReviews></GetReviews> 
      </AuthProvider>
     </div>
   );
