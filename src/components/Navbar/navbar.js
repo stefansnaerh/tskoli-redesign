@@ -25,9 +25,7 @@ const Navbar = () => {
         <nav>    
           <ul>
             <li>
-               <div className="nav-link-container"> 
-              <a href="#" aria-label="link to Modules" onClick={() => close()} className="link">{"{Jakub}"}<p className="arrow">=></p></a>
-              </div> 
+              <a href="#" aria-label="link to Modules" onClick={() => close()} className="link">{"{Jakub}"}</a>
             </li>
             <span className="gray-line"></span>
             <li>
