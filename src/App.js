@@ -3,16 +3,21 @@ import GetReturns from './components/getReturns';
 import GetReviews from './components/getReviews';
 import Navbar from './components/Navbar/navbar';
 import Profile from './components/Profile/profile'
-
+import { useState } from 'react';
 import { AuthProvider } from "./utils/authContext";
 import './App.css';
+import Calendar from 'react-calendar';
 
 function App() {
   return (
     <div className="App">
        <AuthProvider>
         <Navbar/>
+<<<<<<< HEAD
 
+=======
+        <Profile />
+>>>>>>> profile
      </AuthProvider>
     </div>
   );
