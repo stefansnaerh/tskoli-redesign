@@ -13,11 +13,8 @@ function App() {
     <div className="App">
        <AuthProvider>
         <Navbar/>
-<<<<<<< HEAD
 
-=======
         <Profile />
->>>>>>> profile
      </AuthProvider>
     </div>
   );
