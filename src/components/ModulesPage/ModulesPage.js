@@ -24,8 +24,7 @@ const ModulesPage = () => {
       getGuides();
       
     },[])
-    console.log(guides)
-    // ná hvað marga guide-a user er búinn með
+    // initialise count variable and use it in line 36 to count guides
     const count = {}
     useEffect(() => {
         //map through guides and make new array with only module title
@@ -77,7 +76,7 @@ const ModulesPage = () => {
             )
         })}
         </>)}
-      </section>
+    </section>
    
         </>
     )

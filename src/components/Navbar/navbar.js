@@ -41,7 +41,7 @@ const Navbar = () => {
             </li>
             <span className="gray-line"></span>
             <li>
-              <a aria-label="link to Calendar page" onClick={() => close()} className="link">{"{Calendar}"}</a>
+              <a aria-label="link to Calendar" onClick={() => close()} className="link">{"{Calendar}"}</a>
             </li>
             <span className="gray-line"></span>
           </ul>  
