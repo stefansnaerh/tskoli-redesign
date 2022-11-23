@@ -6,21 +6,28 @@ header {
     display: flex;
     flex-direction: column;
     height: 8rem;
-    width: fi;
+    width: fit-content;
   }
   
-
+  .logo-container {
+  display: flex;
+  position: fixed;
+  z-index: 9;
+  background: #6563EB;
+  border-radius: 15px;
+  width: 100px;
+  height: 38px;
+  top: 25px;
+  left: $marginLeftRight;
+  justify-content: center;
+  align-items: center;
+  }
 
   .logo {
-    position: fixed;
-    top: 10px;
-    left: 40px;
-    z-index: 6;
     font-size: $mediumFontSize;
-    font-weight: $regularFW;
+    font-weight: $boldFW;
     font-family: $mainFont;
-    color: $fontColor;
-    text-transform: uppercase;
+    color: $whiteFontColor;
   }
     input + label {
       position: fixed;
@@ -91,7 +98,7 @@ header {
             text-decoration: none;
             color: $backgroundColor;
             font-family: $mainFont;
-            font-weight: $bolderFW;
+            font-weight: $boldFW;
             font-size: $mediumFontSize;
             letter-spacing: $letterSpacing;
             color: $fontColor;

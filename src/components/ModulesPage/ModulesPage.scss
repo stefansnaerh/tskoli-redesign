@@ -4,25 +4,34 @@
 
 
 .modules-container {
-
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    font-family: $mainFont;
+    margin-left: $marginLeftRight;
+    margin-right: $marginLeftRight;
     .modules-header {
         font-size: $largeFontSize;
+        font-weight: $regularFW;
     }
-
     .module-info-container {
         display: flex;
         flex-direction: row ;
         justify-content: space-between;
         margin-left: 1rem;
         margin-right: 1rem;
-    }
+        .module {
+            font-weight: $regularFW;
+        }
+        .module-statistics {
+            display: flex;
+            h1{
+                font-weight: $regularFW;
+                color: $grayFontColor;
+            }
+        }
     
+    }
     .progress-bar {
         background: $softGreen;
         border-radius: 30px;
         height: 30px;
-        
     }
 }
