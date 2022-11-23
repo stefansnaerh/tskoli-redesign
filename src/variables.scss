@@ -1,25 +1,38 @@
 
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
 /* Here are all css variables to use through out the project*/
 
 
 
-$mainFont: "";
+$mainFont: "Poppins", sans-serif;
 
 
 // font size
-$smallFontSize: 1.6rem;
-$mediumFontSize: 2rem;
-$largeFontSize: 2.4rem;
+$smallFontSize: 1.4rem;
+$mediumFontSize: 1.6rem;
+$largeFontSize: 2rem;
+$headerFontSize: 2.4rem;
 
 $letterSpacing:0.2rem;
 
 // font weight
-$regularFW: 200;
-$bolderFW: 300;
+$lighterFW: 200;
+$lightFW: 300;
+$regularFW:400;
+$boldFW:500;
+$bolderFW:600;
+$boldestFW:700;
+
 
 // colors
 $fontColor: #000000;
+$whiteFontColor: #FFFFFF;
 $backgroundColor: #FFFFFF;
+$grayFontColor: #5A5A5A;
 $softGreen:  rgba(132, 207, 110, 0.6);
+
+
+// base margin
+
+$marginLeftRight: 1.5rem

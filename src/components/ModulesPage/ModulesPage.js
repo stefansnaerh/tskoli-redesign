@@ -4,41 +4,58 @@ import './ModulesPage.scss'
 import api from '../../utils/api'
 
 
-
-
-
-
 const ModulesPage = () => {
 
     const [guides, setGuides] = useState([]);
+    const [myAssignemnts, setMyAssignments] = useState([])
+
+
     const [loading,setLoading] = useState (true)
     const [modules, setModules] = useState([])
     const [countModules, setCountModules] = useState({})
-
+    // bera saman id við assignment inni i myassignemnt
     useEffect(()=>{
       const getGuides = async ()=>{
         const g = await api.get('/guides');
+        const a = await api.get('/assignmentreturns')
         // filter away hidden guides and update to state
         setGuides(g.data.filter(g => !g.hidden))
+        setMyAssignments(a.data)
+       
       }
+
+
       getGuides();
       
     },[])
     // initialise count variable and use it in line 36 to count guides
     const count = {}
     useEffect(() => {
-        //map through guides and make new array with only module title
+        //map through guides and make objects with module name and guide id's under each module
        const newModules = guides.map(guide => {
-         return guide.project.Title
+         return {
+            title: guide.project.Title,
+            id: guide._id,
+         }
        });
        console.log(newModules)
-       // count how many guides have the same module title
+
+       const newReturns = myAssignemnts.map(assignment => {
+        return assignment.assignment}
+    )
+    console.log(newReturns)
+       // count how many guides under each module
        for (const element of newModules){
-        if (count[element]){
-            count[element] += 1;
+        if (count[element.title]){
+            count[element.title].ids.push(element.id)
         } else {
-            count[element] = 1;
+            count[element.title] = {ids:[element.id], completed: 0}
         }
+        if (newReturns.includes(element.id)){
+            count[element.title].completed++
+        }
+
+        console.log(count)
         // sort the guides title so they appear in right order
         const ordered = Object.keys(count).sort().reduce(
             (obj, key) => { 
@@ -46,15 +63,16 @@ const ModulesPage = () => {
               return obj;
             }, 
             {}
-          );   
+          );  
           //updating state with the sorted modules and number of guides in each module
+          console.log(ordered)
         setCountModules(ordered)
-        console.log(countModules)
         setLoading(false)
+        
        }
     }, [guides])
 
-    console.log(modules)
+
 
    
   
@@ -68,15 +86,18 @@ const ModulesPage = () => {
             return (
                 <>
                 <div className='module-info-container'>
-                    <h1 key={index}>Module {key}</h1>
-                    <h1>{Object.values(countModules)[index]}</h1>
+                    <h1 className='module' key={index}>Module {key}</h1>
+                    <div className='module-statistics'>
+                        <h1>{Object.values(countModules)[index].completed}/</h1>
+                        <h1>{Object.values(countModules)[index].ids.length}</h1>
+                    </div>
                 </div>
                 <div className='progress-bar'></div>
                 </>
             )
         })}
         </>)}
-    </section>
+        </section>
    
         </>
     )
