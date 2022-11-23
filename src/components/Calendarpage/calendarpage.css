@@ -1,0 +1,43 @@
+.month {
+  width: 110px;
+  height: 34px;
+  left: 197px;
+  top: 150px;
+  background: #D9D9D9;
+}
+
+.week {
+  width: 110px;
+  height: 34px;
+  left: 87px;
+  top: 150px;
+  background: #B4B4B4;
+}
+
+.day {
+  position: relative;
+}
+
+li {
+  list-style: none;
+  width: 30px;
+  height: 15px;
+  margin-right: 20px;
+  background: #D9D9D9;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.daydescription {
+  box-sizing: border-box;
+  width: 240px;
+  height: 200px;
+  margin-left: 78px;
+  margin-top: 10px;
+  background: #E1E1E1;
+  border: 0.5px solid #D5D5D5;
+}/*# sourceMappingURL=calendarpage.css.map */

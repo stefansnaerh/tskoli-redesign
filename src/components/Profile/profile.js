@@ -37,7 +37,7 @@ const Profile = () => {
 
           {/*Here is the div tag for the calendar */}
         <div className="app">
-            <p>Calendar</p>
+            <a href='https://calendar.google.com/calendar/embed?src=nhp4gh3o11km1m6en6vk3dtp48%40group.calendar.google.com&ctz=Atlantic%2FReykjavik'>Calendar</a>
             <div className="calendar-container">
                 <Calendar onChange={setDate} value={date}/>
             </div>
