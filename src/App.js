@@ -1,8 +1,7 @@
-import GetGuides from './components/getGuides';
-import GetReturns from './components/getReturns';
-import GetReviews from './components/getReviews';
+
 import Navbar from './components/Navbar/navbar';
 import Profile from './components/Profile/profile'
+import ModulesPage from './components/ModulesPage/ModulesPage';
 import { useState } from 'react';
 import { AuthProvider } from "./utils/authContext";
 import './App.css';
@@ -13,11 +12,7 @@ function App() {
     <div className="App">
        <AuthProvider>
         <Navbar/>
-<<<<<<< HEAD
-
-=======
-        <Profile />
->>>>>>> profile
+        <ModulesPage/>
      </AuthProvider>
     </div>
   );

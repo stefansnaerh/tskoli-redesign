@@ -25,11 +25,6 @@ const ModulesPage = () => {
       
     },[])
     console.log(guides)
-
-    //Búa til object með project title, hversu mörg guides eru með það og hversu mörg guide user er buinn með
-    
-    // ná öllum guides.project.Title
-    // ná hversu margir modules eru með það Title
     // ná hvað marga guide-a user er búinn með
     const count = {}
     useEffect(() => {
@@ -38,22 +33,26 @@ const ModulesPage = () => {
          return guide.project.Title
        });
        console.log(newModules)
+       // count how many guides have the same module title
        for (const element of newModules){
         if (count[element]){
             count[element] += 1;
         } else {
             count[element] = 1;
         }
-       
-        setCountModules(count)
+        // sort the guides title so they appear in right order
+        const ordered = Object.keys(count).sort().reduce(
+            (obj, key) => { 
+              obj[key] = count[key]; 
+              return obj;
+            }, 
+            {}
+          );   
+          //updating state with the sorted modules and number of guides in each module
+        setCountModules(ordered)
         console.log(countModules)
         setLoading(false)
        }
-       //remove other module title instances from new array
-       /*let uniqueModules = [...new Set(newModules)];
-       setModules(uniqueModules);
-       setLoading(false);*/
-
     }, [guides])
 
     console.log(modules)
@@ -62,14 +61,18 @@ const ModulesPage = () => {
   
     return (
         <>
-      <section>
+      <section className='modules-container'>
         {loading ? (<p>Loading...</p>) : 
         (<>
-        {Object.keys(countModules).sort((a, b) => (a > b ? 1 : -1 )).map((key, index) => {
+         <h1 className='modules-header'>{"{ Modules }"}</h1>
+        {Object.keys(countModules).map((key, index) => {
             return (
                 <>
-                <h1 key={index}>{key}</h1>
-                <p>{Object.values(countModules)[index]}</p>
+                <div className='module-info-container'>
+                    <h1 key={index}>Module {key}</h1>
+                    <h1>{Object.values(countModules)[index]}</h1>
+                </div>
+                <div className='progress-bar'></div>
                 </>
             )
         })}
@@ -80,20 +83,6 @@ const ModulesPage = () => {
     )
 }
 
-/*  <section className='modules-container'>
-        {loading ? (<p>Loading...</p>) :
-        (<>
-            {modules.sort((a, b) => (a > b ? 1 : -1)).map(m => {
-              return (
-                <div className='module-container'>
-                <h2 className='module-name'>Module {m}</h2>
-                <h2 className='project-count'></h2>
-                <span className='progress-bar'></span>
-                </div>
-              )
-            })}
-        </>)
-}
-        </section>*/
+
 
 export default ModulesPage

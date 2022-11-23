@@ -1,1 +1,28 @@
 @import '/src/variables.scss';
+
+
+
+
+.modules-container {
+
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    .modules-header {
+        font-size: $largeFontSize;
+    }
+
+    .module-info-container {
+        display: flex;
+        flex-direction: row ;
+        justify-content: space-between;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    
+    .progress-bar {
+        background: $softGreen;
+        border-radius: 30px;
+        height: 30px;
+        
+    }
+}
