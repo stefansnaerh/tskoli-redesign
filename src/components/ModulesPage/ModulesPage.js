@@ -83,6 +83,9 @@ const ModulesPage = () => {
         (<>
          <h1 className='modules-header'>{"{ Modules }"}</h1>
         {Object.keys(countModules).map((key, index) => {
+          const percentage = Math.round(Object.values(countModules)[index].completed / Object.values(countModules)[index].ids.length * 100)
+          console.log(100 - percentage)
+          console.log(percentage)
             return (
                 <>
                 <div className='module-info-container'>
@@ -92,7 +95,10 @@ const ModulesPage = () => {
                         <h1>{Object.values(countModules)[index].ids.length}</h1>
                     </div>
                 </div>
-                <div className='progress-bar'></div>
+                <div className='progress-bar-container'>
+                <div className='progress-bar-finished' style={{"background": `#B5E2A8`, "width":`${percentage}%`}}></div>
+                <div className='progress-bar-left'></div>
+                </div>
                 </>
             )
         })}
