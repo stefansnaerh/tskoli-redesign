@@ -20,69 +20,56 @@ const Profile = () => {
         {/* Here we have the div tag for student's profile info */}
         <div className="content">
             <h3>Welcome Back!</h3>
-
-          <div className="profile">
-
-
-
+        
+        
+        <div className="profile">
           <div>
             <img src="" alt="Profile picture" />
           </div>
-        
-        
-        
-          <h5>Karítas Witting Halldórsdóttir</h5>
-          <p>karitashall@gmail.com</p>
-          </div>
+            <div className="profile-info">
+              <p className='name'>Karítas Witting Halldórsdóttir</p>
+              <p className='mail'>karitashall@gmail.com</p>
+            </div>
+        </div>
 
           {/*Here is the div tag for the calendar */}
+
         <div className="app">
-            <a href='https://calendar.google.com/calendar/embed?src=nhp4gh3o11km1m6en6vk3dtp48%40group.calendar.google.com&ctz=Atlantic%2FReykjavik'>Calendar</a>
+            
             <div className="calendar-container">
                 <Calendar onChange={setDate} value={date}/>
             </div>
+
             <div className="text-center">
                 Selected date: {date.toDateString()}
-        </div>
+            </div>
              {/*<iframe className="calendar" src="https://calendar.google.com/calendar/embed?src=nhp4gh3o11km1m6en6vk3dtp48%40group.calendar.google.com&ctz=Atlantic%2FReykjavik" ></iframe>*/}
-            
         </div>
 
         
         {/*Here we have the div tag for the next 3 upcoming modules*/}
-        <div className="nextup">
-            <h4>Next up</h4>
-            <div>
-            
+            <p className='next-up'>Next up</p>
+        <div className="nextup-container">
+            <div >
                 <a href = "#" className='next'>
-                    <p><strong>M4</strong></p>
-                    <p>Guide 4</p>
-                    <p>Speciality</p>
-
-
+                    <p className='module'>Module 4</p>
+                    <p>Guide 4 - Speciality</p>
+                    
                 </a>
             </div>
 
             <div>
-            
-                <a href = "#" className='next'>
-                    <p><strong>M5</strong></p>
-                    <p>Guide 1</p>
-                    <p>Back-end 1</p>
-
-
+                <a href = "#" className='next' >
+                    <p className='module'>Module 5</p>
+                    <p>Guide 1 - Back-end 1</p>
                 </a>
             </div>
 
 
             <div>
-            
                 <a href = "#" className='next'>
-                    <p><strong>M5</strong></p>
-                    <p>Guide 2</p>
-                    <p>Back-end 2</p>
-
-
+                    <p className='module'>Module 5</p>
+                    <p>Guide 2 - Back-end 2</p>
                 </a>
             </div>
 

@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import { Link } from 'react-router-dom';
 
 import './navbar.scss'
 
@@ -45,7 +45,7 @@ const Navbar = () => {
             </li>
             <span className="gray-line"></span>
             <li>
-              <a aria-label="link to Calendar" onClick={() => close()} className="link">{"{Calendar}"}</a>
+              <Link to="/calendarpage" aria-label="link to Calendar" onClick={() => close()} className="link">{"{Calendar}"}</Link>
             </li>
             <span className="gray-line"></span>
           </ul>  

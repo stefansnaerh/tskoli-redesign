@@ -7,28 +7,48 @@
     align-items: center
 };
 
-.nextup {
-    text-indent: 0.2rem;
+.name {
+    font-size: $mediumFontSize;
+}
+
+
+
+
+.next-up {
+    font-size: $mediumFontSize;
+    position:relative;
+    right: 13rem;
+    
+};
+
+.nextup-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: 1rem;
 };
 
+.module {
+    font-size: $mediumFontSize;
+    font-weight: $bolderFW;
+    margin-bottom: 0;
+
+};
 
 
 
 .next {
 display: flex;
-font-size: medium;
+flex-direction: column;
+align-items: flex-start;
 box-sizing: border-box;
-width:20rem;
-height: 4.5rem;
-margin-left: 8rem;
+width:32rem;
+height:7.5rem;
+margin-left:4.2rem;
+padding-left: 3rem;
 background: #FFFFFF;
 border: 0.5px solid #FFFFFF;
 box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
-border-radius: 15px;
+border-radius: 1rem;
 text-decoration: none;
 
 };
@@ -37,8 +57,8 @@ a{
 }
 
 .calendar {
-    width: 800px;
-    height: 600px;
+    width: 50rem;
+    height: 37.5rem;
 }
 
 
