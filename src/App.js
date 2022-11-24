@@ -14,8 +14,6 @@ function App() {
     <div className="App">
        <AuthProvider>
         <Navbar />
-        <Profile />
-        <Calendarpage />
         <ModulesPage />
         
      </AuthProvider>
