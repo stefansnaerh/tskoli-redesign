@@ -24,7 +24,11 @@
 .nextup-container {
     display: flex;
     flex-direction: column;
+
     gap: 1rem;
+
+    justify-content: space-between;
+
 };
 
 .module {
@@ -56,10 +60,13 @@ a{
     color: black;
 }
 
+
 .calendar {
     width: 50rem;
     height: 37.5rem;
 }
+
+
 
 
 

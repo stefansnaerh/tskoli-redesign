@@ -23,8 +23,6 @@ const ModulesPage = () => {
         setMyAssignments(a.data)
        
       }
-
-
       getGuides();
       
     },[])
@@ -38,12 +36,10 @@ const ModulesPage = () => {
             id: guide._id,
          }
        });
-       console.log(newModules)
 
        const newReturns = myAssignemnts.map(assignment => {
         return assignment.assignment}
     )
-    console.log(newReturns)
        // count how many guides under each module
        for (const element of newModules){
         if (count[element.title]){
@@ -54,8 +50,6 @@ const ModulesPage = () => {
         if (newReturns.includes(element.id)){
             count[element.title].completed++
         }
-
-        console.log(count)
         // sort the guides title so they appear in right order
         const ordered = Object.keys(count).sort().reduce(
             (obj, key) => { 
@@ -65,17 +59,12 @@ const ModulesPage = () => {
             {}
           );  
           //updating state with the sorted modules and number of guides in each module
-          console.log(ordered)
         setCountModules(ordered)
         setLoading(false)
         
        }
     }, [guides])
 
-
-
-   
-  
     return (
         <>
       <section className='modules-container'>
@@ -83,6 +72,7 @@ const ModulesPage = () => {
         (<>
          <h1 className='modules-header'>{"{ Modules }"}</h1>
         {Object.keys(countModules).map((key, index) => {
+          const percentage = Math.round(Object.values(countModules)[index].completed / Object.values(countModules)[index].ids.length * 100)
             return (
                 <>
                 <div className='module-info-container'>
@@ -92,7 +82,10 @@ const ModulesPage = () => {
                         <h1>{Object.values(countModules)[index].ids.length}</h1>
                     </div>
                 </div>
-                <div className='progress-bar'></div>
+                <div className='progress-bar-container'>
+                <div className='progress-bar-finished' style={{"background": `#B5E2A8`, "width":`${percentage}%`}}></div>
+                <div className='progress-bar-left'></div>
+                </div>
                 </>
             )
         })}

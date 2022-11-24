@@ -34,7 +34,11 @@ function App() {
             </Switch>
 
           </div>
-       
+ 
+    <div className="App">
+       <AuthProvider>
+        <Navbar />
+       <EachModulepage/>
         
         </AuthProvider>
       </div>
