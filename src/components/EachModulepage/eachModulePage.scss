@@ -7,15 +7,17 @@
     flex-direction: column;
     font-family: $mainFont;
     align-items: center;
+    gap: 1rem;
 
     .guide-header {
-        font-size: $largeFontSize;
-        font-weight: $regularFW;
+        font-size: $headerFontSize;
+        font-weight: $boldFW;
     }
     .guides-btn {
         text-decoration: none;
         width: 110px;
         height: 34px;
+        font-size: $mediumFontSize;
         background: #FFFFFF;
         border: 1px solid #6563eb;
         border-radius: 100px 0px 0px 100px;
@@ -24,18 +26,29 @@
         text-decoration: none;
         width: 110px;
         height: 34px;
+        font-size: $mediumFontSize;
         background: #FFFFFF;
         border: 1px solid #6563eb;
         border-radius: 0px 100px 100px 0px;
     };
 
-    .guidenumber {
+    .guide-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         box-sizing: border-box;
-        width: 240px;
-        height: 140px;
-        background: #E1E1E1;
-        border: 0.5px solid #D5D5D5;
+        width: clamp(20rem, 90%, 40rem);
+        height: 12rem;
         border-radius: 15px 15px 0px 0px;
+        h1{
+            font-size: $largeFontSize;
+            font-weight: $boldFW;
+            
+        }
+        h3 {
+            font-size: $mediumFontSize;
+            font-weight: $regularFW;
+        }
     }
 
     
