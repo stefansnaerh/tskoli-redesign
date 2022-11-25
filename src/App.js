@@ -20,10 +20,8 @@ function App() {
     <Router>
 
       <div className="App">
-         <AuthProvider>
+         <AuthProvider/>
           <Navbar />
-         
-
           <div className='content'>
             <Switch>
             
@@ -35,12 +33,7 @@ function App() {
 
           </div>
  
-    <div className="App">
-       <AuthProvider>
-        <Navbar />
-       <EachModulepage/>
-        
-        </AuthProvider>
+  
       </div>
     </Router>
   );
