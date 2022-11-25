@@ -9,7 +9,7 @@ import Calendar from 'react-calendar';
 import EachModulepage from  './components/EachModulepage/eachModulePage';
 import Calendarpage from './components/Calendarpage/calendarpage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import Loginpage from './components/Loginpage/logIn';
 
 
 
@@ -25,7 +25,7 @@ function App() {
           <div className='content'>
             <Switch>
             
-
+              <Route exact path='/loginpage'><Loginpage /></Route>
               <Route exact path='/calendarpage'>
                <Calendarpage />
               </Route>
