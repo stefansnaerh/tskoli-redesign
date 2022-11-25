@@ -8,15 +8,35 @@ import './App.css';
 import Calendar from 'react-calendar';
 import EachModulepage from  './components/EachModulepage/eachModulePage';
 import Calendarpage from './components/Calendarpage/calendarpage';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+
+
+
+
 
 function App() {
   return (
-    <div className="App">
-       <AuthProvider>
-        <Navbar />
-       <EachModulepage/>
-     </AuthProvider>
-    </div>
+
+    <Router>
+
+      <div className="App">
+         <AuthProvider/>
+          <Navbar />
+          <div className='content'>
+            <Switch>
+            
+
+              <Route exact path='/calendarpage'>
+               <Calendarpage />
+              </Route>
+            </Switch>
+
+          </div>
+ 
+  
+      </div>
+    </Router>
   );
 }
 

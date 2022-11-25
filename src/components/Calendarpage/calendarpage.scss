@@ -1,67 +1,77 @@
+@import '/src/variables.scss';
 
 
 
+.date {
+font-size: $mediumFontSize;
+font-weight: $bolderFW;
+}
 
 
-.month {
-    width: 110px;
-    height: 34px;
-    left: 197px;
-    top: 150px;
+.month-year{
+    font-size: $mediumFontSize;
 
 
-    background: #D9D9D9;
+}
 
-
-};
-
-.week {
-    width: 110px;
-    height: 34px;
-    left: 87px;
-    top: 150px;
-
-    background: #B4B4B4;
-
-
-};
 
 .day {
 position: relative;
-
-};
-/* Need to put class on these
-li {
-    list-style: none;
-    width: 30px;
-    height: 15px;
-    margin-right: 20px;
-
-    
- 
-    background: #D9D9D9;
-
 };
 
-
-ul {
+.list-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    
-}
-*/
+    justify-content: space-between;   
+} ;
+
+
+
+.list {
+    font-size: $smallFontSize;
+    list-style: none;
+    width: 50px;
+    height: 25px;
+    margin-right: 15px;
+    padding-top: 5px;
+    background: #D1D0F9;
+    border-radius: 1rem;
+};
+
+.timeanddescription{
+    display: flex;
+    flex-direction: column;
+    .color {
+        font-size: $smallFontSize;
+        color: $whiteFontColor;
+        font-weight: $regularFW;
+    }
+};
+
+.time {
+    box-sizing: border-box;
+    background: #8482EF;
+    width: 240px;
+    margin-left: 78px;
+    border-radius: 8px 8px 0px 0px;
+    margin-bottom: 0px;
+
+
+
+};
+
+
 
 .daydescription {
     box-sizing: border-box;
-    
     width: 240px;
-    height: 200px;
+    height: 466px;
     margin-left: 78px;
-    margin-top: 10px;
-  
-  
-    background: #E1E1E1;
+    background: #D1D0F9;
     border: 0.5px solid #D5D5D5;
-
+    border-radius: 0px 0px 8px 8px;
+    a {
+        text-decoration: none;
+    }
+    
 };
