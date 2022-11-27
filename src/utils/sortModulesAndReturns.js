@@ -4,9 +4,10 @@
 
 
 
-const sortModulesAndReturns = (newModules, count, newReturns, setLoading, newReviews ) => {
+const sortModulesAndReturns = (newModules, count, newReturns, setLoading, newReviews, numberOfGuides ) => {
     let order = {}
     let ordered = {}
+
 
     for (const element of newModules){
       if (count[element.title]){
@@ -15,7 +16,7 @@ const sortModulesAndReturns = (newModules, count, newReturns, setLoading, newRev
         count[element.title].name.push(element.guideTitle)
         }
       } else {
-          count[element.title] = {ids:[element.id],name:[element.guideTitle], isReturned: []}
+          count[element.title] = {ids:[element.id],name:[element.guideTitle], isReturned: [], isReviewed: [], grade: []}
       }
       if (newReturns.includes(element.id)){
           count[element.title].isReturned.push(true)
@@ -23,7 +24,16 @@ const sortModulesAndReturns = (newModules, count, newReturns, setLoading, newRev
       else {
         count[element.title].isReturned.push(false)
       }
-      console.log(count)
+      if (newReviews.some(e => e.assignment === element.id)){
+        count[element.title].isReviewed.push(true)
+        // það eru bara 7 element i newReviews.. þarf að bera það saman við id
+        count[element.title].grade.push(newReviews[0].grade)
+      }
+      else {
+        count[element.title].isReviewed.push(false)
+        count[element.title].grade.push(0)
+      }
+
       // sort the guides title so they appear in right order
       ordered = Object.keys(count).sort().reduce(
           (obj, key) => { 
@@ -43,6 +53,7 @@ const sortModulesAndReturns = (newModules, count, newReturns, setLoading, newRev
       order,
       ordered
      }
+    
   }
 
 

@@ -24,9 +24,8 @@ function App() {
          <AuthProvider/>
           <Navbar />
           <div className='content'>
+          <EachModulepage/>
             <Switch>
-            
-
               <Route exact path='/calendarpage'>
                <Calendarpage />
               </Route>
