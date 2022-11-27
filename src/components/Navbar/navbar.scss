@@ -5,7 +5,7 @@
 header {
     display: flex;
     flex-direction: column;
-    height: 8rem;
+    height: 9rem;
     width: fit-content;
   }
   
@@ -15,8 +15,8 @@ header {
   z-index: 9;
   background: #6563EB;
   border-radius: 100px;
-  width: 100px;
-  height: 38px;
+  width: 11rem;
+  height: 4.5rem;
   top: 25px;
   left: $marginLeftRight;
   justify-content: center;
@@ -72,20 +72,19 @@ header {
       }
     }
     input ~ nav {
-      background: $backgroundColor;
+      background: $backgroundLightPurple;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      height: 8rem;
+      height: 9rem;
       z-index: 3;
       transition: .5s;
       transition-delay: .5s;
       overflow: hidden;
       > ul {
-        text-align: left;
         position: absolute;
-        top: 15%;
+        top: 20%;
         left: 0%;
         right: 10%;
         > li {
@@ -93,17 +92,25 @@ header {
           opacity: 0;
           transition: .5s;
           transition-delay: 0s;
-          margin-bottom: 0.5rem;
+          background-color: $backgroundWhite;
+          border-radius: 100px;
+          height: 4.5rem;
+          margin-bottom: 4rem;
           > .link {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-content: center;
             text-decoration: none;
-            color: $backgroundColor;
+            color: $whiteFontColor;
             font-family: $mainFont;
             font-weight: $boldFW;
             font-size: $mediumFontSize;
             letter-spacing: $letterSpacing;
             color: $fontColor;
-            display: block;
-            padding-top: 4rem;
+            margin-left: 5rem;
+            margin-right: 2rem;
+            padding-top: 1rem;
           }
         }
       }
@@ -118,35 +125,9 @@ header {
         }
       }
     } 
-    
-  
-  
-    .gray-line {
-      align-self: center;
-      justify-self: center;
-      position: absolute;
-      height: 1px;
-      width: 95%;
-      mix-blend-mode: normal;
-      background-color: #000000;
-      left: 0; 
-      right: 0; 
-      margin-left: 5%; 
-      margin-right: auto; 
-    }
-  
 
-  /*
+
     @media (min-width: 768px) {
-      
-    .logo {
-     left: 0;
-     right: 0;
-    }
-  
-     span {
-      display: none;
-     }
      label {
       display: none
      }
@@ -154,49 +135,57 @@ header {
       display: none;
      }
      input ~ nav {
-      display: flex;
-      height: 130px;
+      display: grid;
+      grid-template-columns: 20% 80%;
       transition: none;
       transition-delay: 0s;
        ul {
         display: flex;
-        width: 100vw;
-        align-content: center;
+        grid-column: 2 / 3;
         padding: 0;
+        gap: 2rem;
         flex-direction: row;
         justify-content: space-around;
-        margin-top: 7rem;
         img {
           display: none;
           }
         li {
+          display: flex;
           opacity: 1;
+          justify-items: center;
+          margin: 0;
+          width: 20rem;
+          height: 4rem;
           .link {
-            font-size: $smallFontSize;
+            left: 0;
+            right: 0;
             padding: 0;
+            align-content: center;
+            font-size: $smallFontSize;
+            margin: auto;
+            width: auto;
+            text-align: center;
           }
         }
       }
      }
+     
      input:checked ~ nav {
-      height: 120px;
+      height: 9rem;
      }
     }
-    */
+  
   
   
     @media (min-width: 1366px) {
-      .logo {
-        right: auto;
-        top: 10px;
-        left: 40px;
-      }
       input ~ nav {
-        height: 100px;
-        justify-content: flex-end;
         ul {
-          position: static;
-          width: 70vw;
+          li{
+            width: 24rem;
+            .link {
+              font-size: $mediumFontSize;
+            }
+          }
         }
       }
     }

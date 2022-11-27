@@ -1,4 +1,11 @@
 .App {
   text-align: center;
+  background-color: #F0EFFD;
 }
 
+
+
+.content {
+  display: flex;
+  justify-content: center;
+}
