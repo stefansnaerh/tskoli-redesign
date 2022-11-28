@@ -86,7 +86,7 @@ const EachModulepage = () => {
             <div className='name-button-container'>
             <h1 className='guide-header'>{currentModule}</h1>
         <div className='guide-btns-container'>
-            <button href = "#" className='guides-btn'>GUIDES</button>
+            <button href = "#" className='guides-btn' style={{background: "#6563EB" }}>GUIDES</button>
             <button href = "#" className='myreturn-btn'>MY RETURNS</button>
         </div>
         </div>
