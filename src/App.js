@@ -8,6 +8,8 @@ import './App.css';
 import Calendar from 'react-calendar';
 import EachModulepage from  './components/EachModulepage/eachModulePage';
 import Calendarpage from './components/Calendarpage/calendarpage';
+import GuidePage from './components/GuidePage/guidePage';
+import MyReturns from './components/MyReturnspage/myReturns';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
@@ -24,7 +26,7 @@ function App() {
          <AuthProvider/>
           <Navbar />
           <div className='content'>
-          <EachModulepage/>
+          <MyReturns/>
             <Switch>
               <Route exact path='/calendarpage'>
                <Calendarpage />

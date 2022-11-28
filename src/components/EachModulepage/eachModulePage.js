@@ -2,16 +2,13 @@
 import './eachModulePage.scss';
 import { useState, useEffect } from 'react';
 import api from '../../utils/api'
-import sortModulesAndReturns from '../../utils/sortModulesAndReturns';
+import sortModulesAndReviews from '../../utils/sortModulesAndReviews';
 import { useAuth } from '../../utils/authContext';
 
 
 const EachModulepage = () => {
     const {login} = useAuth();
     const [reviews, setReviews] = useState([]);
-
-    const [numberOfGuides, setNumberOfGuides] = useState(14)
-
 
     const [guides, setGuides] = useState([]);
     const [myAssignemnts, setMyAssignments] = useState([])
@@ -27,7 +24,6 @@ const EachModulepage = () => {
           // filter away hidden guides and update to state
           setGuides(g.data.filter(g => !g.hidden))
           setMyAssignments(a.data)
-         
         }
         getGuides()
       },[])
@@ -39,9 +35,11 @@ const EachModulepage = () => {
         }
         getReviews();
       },[login])
-      const count = {}
+      
       useEffect(() => {
-          //map through guides and make objects with all properties i need 
+          //map through guides and make objects with all properties i need. I then
+          // use these objects in as parameters in the sortModulesAndReviews function to 
+          // sort guides,returns and reviews
          const newModules = guides.map(guide => {
            return {
               title: guide.project.Title,
@@ -57,8 +55,7 @@ const EachModulepage = () => {
          const newReturns = myAssignemnts.map(assignment => {
           return assignment.assignment}
       );
-    
-          
+
           const newReviews = reviews.map(assignment => {
             return {
               assignment : assignment.assignment,
@@ -66,21 +63,15 @@ const EachModulepage = () => {
               grade: assignment.grade
             }
           })
-          console.log(newReviews)
          // Rearrange the data and implement data from assignments api call
-        const {order, ordered} = sortModulesAndReturns(newModules, count, newReturns, setLoading, newReviews, numberOfGuides) 
-        console.log(ordered)
+         const count = {}
+        const {order, ordered} = sortModulesAndReviews(newModules, count, newReturns, setLoading, newReviews) 
         setCurrentModule(order[3])
 
         //updating state with the sorted modules and number of guides in each module
         setCurrentGuides(Object.values(ordered)[3])
-        console.log(ordered)
-        for (const element of newReviews){
-          console.log(element)
-        }
       }, [guides])
-      console.log(currentGuides)
-    
+
       // Put guide name and isReturned in same array so i can get info from same map() in line 105
       let sortReturnWithTitle
       if (loading === false) {
@@ -113,11 +104,13 @@ const EachModulepage = () => {
                   {name[1] === false ? (
                     <h1>Guide not returned</h1>
                   ) : name[2] === false ? (
-                    <h1>Not yet reviewed</h1>
+                    <h1>Need to review!</h1>
                   ): 
                     <div className='grade-review'>
                       <h1>Reviewed</h1>
-                      <h4>Grade : {name[3]}</h4>
+                      {name[3] === undefined ? 
+                      (<h4>Grade coming up!</h4>) :
+                      <h4>Grade : {name[3]}</h4>}
                     </div>}
             </div>
             </div>

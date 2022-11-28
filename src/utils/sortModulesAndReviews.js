@@ -4,7 +4,7 @@
 
 
 
-const sortModulesAndReturns = (newModules, count, newReturns, setLoading, newReviews, numberOfGuides ) => {
+const sortModulesAndReviews = (newModules, count, newReturns, setLoading, newReviews ) => {
     let order = {}
     let ordered = {}
 
@@ -24,10 +24,10 @@ const sortModulesAndReturns = (newModules, count, newReturns, setLoading, newRev
       else {
         count[element.title].isReturned.push(false)
       }
-      if (newReviews.some(e => e.assignment === element.id)){
+      const review = newReviews.find(e => e.assignment === element.id)
+      if (review){
         count[element.title].isReviewed.push(true)
-        // það eru bara 7 element i newReviews.. þarf að bera það saman við id
-        count[element.title].grade.push(newReviews[0].grade)
+        count[element.title].grade.push(review.grade)
       }
       else {
         count[element.title].isReviewed.push(false)
@@ -45,9 +45,6 @@ const sortModulesAndReturns = (newModules, count, newReturns, setLoading, newRev
         // get the name of module
         order = Object.keys(count).sort()
         setLoading(false)
-        //setCurrentModule(order[3])
-        //updating state with the sorted modules and number of guides in each module
-      //setCurrentGuides(Object.values(ordered)[3])
      }
      return {
       order,
@@ -57,4 +54,4 @@ const sortModulesAndReturns = (newModules, count, newReturns, setLoading, newRev
   }
 
 
-  export default sortModulesAndReturns
+  export default sortModulesAndReviews
