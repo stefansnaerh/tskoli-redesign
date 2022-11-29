@@ -29,7 +29,7 @@ header {
     font-family: $mainFont;
     color: $whiteFontColor;
   }
-    input + label {
+    .burger + .nav-input {
       position: fixed;
       top: 35px;
       right: 40px;
@@ -54,10 +54,10 @@ header {
         top: 16px; 
       }      
     }
-    label:hover {
+    .burger:hover {
       cursor: pointer;
     }
-    input:checked + label { 
+    .burger:checked + .nav-input { 
       span {
         opacity: 0;
         top: 50%;
@@ -71,7 +71,7 @@ header {
         transform: rotate(-405deg);
       }
     }
-    input ~ nav {
+    .burger ~ nav {
       background: $backgroundLightPurple;
       position: fixed;
       top: 0;
@@ -115,7 +115,7 @@ header {
         }
       }
     }
-    input:checked ~ nav { 
+    .burger:checked ~ nav { 
       height: 100%;
       transition-delay: 0s;
       > ul {
@@ -131,10 +131,10 @@ header {
      label {
       display: none
      }
-     input{
+     .burger{
       display: none;
      }
-     input ~ nav {
+     .burger ~ nav {
       display: grid;
       grid-template-columns: 20% 80%;
       transition: none;
@@ -170,7 +170,7 @@ header {
       }
      }
      
-     input:checked ~ nav {
+     .burger:checked ~ nav {
       height: 9rem;
      }
     }
@@ -178,7 +178,7 @@ header {
   
   
     @media (min-width: 1366px) {
-      input ~ nav {
+      .burger ~ nav {
         ul {
           li{
             width: 24rem;
