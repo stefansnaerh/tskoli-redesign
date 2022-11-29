@@ -1,6 +1,4 @@
-
-import ModulesPage from "../../components/ModulesPage/ModulesPage"
-
+import ModulesPage from "../../components/ModulesPage/ModulesPage";
 
 
 const AllModules = () => {
@@ -11,5 +9,5 @@ const AllModules = () => {
     )
 }
 
+export default ModulesPage
 
-export default AllModules
