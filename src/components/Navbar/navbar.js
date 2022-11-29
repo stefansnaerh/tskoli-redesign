@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 import arrow from '../../images/arrowIcon.svg'
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import './navbar.scss'
 
 
@@ -9,10 +9,11 @@ import './navbar.scss'
 
 const Navbar = () => {
     const [closeNav, setCloseNav] = useState(false)
-  
+    const location = useLocation();
     const close = () => {
       setCloseNav(current => !current)
     }
+    if (location.pathname === "/loginpage") return (<div></div>)
     return (
         <>
         <header>
