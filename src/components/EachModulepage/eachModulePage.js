@@ -6,6 +6,7 @@ import sortModulesAndReviews from '../../utils/sortModulesAndReviews';
 import { useAuth } from '../../utils/authContext';
 
 import { ModuleToDisplay } from '../../App';
+import { SwitchToReturns } from '../../pages/modules/modules'
 
 const EachModulepage = () => {
     const {login} = useAuth();
@@ -20,6 +21,7 @@ const EachModulepage = () => {
 
 
     const {displayModule, setDisplayModule} = useContext(ModuleToDisplay)
+    const {displayReturns, setDisplayReturns} = useContext(SwitchToReturns)
 
     console.log(displayModule)
 
@@ -93,7 +95,7 @@ const EachModulepage = () => {
             <h1 className='guide-header'>{currentModule}</h1>
         <div className='guide-btns-container'>
             <button href = "#" className='guides-btn' style={{background: "#6563EB" }}>GUIDES</button>
-            <button href = "#" className='myreturn-btn'>MY RETURNS</button>
+            <button onClick={() => setDisplayReturns(false)} href = "#" className='myreturn-btn'>MY RETURNS</button>
         </div>
         </div>
         <div className='all-guides-container'>

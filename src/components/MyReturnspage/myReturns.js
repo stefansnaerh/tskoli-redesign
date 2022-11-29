@@ -1,9 +1,10 @@
 import './myReturns.scss';
 
 import api from '../../utils/api'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext} from 'react';
 
-
+import { ModuleToDisplay } from '../../App';
+import { SwitchToReturns } from '../../pages/modules/modules'
 
 const MyReturns = () => {
 
@@ -15,7 +16,8 @@ const MyReturns = () => {
 
     const [loading, setLoading] = useState(true)
 
-
+    const {displayModule, setDisplayModule} = useContext(ModuleToDisplay)
+    const {displayReturns, setDisplayReturns} = useContext(SwitchToReturns)
 
     useEffect(() => {
         const getGuides = async ()=>{
@@ -68,8 +70,8 @@ const MyReturns = () => {
             {}
         );
         const orderModule = Object.keys(count).sort()
-        setCurrentModule(orderModule[3])
-        setCurrentGuides(Object.values(order)[3])
+        setCurrentModule(orderModule[displayModule])
+        setCurrentGuides(Object.values(order)[displayModule])
     }, [returns])
 
     let sortReturnWithTitle
@@ -85,7 +87,7 @@ const MyReturns = () => {
             <div className='name-button-container'>
                 <h1 className='guide-header'>{currentModule}</h1>
                 <div className='guide-btns-container'>
-                    <button href = "#" className='guides-btn' style={{background: "#FFFFFF", color:"#6563EB"}}>GUIDES </button>
+                    <button href = "#" onClick={() => setDisplayReturns(true)} className='guides-btn' style={{background: "#FFFFFF", color:"#6563EB"}}>GUIDES </button>
                     <button href = "#" className='myreturn-btn' style={{background: "#6563EB", color:"#FFFFFF"}}>MY RETURNS</button>
                 </div>
             </div>
