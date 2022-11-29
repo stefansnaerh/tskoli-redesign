@@ -1,0 +1,106 @@
+@import '/src/variables.scss';
+
+
+
+body{
+    background-color: $bgLightPurple;
+    font-family: $mainFont;
+    background-image: url(../../images/login-graphic-light.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mainwrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.Login {
+    display: flex;
+    width: 30vh;
+    height: 40vh;
+    padding: 5vh;
+    background: #FFFFFF;
+    box-shadow: 0px 7px 8px rgba(139, 139, 139, 0.25);
+    border-radius: 42px;
+    align-items: center;
+}
+
+
+.loginput{
+    box-sizing: border-box;
+    width: 30vh;
+    height: 35px;
+    background: $inputfieldcolor;
+    border: 1px solid #E6E6E6;
+    border-radius: 30px;
+    padding-left: 15px;
+    font-size: 16px;
+}
+@media screen and (min-width: 700px){
+    .loginput{
+        font-size: 20px;
+        height: 38px;
+    }
+}
+
+
+.loginform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.password, .username{
+    text-align: left;
+    margin-left: 30px;
+    font-size: 16px;
+    margin: 10px;
+}
+@media screen and (min-width: 700px){
+    .password, .username{
+        font-size: 20px;
+    }
+}
+
+.loginbtn{
+    width: 100px;
+    height: 35px;
+    border-radius: 100px;
+    background-color: $btnpurple;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    box-shadow: 1px 1px 5px 1px rgba(81, 81, 81, 0.25);
+}
+@media screen and (min-width: 700px) {
+    .loginbtn {
+        font-size: 20px;
+        width: 105px;
+        height: 40px;
+    }
+
+}
+
+.vefskolinn{
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 5vh;
+}
+@media screen and (min-width: 700px){
+    .vefskolinn{
+        font-size: 50px;
+        margin-bottom: 4vh;
+    }
+}
+
+ .btnwrapper{
+    text-align: right;
+    padding-top: 20px;
+    margin-top: 1vh;
+ }
+
+ .userinputwrapper{
+    margin-bottom: 3vh;
+ }

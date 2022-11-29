@@ -2,44 +2,165 @@
 
 
 
-.guides-container {
+.guides-section-container {
     display: flex;
     flex-direction: column;
     font-family: $mainFont;
-    align-items: center;
-
+    gap: 1rem;
+    background-color: $backgroundWhite;
+    width: 93%;
+    border-radius: 42px;
+    padding-top: 2.5rem;
     .guide-header {
-        font-size: $largeFontSize;
-        font-weight: $regularFW;
+        font-size: $headerFontSize;
+        font-weight: $boldFW;
     }
-    .guides-btn {
-        text-decoration: none;
-        width: 110px;
-        height: 34px;
-        background: #FFFFFF;
-        border: 1px solid #6563eb;
-        border-radius: 100px 0px 0px 100px;
-    };
-    .myreturn-btn {
-        text-decoration: none;
-        width: 110px;
-        height: 34px;
-        background: #FFFFFF;
-        border: 1px solid #6563eb;
-        border-radius: 0px 100px 100px 0px;
-    };
-
-    .guidenumber {
-        box-sizing: border-box;
-        width: 240px;
-        height: 140px;
-        background: #E1E1E1;
-        border: 0.5px solid #D5D5D5;
-        border-radius: 15px 15px 0px 0px;
+    .name-button-container{
+        margin-bottom: 3rem;
     }
-
+    .guide-btns-container {
+        .guides-btn {
+            text-decoration: none;
+            width: 12.5rem;
+            height: 3.9rem;
+            font-size: $mediumFontSize;
+            font-weight: $boldFW;
+            color: #FFFFFF;
+            background: #6563EB;
+            border: 1px solid #6563eb;
+            border-radius: 100px 0px 0px 100px;
+        };
+        .myreturn-btn {
+            text-decoration: none;
+            width: 12.5rem;
+            height: 3.9rem;
+            font-size: $mediumFontSize;
+            font-weight: $boldFW;
+            background: #FFFFFF;
+            color: #6563EB;
+            border: 1px solid #6563eb;
+            border-radius: 0px 100px 100px 0px;
+        };
     
-    .guide-link {
-        text-decoration: none;
+
+    }
+    .all-guides-container{
+        display: flex;
+        flex-direction: column;
+        .guide-review-wrapper{
+            display: flex;
+            flex-direction: column;
+            width: clamp(20rem, 90%, 40rem);
+            gap: 1rem;
+            align-self: center;
+            .guide-container {
+                box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                height: 12rem;
+                border-radius: 15px 15px 0px 0px;
+                h1{
+                    font-size: $largeFontSize;
+                    font-weight: $boldFW;
+                }
+                h3 {
+                    font-size: $mediumFontSize;
+                    font-weight: $regularFW;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                }
+                .guide-link {
+                    text-decoration: none;
+                }
+            }
+            .isReviewed-card {
+                box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                height: 7rem;
+                border-radius: 0px 0px 15px 15px;;
+                margin-bottom: 2.5rem;
+                h1 {
+                    font-size: $largeFontSize;
+                    font-weight: $boldFW;
+                }
+                h4 {
+                    font-size: $smallFontSize;
+                    font-weight: $regularFW;
+                }
+                .grade-review {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    width: 100%;
+                    justify-content: space-around;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .guides-section-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        .name-button-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            align-self: center;
+        }
+        .all-guides-container{
+            
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            .guide-review-wrapper{
+                width: 24rem;
+                .guide-container {
+                    height: 20rem;
+                }
+            }
+            
+        }
+     
+    }
+}
+
+@media (min-width: 1366px) {
+    .guides-section-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        .name-button-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            align-self: center;
+        }
+        .all-guides-container{
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 4rem;
+            justify-content: center;
+            .guide-review-wrapper{
+                width: 26rem;
+                .guide-container {
+                    height: 21rem;
+                }
+            }
+            
+        }
+     
     }
 }

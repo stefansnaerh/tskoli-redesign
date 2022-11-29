@@ -7,6 +7,9 @@
     font-family: $mainFont;
     margin-left: $marginLeftRight;
     margin-right: $marginLeftRight;
+    background-color: $backgroundWhite;
+    border-radius: 42px;
+    padding: $marginLeftRight $marginLeftRight $marginLeftRight $marginLeftRight;
 
     .modules-header {
         z-index: 1;
@@ -36,6 +39,7 @@
         position: relative;
         display: flex;
         flex-direction: row;
+        margin-bottom: 1.2rem;
     }
     .progress-bar-finished {
         height: 30px;

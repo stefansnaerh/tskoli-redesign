@@ -1,6 +1,7 @@
 import { useState } from "react"
-import { Link } from 'react-router-dom';
 
+import arrow from '../../images/arrowIcon.svg'
+import { Link } from "react-router-dom"
 import './navbar.scss'
 
 
@@ -29,25 +30,17 @@ const Navbar = () => {
         <nav>    
           <ul>
             <li>
-              <a href="#" aria-label="link to Modules" onClick={() => close()} className="link">{"{Modules}"}</a>
+              <Link aria-label="link to Modules" onClick={() => close()} to="/allmodules" className="link">{"{ Modules }"}<img alt="arrow" src={arrow}/></Link>
             </li>
-            <span className="gray-line"></span>
             <li>
-              <a aria-label="link to resources" onClick={() => close()} className="link">{"{Resources}"}</a>
+              <Link aria-label="link to resources" onClick={() => close()} to="/resources" className="link">{"{ Resources }"}<img alt="arrow" src={arrow}/></Link>
             </li>
-            <span className="gray-line"></span>
             <li>
-              <a aria-label="link to Gallery" onClick={() => close()} className="link">{"{Gallery}"}</a>
+              <Link aria-label="link to Gallery" onClick={() => close()} to="/gallery" className="link">{"{ Gallery }"}<img alt="arrow" src={arrow}/></Link>
             </li>
-            <span className="gray-line"></span>
             <li>
-              <a aria-label="link to People" onClick={() => close()} className="link">{"{People}"}</a>
+              <Link aria-label="link to People" onClick={() => close()} to="/people" className="link">{"{ People }"}<img alt="arrow" src={arrow}/></Link>
             </li>
-            <span className="gray-line"></span>
-            <li>
-              <Link to="/calendarpage" aria-label="link to Calendar" onClick={() => close()} className="link">{"{Calendar}"}</Link>
-            </li>
-            <span className="gray-line"></span>
           </ul>  
         </nav>
         </header>
