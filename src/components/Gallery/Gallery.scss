@@ -16,7 +16,15 @@
     padding: $marginLeftRight $marginLeftRight $marginLeftRight $marginLeftRight;
   } 
   
-
+.gallerytxt{
+    display: flex;
+}
+.project{
+    display: flex;
+}
+.name{
+    position: absolute;
+}
 
   .image {
     max-width: 100%;
