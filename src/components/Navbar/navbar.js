@@ -21,8 +21,8 @@ const Navbar = () => {
             <h1 className="logo">tskoli.dev</h1>
           </div>
         </a>
-        <input id="burger" readOnly onClick={() => close()} checked={closeNav} type="checkbox"/>
-        <label aria-label="click to expand info links" htmlFor="burger">
+        <input className="burger" readOnly onClick={() => close()} checked={closeNav} type="checkbox"/>
+        <label className="nav-input" aria-label="click to expand info links" htmlFor="burger">
             <span></span>
             <span></span>
             <span></span>
