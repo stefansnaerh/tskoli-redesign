@@ -86,22 +86,27 @@ body{
     height: 3.5rem;
     border-radius: 10.0rem;
     background-color: $btnpurple;
-    color: white;
-    font-weight: 500;
-    font-size: 1.6rem;
+    
     box-shadow: 1px 1px 5px 1px rgba(81, 81, 81, 0.25);
     border-style: none;
 }
 @media screen and (min-width: 700px) {
     .loginbtn {
-        font-size: 1.8rem;
         width: 10.5rem;
         height: 4.0rem;
     }
 }
-
-
-
+.btntext{
+    color: white;
+    font-weight: 500;
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+@media screen and (min-width: 700px) {
+    .btntext{
+    font-size: 1.8rem;
+    }
+}
  .btnwrapper{
     text-align: right;
     padding-top: 2.0rem;
