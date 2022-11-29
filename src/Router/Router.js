@@ -7,6 +7,7 @@ import Resources from "../pages/resources/resources"
 import Gallery from "../pages/gallery/gallery"
 import Modules from "../pages/modules/modules";
 import Guide from "../pages/guide/guide";
+import LoginPage from "../pages/loginPage/loginPage";
 
 
 
@@ -18,6 +19,7 @@ const RouterComponet = () => {
         <Navbar/>
         <Routes>
             <Route path="/" element={<MainPage/>}/>
+            <Route path="/loginpage" element={<LoginPage/>}/>
             <Route path="/allmodules" element={<AllModules/>}/>
             <Route path="/recources" element={<Resources/>}/>
             <Route path="/gallery" element={<Gallery/>}/>
