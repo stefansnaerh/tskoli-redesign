@@ -10,37 +10,24 @@ import EachModulepage from  './components/EachModulepage/eachModulePage';
 import Calendarpage from './components/Calendarpage/calendarpage';
 import GuidePage from './components/GuidePage/guidePage';
 import MyReturns from './components/MyReturnspage/myReturns';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+
 import Loginpage from './components/Loginpage/logIn';
 
 
 
 
+import RouterComponet from './Router/Router';
+
 
 function App() {
   return (
-
-    <Router>
-
       <div className="App">
+
          <AuthProvider>
-          <Navbar /> 
-          <div className='content'>
-          <MyReturns/>
-            <Switch>
-            
-              <Route exact path='/loginpage'><Loginpage /></Route>
-
-              <Route exact path='/calendarpage'>
-               <Calendarpage />
-              </Route>
-            </Switch>
-
-          </div>
- 
-            </AuthProvider>
+          <RouterComponet/>
+          </AuthProvider>
       </div>
-    </Router>
   );
 }
 
