@@ -22,18 +22,14 @@ function App() {
       <div className="App">
          <AuthProvider/>
           <Navbar />
+
           <div className='content'>
             <Switch>
-            
-
               <Route exact path='/calendarpage'>
                <Calendarpage />
               </Route>
             </Switch>
-
           </div>
- 
-  
       </div>
     </Router>
   );
