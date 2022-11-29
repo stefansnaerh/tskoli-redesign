@@ -1,6 +1,6 @@
 
 import Navbar from './components/Navbar/navbar';
-import Profile from './components/Profile/profile'
+import Sidebar from './components/Sidebar/sidebar';
 import ModulesPage from './components/ModulesPage/ModulesPage';
 import { useState } from 'react';
 import { AuthProvider } from "./utils/authContext";
@@ -13,6 +13,7 @@ import MyReturns from './components/MyReturnspage/myReturns';
 
 
 import Loginpage from './components/Loginpage/logIn';
+import Homepage from './components/Homepage/homepage';
 
 
 
