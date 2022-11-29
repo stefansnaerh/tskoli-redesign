@@ -1,10 +1,15 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import './ModulesPage.scss'
 import api from '../../utils/api'
+import { Link } from 'react-router-dom';
 
 
+
+import { ModuleToDisplay } from '../../App';
 const ModulesPage = () => {
+
+    const {displayModule, setDisplayModule} = useContext(ModuleToDisplay)
 
     const [guides, setGuides] = useState([]);
     const [myAssignemnts, setMyAssignments] = useState([])
@@ -77,16 +82,20 @@ const ModulesPage = () => {
             return (
                 <>
                 <div className='module-info-container'>
+                    <Link onClick={() => setDisplayModule(index)} to="/modules" className='link'>
                     <h1 className='module' key={index}>Module {key}</h1>
+                    </Link>
                     <div className='module-statistics'>
                         <h1>{Object.values(countModules)[index].completed}/</h1>
                         <h1>{Object.values(countModules)[index].ids.length}</h1>
                     </div>
                 </div>
+                <Link onClick={() => setDisplayModule(index)} to="/modules" className='link'>
                 <div className='progress-bar-container'>
                 <div className='progress-bar-finished' style={{"background": `#B5E2A8`, "width":`${percentage}%`}}></div>
                 <div className='progress-bar-left'></div>
                 </div>
+                </Link>
                 </>
             )
         })}

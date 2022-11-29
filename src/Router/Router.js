@@ -25,7 +25,7 @@ const RouterComponet = () => {
             <Route path="/gallery" element={<Gallery/>}/>
             <Route path="/calendar" element={<CalendarPage/>}/>
             <Route path="/guide" element={<Guide/>}/>
-            <Route path="/modules" elemençt={<Modules/>}/>
+            <Route path="/modules" element={<Modules/>}/>
 
         </Routes>
     

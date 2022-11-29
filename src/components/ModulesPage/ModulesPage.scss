@@ -16,6 +16,9 @@
         font-size: $largeFontSize;
         font-weight: $regularFW;
     }
+    .link {
+        text-decoration: none;
+    }
     .module-info-container {
         display: flex;
         flex-direction: row ;

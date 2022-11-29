@@ -2,7 +2,7 @@
 import Navbar from './components/Navbar/navbar';
 import Profile from './components/Profile/profile'
 import ModulesPage from './components/ModulesPage/ModulesPage';
-import { useState } from 'react';
+import { useState, createContext } from 'react';
 import { AuthProvider } from "./utils/authContext";
 import './App.css';
 import Calendar from 'react-calendar';
@@ -14,18 +14,22 @@ import MyReturns from './components/MyReturnspage/myReturns';
 
 import Loginpage from './components/Loginpage/logIn';
 
-
-
-
 import RouterComponet from './Router/Router';
 
+export const ModuleToDisplay = createContext()
 
 function App() {
+
+  const [ displayModule, setDisplayModule] = useState(0)
+
   return (
+  
       <div className="App">
+       <ModuleToDisplay.Provider value={{displayModule, setDisplayModule}}>
          <AuthProvider>
           <RouterComponet/>
           </AuthProvider>
+          </ModuleToDisplay.Provider>
       </div>
   );
 }

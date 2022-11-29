@@ -1,10 +1,11 @@
 
 import './eachModulePage.scss';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import api from '../../utils/api'
 import sortModulesAndReviews from '../../utils/sortModulesAndReviews';
 import { useAuth } from '../../utils/authContext';
 
+import { ModuleToDisplay } from '../../App';
 
 const EachModulepage = () => {
     const {login} = useAuth();
@@ -16,6 +17,11 @@ const EachModulepage = () => {
     const [currentModule, setCurrentModule] = useState([])
 
     const [loading,setLoading] = useState (true)
+
+
+    const {displayModule, setDisplayModule} = useContext(ModuleToDisplay)
+
+    console.log(displayModule)
 
     useEffect(()=>{
         const getGuides = async ()=>{
@@ -66,10 +72,10 @@ const EachModulepage = () => {
          // Rearrange the data and implement data from assignments api call
          const count = {}
         const {order, ordered} = sortModulesAndReviews(newModules, count, newReturns, setLoading, newReviews) 
-        setCurrentModule(order[3])
+        setCurrentModule(order[displayModule])
 
         //updating state with the sorted modules and number of guides in each module
-        setCurrentGuides(Object.values(ordered)[3])
+        setCurrentGuides(Object.values(ordered)[displayModule])
       }, [guides])
 
       // Put guide name and isReturned in same array so i can get info from same map() in line 105
