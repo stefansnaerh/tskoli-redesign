@@ -11,7 +11,7 @@ import Calendarpage from './components/Calendarpage/calendarpage';
 import GuidePage from './components/GuidePage/guidePage';
 import MyReturns from './components/MyReturnspage/myReturns';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import Loginpage from './components/Loginpage/logIn';
 
 
 
@@ -23,11 +23,14 @@ function App() {
     <Router>
 
       <div className="App">
-         <AuthProvider/>
-          <Navbar />
+         <AuthProvider>
+          <Navbar /> 
           <div className='content'>
           <MyReturns/>
             <Switch>
+            
+              <Route exact path='/loginpage'><Loginpage /></Route>
+
               <Route exact path='/calendarpage'>
                <Calendarpage />
               </Route>
@@ -35,7 +38,7 @@ function App() {
 
           </div>
  
-  
+            </AuthProvider>
       </div>
     </Router>
   );
