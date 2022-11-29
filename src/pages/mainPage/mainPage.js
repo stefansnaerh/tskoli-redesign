@@ -1,10 +1,12 @@
-import Homepage from "../../components/Homepage/homepage"
+import Dashboard from "../../components/Dashboard/dashboard"
+import Sidebar from "../../components/Sidebar/sidebar"
 
 
 const MainPage = () => {
+    console.log (window.screen.width)
     return (
         <>
-        <Homepage/>
+        {window.screen.width>768?<Dashboard/>:<Sidebar/>}
         </>
     )
 }

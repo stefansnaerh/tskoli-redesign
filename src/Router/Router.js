@@ -8,7 +8,7 @@ import Gallery from "../pages/gallery/gallery"
 import Modules from "../pages/modules/modules";
 import Guide from "../pages/guide/guide";
 import LoginPage from "../pages/loginPage/loginPage";
-
+import Sidebar from "../components/Sidebar/sidebar";
 
 
 
@@ -17,6 +17,9 @@ const RouterComponet = () => {
         <>
         <BrowserRouter>
         <Navbar/>
+        <div className="sidebar-display">
+            <Sidebar/>
+        </div>
         <Routes>
             <Route path="/" element={<MainPage/>}/>
             <Route path="/loginpage" element={<LoginPage/>}/>
@@ -26,9 +29,7 @@ const RouterComponet = () => {
             <Route path="/calendar" element={<CalendarPage/>}/>
             <Route path="/guide" element={<Guide/>}/>
             <Route path="/modules" element={<Modules/>}/>
-
         </Routes>
-    
         </BrowserRouter>
         </>
     )

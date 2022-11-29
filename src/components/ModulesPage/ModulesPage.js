@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useContext } from 'react';
 import './ModulesPage.scss'
 import api from '../../utils/api'
