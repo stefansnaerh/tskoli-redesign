@@ -19,9 +19,9 @@ const RouterComponet = () => {
         <>
         <BrowserRouter>
         <main className="main-wrapper">
-            <div className="nav-wrapper">
+            
         <Navbar/>
-        </div>
+        
         <div className="sidebar-display">
             <Sidebar/>
         </div>
