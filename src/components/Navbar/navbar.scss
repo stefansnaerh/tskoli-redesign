@@ -7,128 +7,130 @@ header {
     flex-direction: column;
     height: 9rem;
     width: fit-content;
-  }
-  
-  .logo-container {
-  display: flex;
-  position: fixed;
-  z-index: 9;
-  background: #6563EB;
-  border-radius: 100px;
-  width: 11rem;
-  height: 4.5rem;
-  top: 25px;
-  left: $marginLeftRight;
-  justify-content: center;
-  align-items: center;
-  }
-
-  .logo {
-    font-size: $mediumFontSize;
-    font-weight: $boldFW;
-    font-family: $mainFont;
-    color: $whiteFontColor;
-  }
-    input + label {
+    .logo-container {
+      display: flex;
       position: fixed;
-      top: 35px;
-      right: 40px;
-      height: 20px;
-      width: 25px; 
-      z-index: 5;
-      span {
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        top: 50%;
-        margin-top: -1px;
-        left: 0;
-        display: block;
-        background: $fontColor;
-        transition: .5s;
+      z-index: 9;
+      background: #6563EB;
+      border-radius: 100px;
+      width: 11rem;
+      height: 4.5rem;
+      top: 25px;
+      left: $marginLeftRight;
+      justify-content: center;
+      align-items: center;
       }
-      span:first-child {
-        top: 3px; 
+    
+      .logo {
+        font-size: $mediumFontSize;
+        font-weight: $boldFW;
+        font-family: $mainFont;
+        color: $whiteFontColor;
       }
-      span:last-child {
-        top: 16px; 
-      }      
-    }
-    label:hover {
-      cursor: pointer;
-    }
-    input:checked + label { 
-      span {
-        opacity: 0;
-        top: 50%;
-      }
-      span:first-child {
-        opacity: 1;
-        transform: rotate(405deg);
-      }
-      span:last-child {
-        opacity: 1;
-        transform: rotate(-405deg);
-      }
-    }
-    input ~ nav {
-      background: $backgroundLightPurple;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 9rem;
-      z-index: 3;
-      transition: .5s;
-      transition-delay: .5s;
-      overflow: hidden;
-      > ul {
-        position: absolute;
-        top: 20%;
-        left: 0%;
-        right: 10%;
-        > li {
-          list-style: none;  
-          opacity: 0;
-          transition: .5s;
-          transition-delay: 0s;
-          background-color: $backgroundWhite;
-          border-radius: 100px;
-          height: 4.5rem;
-          margin-bottom: 4rem;
-          > .link {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-content: center;
-            text-decoration: none;
-            color: $whiteFontColor;
-            font-family: $mainFont;
-            font-weight: $boldFW;
-            font-size: $mediumFontSize;
-            letter-spacing: $letterSpacing;
-            color: $fontColor;
-            margin-left: 5rem;
-            margin-right: 2rem;
-            padding-top: 1rem;
+        input + label {
+          position: fixed;
+          top: 35px;
+          right: 40px;
+          height: 20px;
+          width: 25px; 
+          z-index: 5;
+          span {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            margin-top: -1px;
+            left: 0;
+            display: block;
+            background: $fontColor;
+            transition: .5s;
+          }
+          span:first-child {
+            top: 3px; 
+          }
+          span:last-child {
+            top: 16px; 
+          }      
+        }
+        label:hover {
+          cursor: pointer;
+        }
+        input:checked + label { 
+          span {
+            opacity: 0;
+            top: 50%;
+          }
+          span:first-child {
+            opacity: 1;
+            transform: rotate(405deg);
+          }
+          span:last-child {
+            opacity: 1;
+            transform: rotate(-405deg);
           }
         }
-      }
-    }
-    input:checked ~ nav { 
-      height: 100%;
-      transition-delay: 0s;
-      > ul {
-        > li {
-          opacity: 1;
+        input ~ nav {
+          background: $backgroundLightPurple;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 9rem;
+          z-index: 3;
+          transition: .5s;
           transition-delay: .5s;
+          overflow: hidden;
+          > ul {
+            position: absolute;
+            top: 20%;
+            left: 0%;
+            right: 10%;
+            > li {
+              list-style: none;  
+              opacity: 0;
+              transition: .5s;
+              transition-delay: 0s;
+              background-color: $backgroundWhite;
+              border-radius: 100px;
+              height: 4.5rem;
+              margin-bottom: 4rem;
+              > .link {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-content: center;
+                text-decoration: none;
+                color: $whiteFontColor;
+                font-family: $mainFont;
+                font-weight: $boldFW;
+                font-size: $mediumFontSize;
+                letter-spacing: $letterSpacing;
+                color: $fontColor;
+                margin-left: 5rem;
+                margin-right: 2rem;
+                padding-top: 1rem;
+              }
+            }
+          }
         }
-      }
-    } 
-
+        input:checked ~ nav { 
+          height: 100%;
+          transition-delay: 0s;
+          > ul {
+            > li {
+              opacity: 1;
+              transition-delay: .5s;
+            }
+          }
+        } 
+    
+  }
+  
+  
 
     @media (min-width: 768px) {
-     label {
+     header { 
+      label {
       display: none
      }
      input{
@@ -173,6 +175,7 @@ header {
      input:checked ~ nav {
       height: 9rem;
      }
+    }
     }
   
   
