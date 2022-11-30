@@ -8,13 +8,13 @@ import Day from './day';
 
 const Calendarpage = () => {
   const [calendar, setCalendar] = useState([]);
+  const d = new Date();
   
   const [plan, setPlan] = useState(Date.now());
-  const [selectedDate, setSelectedDate] = useState(-1)
+  const [selectedDate, setSelectedDate] = useState(d.getDay())
 
 
   const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  const d = new Date();
   const name = month[d.getMonth()];
   const year = d.getFullYear();
 
@@ -62,7 +62,7 @@ const Calendarpage = () => {
       
       
     };
-   const selectedStyle = {backgroundColor:'#D1D0F9'}
+  
    const weekDays = [1,2,3,4,5].map(i => addDays(i-d.getDay(),Date.now()))
    const weekStartD = new Date( addDays(0-d.getDay(), Date.now()))
    //console.log(weekStartD.getYear())
@@ -90,20 +90,24 @@ const Calendarpage = () => {
 
 
           <div className="day">
-            <ul className='list-container'>
-                <li className='list' style={selectedDate===1? selectedStyle:{}} onClick={ () => handleClick( 1)}>Mon</li>
-                <li className='list' style={selectedDate===2? selectedStyle:{}} onClick={ () => handleClick( 2)}>Tue</li>
-                <li className='list' style={selectedDate===3? selectedStyle:{}} onClick={ () => handleClick( 3)}>Wed</li>
-                <li className='list' style={selectedDate===4? selectedStyle:{}} onClick={ () => handleClick( 4)}>Thur</li>
-                <li className='list' style={selectedDate===5? selectedStyle:{}} onClick={ () => handleClick( 5)}>Fri</li>
-               
+            <ul className='timeanddescription'>
+              {['Mon','Tue','Wed','Thur','Fri'].map((day, i) => {
+                console.log(i)
+                console.log(selectedDate)
+                const selectedClass = selectedDate===i+1? 'selected-style':''
+                return (
+                  <li className={'list '+selectedClass} onClick={ () => handleClick( i+1)}><p>{day}</p></li>
+                )
+              })}
+                
             </ul>
           </div>
 
           <div className='timeanddescription'>
-            {weekDays.map(day =>{
+            {weekDays.map((day, i) =>{
+              const selectedClass = selectedDate===i+1? 'selected-style':''
               return (
-              <div className="wrapper"><Day key={day} calendar={calendar} plan={day}></Day></div>)})
+              <div key={day} className={"wrapper "+selectedClass}><Day  calendar={calendar} plan={day}></Day></div>)})
             }
 {/*<Day calendar={calendar} plan={plan}></Day>*/}
 
