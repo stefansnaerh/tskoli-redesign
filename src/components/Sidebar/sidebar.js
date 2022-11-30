@@ -3,26 +3,23 @@ import { useState, useEffect} from 'react';
 import Calendar from 'react-calendar';
 import dpp from '../../images/default-profile-picture.svg';
 import api from '../../utils/api'
-import sortModulesAndReviews from '../../utils/sortModulesAndReviews';
 import { useAuth } from '../../utils/authContext';
 
-import { ModuleToDisplay } from '../../App';
-import { SwitchToReturns } from '../../pages/modules/modules'
 
 
-  {/*const Sidebar = () => {
-  const [date, setDate] = useState(new Date())
 
-  const [student, setStudent] = useState({});
+  const Sidebar = () => {
+  const [date, setDate] = useState(new Date());
   const [guides, setGuides] = useState([]);
-  const [reviews, setReviews] = useState([]);
-  const {user} = useAuth();
+  
 
-  useEffect(() => {
+ 
+ useEffect(() => {
 
     const getData = async () => {
-        const userData = await api.get(`/users/${user._id}`);
-        setStudent(userData.data);
+        const user = await api.get('/auth/me');
+        const userData = await api.get(`/users/${user.data._id}`);
+       console.log(userData)
 
         const guidesData = await api.get(`/guides`);
         //filter out hidden guides
@@ -49,14 +46,14 @@ import { SwitchToReturns } from '../../pages/modules/modules'
         const nextUpGuides = guidesNotReturned.filter(guide =>  guide.project.Title === guidesNotReturned[0].project.Title);
         setGuides(nextUpGuides);
 
-        const reviewsData = await api.get(`/reviews`);
-        setReviews(reviewsData.data);
+       // const reviewsData = await api.get(`/reviews`);
+        //setReviews(reviewsData.data);
     };
-    if(user) {
+   
         getData();
-    }
+    
 },
-[user]);*/}
+[]);
 
 
 
@@ -93,27 +90,23 @@ import { SwitchToReturns } from '../../pages/modules/modules'
             
             {/*Here we have the div tag for the next 3 upcoming modules*/}
             <p className='next-up'>Next up</p>
+
             <div className="nextup-container">
+
+            {guides.map(guide => {
+                console.log(guide)
+                return (
+
                 <div >
-                    <a href = "#" className='next'>
-                        <p className='module'>Module 4</p>
+                    <a href = {`/guides/${guide._id}`} className='next'>
+                        <p className='module'>{guide.project.Title}</p>
+                        {guide.Title}
                         
                     </a>
                 </div>
+                )
+            })}
 
-                <div>
-                    <a href = "#" className='next' >
-                        <p className='module'>Module 5</p>
-                        <p>Guide 1 - Back-end 1</p>
-                    </a>
-                </div>
-
-                <div>
-                    <a href = "#" className='next'>
-                        <p className='module'>Module 5</p>
-                        <p>Guide 2 - Back-end 2</p>
-                    </a>
-                </div>
             </div>
 
         </div>
