@@ -21,11 +21,12 @@ const Gallery = ()=>{
   return (
     
     <div className="main-container">
-      {/* <p className="subheader">Projects from students 2022</p> */}
-      <div className="gallery-container">
-        <div className="gallerytxt">
+         <div className="gallerytxt">
       <h1 className="gallerytxt">{"{ Gallery }"}</h1>
         </div>
+      {/* <p className="subheader">Projects from students 2022</p> */}
+      <div className="gallery-container">
+       
        {projects.map(project=>{
  
         return (
