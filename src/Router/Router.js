@@ -4,7 +4,7 @@ import MainPage from "../pages/mainPage/mainPage";
 import CalendarPage from "../pages/calendarPage/calendarPage"
 import AllModules from "../pages/allModules/allModules";
 import Resources from "../pages/resources/resources"
-import Gallery from "../pages/gallery/gallery"
+import Gallery from "../pages/galleryPage/galleryPage"
 import Modules from "../pages/modules/modules";
 import Guide from "../pages/guide/guide";
 import LoginPage from "../pages/loginPage/loginPage";

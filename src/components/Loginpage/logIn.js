@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Loginpage = ()=>{
 
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const x = useAuth()
@@ -14,6 +15,7 @@ const Loginpage = ()=>{
     }
 
     async function handleSubmit(event){
+
         event.preventDefault();
         const form = event.target;
         const result = await x.login({
@@ -33,42 +35,45 @@ const Loginpage = ()=>{
     return (
         <div className="mainwrapper" >
 
-        <div className="Login">
-            <form className="loginform" onSubmit={handleSubmit}>
-                <h1 className="vefskolinn">{' { Vefskólinn } '}</h1>
-                <div className="insideswrapper">
-                <div className="userinputwrapper">
-                    <div className="username">
-                <label className="logintitle">Username</label>
-                    </div>
-                <input className="loginput" 
-                name="email"
-                autoFocus
-                type="email"
-                value={email}
-                onChange={ (e) => setEmail(e.target.value)}
-                ></input>
-                </div>
+            <div className="Login">
+                <form className="loginform" onSubmit={handleSubmit}>
+                    <h1 className="vefskolinn">{' { Vefskólinn } '}</h1>
+                    <div className="insideswrapper">
+                        <div className="userinputwrapper">
+                             <div className="username">
+                                <label className="logintitle">Username</label>
+                            </div>
+                            <input className="loginput" 
+                                name="email"
+                                autoFocus
+                                type="email"
+                                value={email}
+                                onChange={ (e) => setEmail(e.target.value)}
+                            ></input>
+                        </div>
 
-                <div className="passwordinputwrapper">
-                    <div className="password">
-                <label className="logintitle">Password</label>
+                        <div className="passwordinputwrapper">
+                            <div className="password">
+                                <label className="logintitle">Password</label>
+                            </div>
+                            <input className="loginput"
+                                name="password"
+                                type="password"
+                                value={password}
+                                onChange={ (e) => setPassword(e.target.value)}>
+                            </input>
+                        </div>
+                            
+                            <div className="btnwrapper">
+                                <button className="loginbtn" block="true" type="login" disabled={!validateForm()}>
+                                <Link  to="/allmodules" className="btntext">LOGIN</Link>
+                                </button>
+                            </div>
                     </div>
-                <input className="loginput"
-                name="password"
-                type="password"
-                value={password}
-                onChange={ (e) => setPassword(e.target.value)}></input>
-                </div>
-                    <div className="btnwrapper">
-                <button className="loginbtn" block="true" type="login" disabled={!validateForm()}>
-                    <Link  to="/allmodules" className="btntext">LOGIN</Link>
-                </button>
-                    </div>
-                    </div>
-            </form>
-      </div>
-       </div> 
+
+                </form>
+            </div>
+        </div> 
     )
     
     }

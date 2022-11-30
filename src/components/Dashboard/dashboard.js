@@ -68,22 +68,24 @@ const Dashboard = () => {
     <div className="dashboard">
       <h1 className="welcome-back">Welcome Back!</h1>
       <div className="status-bar">
-        <h2 className="status">Status</h2>
         <div className="module-status-bars">
-          <section className="modules-container">
+          <section className="status-container">
             {loading ? (
               <p>Loading...</p>
             ) : (
               <>
-                <h1 className="modules-header">{"{ Modules }"}</h1>
+                <h1 className="status-header">Status</h1>
                 {Object.keys(countModules).map((key, index) => {
                   const percentage = Math.round(
                     (Object.values(countModules)[index].completed /
                       Object.values(countModules)[index].ids.length) *
                       100
                   );
+
+                  // Má hunsa þetta. Þetta er það sem Stefán gerði til að láta upplýsingarnar koma rétt upp
                   return (
                     <>
+                    <div className="module-wrapper">
                       <div className="module-info-container">
                         <Link
                           onClick={() => setDisplayModule(index)}
@@ -119,10 +121,12 @@ const Dashboard = () => {
                           <div className="progress-bar-left"></div>
                         </div>
                       </Link>
+                      </div>
                     </>
                   );
                 })}
               </>
+              
             )}
           </section>
         </div>
