@@ -3,26 +3,31 @@
 .gallery-container{
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3vh;
+    justify-items: center;
+    gap:1vh;
 
   } 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1200px) {
     .gallery-container{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        justify-items: center;
     }
     
   }
-  @media screen and (min-width: 1300px) {
+  @media screen and (min-width: 1200px) {
     .gallery-container{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
     }
   }
-  @media screen and (min-width: 1600px) {
+  @media screen and (min-width: 2000px) {
     .gallery-container{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        gap:3vh;
     }
   }
 
@@ -36,13 +41,16 @@
 .gallerytxt{
     display: flex;
     margin: 4.5rem;
+    font-size: 3.6rem;
+    font-weight: normal;
+
 
 }
 .project{
     display: flex;
     position: relative;
-    width: 340px;
-    height: 320px;
+    width: 35vh;
+    height: 30vh;
     align-items: center;
 }
 
@@ -53,8 +61,8 @@
 }
 
 .image {
-    width: 340px;
-    height: 320px;
+    width: 35vh;
+    height: 30vh;
     object-fit: cover;
     border-radius: 8px;
     transition: ease-in-out 0.3s;
@@ -62,20 +70,31 @@
 .image:hover{
     filter: brightness(55%);
     }
+    .main-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-family: $mainFont;
+        margin-left: $marginLeftRight;
+        margin-right: $marginLeftRight;
+        background-color: $backgroundWhite;
+        border-radius: 42px;
+        padding: $marginLeftRight $marginLeftRight $marginLeftRight $marginLeftRight;
+ 
+      }
 
-
-.main-container{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-    justify-content: center;
-    font-family: $mainFont;
-    margin-left: $marginLeftRight;
-    margin-right: $marginLeftRight;
-    background-color: $backgroundWhite;
-    border-radius: 42px;
-    padding: $marginLeftRight $marginLeftRight $marginLeftRight $marginLeftRight;
-    position: relative;
-  }
+// .main-container{
+//     display: flex;
+//     flex-direction: column;
+//     padding: 10px;
+//     padding-left: 40px;
+//     padding-right: 40px;
+//     justify-content: center;
+//     font-family: $mainFont;
+//     margin-left: $marginLeftRight;
+//     margin-right: $marginLeftRight;
+//     background-color: $backgroundWhite;
+//     border-radius: 42px;
+//     padding: $marginLeftRight $marginLeftRight $marginLeftRight $marginLeftRight;
+//     position: relative;
+//   }
