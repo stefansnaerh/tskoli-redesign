@@ -10,9 +10,10 @@ import { ModuleToDisplay } from '../../App';
 import { SwitchToReturns } from '../../pages/modules/modules'
 
 
-  {/*const Sidebar = () => {
+  const Sidebar = () => {
+    
   const [date, setDate] = useState(new Date())
-
+/*
   const [student, setStudent] = useState({});
   const [guides, setGuides] = useState([]);
   const [reviews, setReviews] = useState([]);
@@ -56,7 +57,7 @@ import { SwitchToReturns } from '../../pages/modules/modules'
         getData();
     }
 },
-[user]);*/}
+[user]);*/
 
 
 
