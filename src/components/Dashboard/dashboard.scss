@@ -1,6 +1,14 @@
 @import '/src/variables.scss';
 
 
+.dashboard {
+    position: absolute;
+    right: 0;
+    top: 20rem;
+    width: 110rem;
+}
+
+//status bar
 .modules-container {
     font-family: $mainFont;
     margin-left: $marginLeftRight;

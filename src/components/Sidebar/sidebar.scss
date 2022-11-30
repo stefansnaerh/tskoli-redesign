@@ -1,6 +1,19 @@
 @import '/src/variables.scss';
 
 
+.sidebar-container {
+  height: 100%;
+  width: 35rem;
+  position: fixed;
+  top: 10rem;
+  left: 0;
+  padding-top: 1.25rem;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 a {
   color: black;
 }
@@ -16,13 +29,6 @@ a {
   margin: 0 auto;
 }
 
-.content {
-  text-align: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
 .name {
   font-size: $mediumFontSize;
 }
@@ -30,7 +36,7 @@ a {
 /* The code lines below are used to style the "next up" section */
 .next-up {
   font-size: $mediumFontSize;
-  position:relative;
+  position: relative;
   right: 13rem;   
 }
 
