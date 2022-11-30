@@ -10,16 +10,22 @@ import Guide from "../pages/guide/guide";
 import LoginPage from "../pages/loginPage/loginPage";
 import Sidebar from "../components/Sidebar/sidebar";
 
+import './router.scss';
+
 
 
 const RouterComponet = () => {
     return (
         <>
         <BrowserRouter>
+        <main className="main-wrapper">
+            <div className="nav-wrapper">
         <Navbar/>
+        </div>
         <div className="sidebar-display">
             <Sidebar/>
         </div>
+        <section className="content-wrapper">
         <Routes>
             <Route path="/" element={<MainPage/>}/>
             <Route path="/loginpage" element={<LoginPage/>}/>
@@ -30,6 +36,8 @@ const RouterComponet = () => {
             <Route path="/guide" element={<Guide/>}/>
             <Route path="/modules" element={<Modules/>}/>
         </Routes>
+        </section>
+        </main>
         </BrowserRouter>
         </>
     )
