@@ -2,7 +2,6 @@
 
 
 .sidebar-container {
-  height: 100%;
   width: 35rem;
   position: fixed;
   top: 10rem;
@@ -18,16 +17,7 @@ a {
   color: black;
 }
 
-.app {
-  text-align: center;
-  margin: 0 auto;
-  width: 80%;
-}
 
-.text-center {
-  font-style: italic;
-  margin: 0 auto;
-}
 
 .name {
   font-size: $mediumFontSize;
@@ -37,7 +27,10 @@ a {
 .next-up {
   font-size: $mediumFontSize;
   position: relative;
-  right: 13rem;   
+  margin-left: 8rem;
+  margin-bottom: 0.5rem;
+  right: 13rem; 
+  width: 242px;  
 }
 
 .nextup-container {
@@ -52,9 +45,9 @@ a {
   flex-direction: column;  
   align-items: flex-start;
   box-sizing: border-box;
-  width:32rem;
+  width:242px;
   height:7.5rem;
-  margin-left:4.2rem;
+  margin-left:0.5rem;
   padding-left: 3rem;
   background: #FFFFFF;
   border: 0.5px solid #FFFFFF;
@@ -70,18 +63,16 @@ a {
 }
 
 /* The code lines below are used to style the calendar */
-.calendar {
-  width: 50rem;
-  height: 37.5rem;
-}
+
 
 .react-calendar {
-  width: 350px;
+  width: 242px;
+  height: 250px;
   max-width: 100%;
   background: white;
   border: 1px solid #a0a096;
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.125em;
+  line-height: 0rem;
   border: 0.5px solid #FFFFFF;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
@@ -114,6 +105,7 @@ a {
   margin: 0;
   border: 0;
   outline: none;
+  border-radius: 20px;
 }
 
 .react-calendar button:enabled:hover {
@@ -193,10 +185,7 @@ a {
   background: #8482EF;
 }
   
-.react-calendar__tile--now:enabled:hover,
-.react-calendar__tile--now:enabled:focus {
-  background: #ffffa9;
-}
+
   
 .react-calendar__tile--hasActive {
   background: #76baff;
@@ -208,7 +197,7 @@ a {
 }
 
 .react-calendar__tile--active {
-  background: #006edc;
+  background: #6563EB;
   color: white;
 }
 
