@@ -100,22 +100,23 @@ const EachModulepage = () => {
         </div>
         <div className='all-guides-container'>
         {sortReturnWithTitle.map((name, key) => {
+          const hasReviewed = name[2]
+          const hasReturned = name[1]
             return (
                 <div className='guide-review-wrapper'>
-                <div key={key} className="guide-container" style={name[1] === false? {backgroundColor: "#E2E2E2"} : {backgroundColor: "#B5E2A8"}}>
+                <div key={key} className="guide-container" style={!hasReturned ? {backgroundColor: "#F1F1F1"} : {backgroundColor: "#B5E2A8"}}>
                   <a className='guide-link' href="">
                       <h1>Guide {key +1}</h1>
                       <h3>{name[0]}</h3>
                   </a>
                 </div>
-                <div className='isReviewed-card' style={name[2] === false? {backgroundColor: "#E2E2E2"} : {backgroundColor: "#B5E2A8"}}>
+                <div className='isReviewed-card' style={!hasReviewed ? hasReturned ? {backgroundColor: "#FECA9D"}: {backgroundColor: "#F1F1F1"} : hasReturned ? {backgroundColor: "#B5E2A8"}: {backgroundColor: "#B5E2A8"}}>
                   {name[1] === false ? (
-                    <h1>Guide not returned</h1>
+                    <h4>Guide not returned</h4>
                   ) : name[2] === false ? (
-                    <h1>Need to review!</h1>
+                    <h4>Please review</h4>
                   ): 
                     <div className='grade-review'>
-                      <h1>Reviewed</h1>
                       {name[3] === undefined ? 
                       (<h4>Grade coming up!</h4>) :
                       <h4>Grade : {name[3]}</h4>}

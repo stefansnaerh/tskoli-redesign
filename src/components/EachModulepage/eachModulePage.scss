@@ -8,9 +8,10 @@
     font-family: $mainFont;
     gap: 1rem;
     background-color: $backgroundWhite;
-    width: 93%;
     border-radius: 42px;
     padding-top: 2.5rem;
+    margin-left: $marginLeftRight;
+    margin-right: $marginLeftRight;
     .guide-header {
         font-size: $headerFontSize;
         font-weight: $boldFW;
