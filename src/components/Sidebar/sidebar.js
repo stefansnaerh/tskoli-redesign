@@ -7,9 +7,11 @@ import { useAuth } from '../../utils/authContext';
 
 
 
-
   const Sidebar = () => {
-  const [date, setDate] = useState(new Date());
+    
+  const [date, setDate] = useState(new Date())
+  const [student, setStudent] = useState({});
+
   const [guides, setGuides] = useState([]);
   
 

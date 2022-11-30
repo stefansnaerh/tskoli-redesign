@@ -1,7 +1,7 @@
 .main-wrapper {
   display: grid;
   grid-template-rows: 10% 1fr;
-  grid-template-columns: 20% 1fr;
+  grid-template-columns: 35rem 1fr;
 }
 .main-wrapper .sidebar-display {
   grid-row: 1/1;
@@ -12,4 +12,15 @@
   grid-column: 2/2;
   margin-right: 0.5rem;
   margin-top: 2rem;
+  width: 100%;
+}
+
+@media (max-width: 850px) {
+  .main-wrapper .content-wrapper {
+    grid-column: 1/3;
+    align-content: center;
+  }
+  .main-wrapper .sidebar-display {
+    display: none;
+  }
 }/*# sourceMappingURL=router.css.map */

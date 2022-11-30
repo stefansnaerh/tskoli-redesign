@@ -128,7 +128,7 @@ header {
   
   
 
-    @media (min-width: 768px) {
+    @media (min-width: 850px) {
      header { 
       label {
       display: none
@@ -144,8 +144,9 @@ header {
        ul {
         display: flex;
         grid-column: 2 / 3;
+        right: $marginLeftRight;
         padding: 0;
-        gap: 2rem;
+        gap: 1.5rem;
         flex-direction: row;
         justify-content: space-around;
         img {
@@ -156,7 +157,7 @@ header {
           opacity: 1;
           justify-items: center;
           margin: 0;
-          width: 20rem;
+          width: 14rem;
           height: 4rem;
           .link {
             left: 0;
