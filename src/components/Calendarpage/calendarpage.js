@@ -23,12 +23,6 @@ const Calendarpage = () => {
     return  newDate
 
   }
-   
-
-
-   
-
-
   useEffect(()=> {
     const getData = async () => {
       const data = await getEvents()
@@ -38,19 +32,6 @@ const Calendarpage = () => {
     }
     getData();
   },[])
-  
-
-  {/*useEffect(() => {}*/}
-
-  
-    
-    //console.log(eventLocation)
-
-{/**I want to create a click event
-
-    const handleClick = (name, e) => {
-      console.log('hello' + name, e.pointerId);
-    } */}
 
     const handleClick = (day) => {
       const d = new Date()
@@ -70,25 +51,16 @@ const Calendarpage = () => {
    const weekStart = weekStartD.getDate() + '.' + (weekStartD.getMonth()+1) +'.' + (weekStartD.getYear()-100)
    const weekEnd = weekEndD.getDate() + '.' + (weekEndD.getMonth()+1) +'.' + (weekEndD.getYear()-100)
    console.log(weekDays)
-   
-
-   
     return ( 
         
           <div className="calendarhome">
             <div>
               <div className="myear">
-                <p className='month-year'>{name}</p>
+                <p className='month-year'>{name.toUpperCase()}</p>
                 <p className='month-year'>{year}</p>
               </div>
                 <p className='date'> {`< ${weekStart} - ${weekEnd} >`} </p>
             </div>
-            
-
-
-
-
-
           <div className="day">
             <ul className='timeanddescription'>
               {['Mon','Tue','Wed','Thur','Fri'].map((day, i) => {
@@ -99,13 +71,12 @@ const Calendarpage = () => {
                   <li className={'list '+selectedClass} onClick={ () => handleClick( i+1)}><p>{day}</p></li>
                 )
               })}
-                
             </ul>
           </div>
 
           <div className='timeanddescription'>
             {weekDays.map((day, i) =>{
-              const selectedClass = selectedDate===i+1? 'selected-style':''
+              const selectedClass = selectedDate===i+1? 'selected-style-day':''
               return (
               <div key={day} className={"wrapper "+selectedClass}><Day  calendar={calendar} plan={day}></Day></div>)})
             }
@@ -123,14 +94,6 @@ const Calendarpage = () => {
     
 
         </div>
-        
-        
-        
-        
-        
-        
-        
-      
      );
 }
  
