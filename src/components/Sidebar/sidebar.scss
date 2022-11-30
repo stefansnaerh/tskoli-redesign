@@ -19,6 +19,8 @@ a {
 .content {
   text-align: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .name {
@@ -41,7 +43,7 @@ a {
 
 .next {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  
   align-items: flex-start;
   box-sizing: border-box;
   width:32rem;
