@@ -15,9 +15,10 @@ const [displayReturns, setDisplayReturns] = useState(true)
 
         <>
         <SwitchToReturns.Provider value={{displayReturns, setDisplayReturns}}>
-        {displayReturns ? (<EachModulepage/>) : 
-        (
-            <MyReturns/>
+        {displayReturns ? 
+        (<EachModulepage/>) 
+        :(
+        <MyReturns/>
         )}
         </SwitchToReturns.Provider>
         </>

@@ -7,17 +7,15 @@ import { Link } from 'react-router-dom';
 
 
 import { ModuleToDisplay } from '../../App';
+
 const ModulesPage = () => {
-
+    // using context to pass down state 
     const {displayModule, setDisplayModule} = useContext(ModuleToDisplay)
-
+    
     const [guides, setGuides] = useState([]);
     const [myAssignemnts, setMyAssignments] = useState([])
-
-
-    const [loading,setLoading] = useState (true)
-    const [modules, setModules] = useState([])
     const [countModules, setCountModules] = useState({})
+    const [loading,setLoading] = useState (true)
     // bera saman id við assignment inni i myassignemnt
     useEffect(()=>{
       const getGuides = async ()=>{
