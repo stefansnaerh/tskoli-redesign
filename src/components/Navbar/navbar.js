@@ -34,13 +34,16 @@ const Navbar = () => {
               <Link aria-label="link to Modules" onClick={() => close()} to="/allmodules" className="link">{"{ Modules }"}<img alt="arrow" src={arrow}/></Link>
             </li>
             <li>
-              <Link aria-label="link to resources" onClick={() => close()} to="/resources" className="link">{"{ Resources }"}<img alt="arrow" src={arrow}/></Link>
+              <Link aria-label="link to Resources" onClick={() => close()} to="/resources" className="link">{"{ Resources }"}<img alt="arrow" src={arrow}/></Link>
             </li>
             <li>
               <Link aria-label="link to Gallery" onClick={() => close()} to="/gallery" className="link">{"{ Gallery }"}<img alt="arrow" src={arrow}/></Link>
             </li>
             <li>
               <Link aria-label="link to People" onClick={() => close()} to="/people" className="link">{"{ People }"}<img alt="arrow" src={arrow}/></Link>
+            </li>
+            <li>
+              <Link aria-label="link to Calendar" onClick={() => close()} to="/calendar" className="link">{"{ Calendar }"}<img alt="arrow" src={arrow}/></Link>
             </li>
           </ul>  
         </nav>
