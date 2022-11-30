@@ -17,7 +17,7 @@ const Navbar = () => {
     return (
         <>
         <header>
-        <a href="#">
+        <a href="/mainPage.js">
           <div className="logo-container">
             <h1 className="logo">tskoli.dev</h1>
           </div>
