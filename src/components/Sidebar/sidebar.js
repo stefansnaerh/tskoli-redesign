@@ -21,8 +21,6 @@ import { useAuth } from '../../utils/authContext';
     const getData = async () => {
         const user = await api.get('/auth/me');
         const userData = await api.get(`/users/${user.data._id}`);
-       console.log(userData)
-
         const guidesData = await api.get(`/guides`);
         //filter out hidden guides
         const guides = guidesData.data.filter(guide => guide.hidden !== true);
@@ -96,7 +94,6 @@ import { useAuth } from '../../utils/authContext';
             <div className="nextup-container">
 
             {guides.map(guide => {
-                console.log(guide)
                 return (
 
                 <div >

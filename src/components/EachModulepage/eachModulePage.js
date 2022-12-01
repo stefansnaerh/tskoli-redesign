@@ -1,12 +1,14 @@
 
 import './eachModulePage.scss';
 import { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import api from '../../utils/api'
 import sortModulesAndReviews from '../../utils/sortModulesAndReviews';
 import { useAuth } from '../../utils/authContext';
 
 import { ModuleToDisplay } from '../../App';
 import { SwitchToReturns } from '../../pages/modules/modules'
+import { GuideToDisplay } from '../../App';
 
 const EachModulepage = () => {
     const {login} = useAuth();
@@ -19,11 +21,9 @@ const EachModulepage = () => {
 
     const [loading,setLoading] = useState (true)
 
-
+    const {displayGuide, setDisplayGuide} = useContext(GuideToDisplay)
     const {displayModule, setDisplayModule} = useContext(ModuleToDisplay)
     const {displayReturns, setDisplayReturns} = useContext(SwitchToReturns)
-
-    console.log(displayModule)
 
     useEffect(()=>{
         const getGuides = async ()=>{
@@ -43,7 +43,7 @@ const EachModulepage = () => {
         }
         getReviews();
       },[login])
-      
+    
       useEffect(() => {
           //map through guides and make objects with all properties i need. I then
           // use these objects in as parameters in the sortModulesAndReviews function to 
@@ -68,7 +68,8 @@ const EachModulepage = () => {
             return {
               assignment : assignment.assignment,
               feedback: assignment.feedback,
-              grade: assignment.grade
+              grade: assignment.grade,
+              id: assignment.id
             }
           })
          // Rearrange the data and implement data from assignments api call
@@ -79,12 +80,12 @@ const EachModulepage = () => {
         //updating state with the sorted modules and number of guides in each module
         setCurrentGuides(Object.values(ordered)[displayModule])
       }, [guides])
-
+    
       // Put guide name and isReturned in same array so i can get info from same map() in line 105
       let sortReturnWithTitle
       if (loading === false) {
-       const zip = (a1, a2, a3, a4) => a1.map((x, i) => [x, a2[i], a3[i], a4[i]]);
-       sortReturnWithTitle= zip(currentGuides.name, currentGuides.isReturned, currentGuides.isReviewed, currentGuides.grade)
+       const zip = (a1, a2, a3, a4, a5) => a1.map((x, i) => [x, a2[i], a3[i], a4[i], a5[i]]);
+       sortReturnWithTitle= zip(currentGuides.name, currentGuides.isReturned, currentGuides.isReviewed, currentGuides.grade, currentGuides.ids)
        }
     return(
         <section className='guides-section-container'>
@@ -105,10 +106,10 @@ const EachModulepage = () => {
             return (
                 <div className='guide-review-wrapper'>
                 <div key={key} className="guide-container" style={!hasReturned ? {backgroundColor: "#F1F1F1"} : {backgroundColor: "#B5E2A8"}}>
-                  <a className='guide-link' href="">
+                  <Link to="/guide" onClick={() => setDisplayGuide(name[4])} className='guide-link' href="">
                       <h1>Guide {key +1}</h1>
                       <h3>{name[0]}</h3>
-                  </a>
+                  </Link>
                 </div>
                 <div className='isReviewed-card' style={!hasReviewed ? hasReturned ? {backgroundColor: "#FECA9D"}: {backgroundColor: "#F1F1F1"} : hasReturned ? {backgroundColor: "#B5E2A8"}: {backgroundColor: "#B5E2A8"}}>
                   {name[1] === false ? (

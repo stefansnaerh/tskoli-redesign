@@ -8,7 +8,34 @@
 
 
 .guide-info-container {
-    width: 93%;
+   
     border-radius: 42px;
     background-color: $backgroundWhite;
+    margin: $marginLeftRight;
+    text-align: left;
+    padding: $marginLeftRight;
+    h1{
+        font-size: $headerFontSize;
+        font-weight: $boldFW;
+    }
+    h2{
+        font-size: $largeFontSize;
+        font-weight: $boldFW;
+    }
+    p , ul , li {
+        font-size: $smallFontSize;
+    }
+    ul {
+      padding-left: 1rem;
+    }
+}
+
+
+
+@media (max-width: 850px) {
+    .guide-info-container {
+        .guide-extra-info-container {
+            display: none;
+        }
+    }
 }
