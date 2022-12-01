@@ -9,6 +9,7 @@ import Modules from "../pages/modules/modules";
 import Guide from "../pages/guide/guide";
 import LoginPage from "../pages/loginPage/loginPage";
 import Sidebar from "../components/Sidebar/sidebar";
+import Profilepage from "../components/Profilepage/profilepage";
 
 import './router.scss';
 
