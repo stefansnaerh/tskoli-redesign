@@ -2,6 +2,7 @@ import { useState } from "react";
 import './login.scss';
 import {useAuth} from "../../utils/authContext"
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Loginpage = ()=>{
 
@@ -9,13 +10,13 @@ const Loginpage = ()=>{
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const x = useAuth()
-    
+    let history = useNavigate();
+
     function validateForm() {
         return email.length > 0 && password.length > 0;
     }
 
     async function handleSubmit(event){
-
         event.preventDefault();
         const form = event.target;
         const result = await x.login({
@@ -23,14 +24,15 @@ const Loginpage = ()=>{
           password: form.password.value,
         });
         if (result.status === 200) {
+            //when form is submitted it goes into dashboard
+                    history.push("/.dashboard") 
           console.log("You are logged in!")
         } else {
           console.log("You did not manage to log in")
           console.log(result.data.message)
         }
+
     }
-
-
 
     return (
         <div className="mainwrapper" >
@@ -66,7 +68,7 @@ const Loginpage = ()=>{
                             
                             <div className="btnwrapper">
                                 <button className="loginbtn" block="true" type="login" disabled={!validateForm()}>
-                                <Link  to="/allmodules" className="btntext">LOGIN</Link>
+                                    LOGIN 
                                 </button>
                             </div>
                     </div>
