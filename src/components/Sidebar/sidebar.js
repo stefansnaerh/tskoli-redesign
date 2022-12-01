@@ -23,6 +23,7 @@ import Profilepage from '../Profilepage/profilepage';
         const getData = async () => {
         const user = await api.get('/auth/me');
         const userData = await api.get(`/users/${user.data._id}`);
+
        console.log(user)
         setStudent(user.data)
 
@@ -96,7 +97,6 @@ import Profilepage from '../Profilepage/profilepage';
             <div className="nextup-container">
 
             {guides.map(guide => {
-                console.log(guide)
                 return (
 
                 <div >
