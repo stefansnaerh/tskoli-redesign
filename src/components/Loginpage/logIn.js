@@ -68,7 +68,9 @@ const Loginpage = ()=>{
                             
                             <div className="btnwrapper">
                                 <button className="loginbtn" block="true" type="login" disabled={!validateForm()}>
+
                                     LOGIN 
+
                                 </button>
                             </div>
                     </div>

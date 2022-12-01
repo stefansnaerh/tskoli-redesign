@@ -56,6 +56,7 @@ const ModulesPage = () => {
         // sort the guides title so they appear in right order
         const ordered = Object.keys(count).sort().reduce(
             (obj, key) => { 
+              console.log(obj[key], count[key])
               obj[key] = count[key]; 
               return obj;
             }, 
