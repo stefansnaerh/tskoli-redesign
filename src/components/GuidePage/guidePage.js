@@ -29,15 +29,18 @@ const GuidePage = () => {
 
       console.log(guide)
     return (
-        <section className='guide-info-container'>
+        <section className="guide-section">
+          <div className='guide-info-container'>
           {loading ? (<p>Loading.....</p>): 
           (
             <>
+            <div className='guide-description-container'>
             <h1>Module {guide.project.Title.slice(0,1)}</h1>
             <h2>{guide.Title}</h2>
             <h2>Description</h2>
             <div dangerouslySetInnerHTML={{__html: guide.Description}}></div>
             <div dangerouslySetInnerHTML={{__html: guide.Deliver.Description}}></div>
+            </div>
             <div className='guide-extra-info-container'>
               <div className='materials-container'>
                 <h2>Materials</h2>
@@ -53,9 +56,15 @@ const GuidePage = () => {
                   })}
                 </ul>
               </div>
+              <div className='topics'>
+                  <h2>Topics</h2>
+                <div dangerouslySetInnerHTML={{__html:guide.topicsList}}></div>
+                </div>
             </div>
             </>
           )}
+          </div>
+          <button className='return-guide-btn'>Return</button>
         </section>
     )
 }
