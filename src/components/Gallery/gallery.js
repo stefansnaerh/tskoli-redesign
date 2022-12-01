@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import './Gallery.scss';
 import Project from  './project' ;
+import {motion} from "framer-motion"
 
 const Gallery = ()=>{
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './Gallery.scss'
+import {motion} from "framer-motion"
 
 const Project = ({project}) => {
 
@@ -25,7 +26,10 @@ const Project = ({project}) => {
         <div key={project._id} className="project">
 
             <div className="image"onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                <img onError={skipImage} onClick={()=> openInNewTab (project.url)} className="image" src={project.imageOrGif}></img>
+                <motion.img onError={skipImage} onClick={()=> openInNewTab (project.url)} className="image" src={project.imageOrGif}
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9}}>
+                          </motion.img>
             </div>
             
 
