@@ -20,9 +20,16 @@
     font-weight: $boldFW; 
     z-index: 1;
     display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 5rem;
+    padding-top: 3rem;
+    padding-left: 4.5rem;
+}
+.status-header {
+    z-index: 1;
+    font-size: $headerFontSize;
+    font-weight: $boldFW;
+    display: flex;
+    padding-left: 4.5rem;
+    padding-top: 4rem;
 }
 
 //status bar
@@ -30,15 +37,9 @@
     font-family: $mainFont;
     display: grid;
     grid-template-columns: auto auto auto auto;
-    padding: 2rem;
-
-
-    .status-header {
-        z-index: 1;
-        font-size: $headerFontSize;
-        font-weight: $boldFW;
-        display: flex;
-    }
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    gap: 2rem;
 
     .link {
         text-decoration: none;
@@ -48,11 +49,11 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-left: 1rem;
-        margin-right: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
         
-
         .module {
+            font-size: $mediumFontSize;
             font-weight: $regularFW;
         }
 
@@ -60,6 +61,7 @@
             display: flex;
 
             h1 {
+                font-size: $smallFontSize;
                 font-weight: $regularFW;
                 color: $grayFontColor;
             }
@@ -70,21 +72,20 @@
         position: relative;
         display: flex;
         flex-direction: row;
-        margin-bottom: 1.2rem;
     }
 
     .progress-bar-finished {
-        height: 1.8rem;
+        height: 3.1rem;
         border-radius: 1.8rem;
         z-index: 2;
     }
 
     .progress-bar-left {
-        height: 1.8rem;
+        height: 3.1rem;
         z-index: 1;
         position: absolute;
         width: 100%;
-        background: #F3FAF0;
+        background: #F1F1F1;
         border-radius: 1.8rem;
     }
 }

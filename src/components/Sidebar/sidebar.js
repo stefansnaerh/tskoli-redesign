@@ -60,16 +60,6 @@ import { SwitchToReturns } from '../../pages/modules/modules'
 [user]);*/
 
 
-
-
-
-
-
-
-
-
-
-  
     return (
         <>
         {/* Here we have the div tag for user info */}
@@ -90,7 +80,6 @@ import { SwitchToReturns } from '../../pages/modules/modules'
                 <Calendar onChange={setDate} value={date}/>
             </div>
                
-            
             
             {/*Here we have the div tag for the next 3 upcoming modules*/}
             <p className='next-up'>Next up</p>

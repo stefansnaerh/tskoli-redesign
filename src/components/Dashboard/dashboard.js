@@ -3,6 +3,10 @@ import { useState, useEffect, useContext } from "react";
 import api from "../../utils/api";
 import { Link } from "react-router-dom";
 import { ModuleToDisplay } from "../../App";
+import ToDoList from '../Dashboard/todolist';
+import data from "../../data.json";
+import ToDoListOne from "../../ToDoList";
+import "./todolist.scss";
 
 
 // Dashboard for homepage:
@@ -13,6 +17,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [modules, setModules] = useState([]);
   const [countModules, setCountModules] = useState({});
+  const [ toDoList, setToDoList ] = useState(data);
 
   // bera saman id við assignment inni i my assignment
   useEffect(() => {
@@ -69,12 +74,12 @@ const Dashboard = () => {
       <h1 className="welcome-back">Welcome Back!</h1>
       <div className="status-bar">
         <div className="module-status-bars">
+          <h1 className="status-header">Status</h1>
           <section className="status-container">
             {loading ? (
               <p>Loading...</p>
             ) : (
               <>
-                <h1 className="status-header">Status</h1>
                 {Object.keys(countModules).map((key, index) => {
                   const percentage = Math.round(
                     (Object.values(countModules)[index].completed /
@@ -93,7 +98,7 @@ const Dashboard = () => {
                           className="link"
                         >
                           <h1 className="module" key={index}>
-                            Module {key}
+                            Module {key.slice(0, 2)}
                           </h1>
                         </Link>
                         <div className="module-statistics">
@@ -126,13 +131,21 @@ const Dashboard = () => {
                   );
                 })}
               </>
-              
             )}
           </section>
         </div>
       </div>
+
+
+      <div className="tdl">
+        <ToDoList />
+        <ToDoListOne toDoList={toDoList}/>
+      </div>
+
+
     </div>
   );
 };
+
 
 export default Dashboard;
