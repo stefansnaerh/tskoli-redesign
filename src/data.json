@@ -1,33 +1,29 @@
 [{
     "id": 1,
-    "task": "Borða graut",
-    "complete": true
-  }, {
-    "id": 2,
     "task": "Gefa mjámjá nammnamm",
     "complete": true
   }, {
-    "id": 3,
+    "id": 2,
     "task": "Síðdegis blundur",
     "complete": true
   }, {
-    "id": 4,
+    "id": 3,
     "task": "Hlusta a sad tónlist og horfa út um gluggann",
     "complete": false
   }, {
-    "id": 5,
+    "id": 4,
     "task": "Finna hund",
     "complete": true
   }, {
-    "id": 6,
+    "id": 5,
     "task": "Klappa hund",
     "complete": false
   }, {
-    "id": 7,
+    "id": 6,
     "task": "Lesa gamla testamentið",
     "complete": true
   }, {
-    "id": 8,
+    "id": 7,
     "task": "Hoppa í poll",
     "complete": false
   }]
