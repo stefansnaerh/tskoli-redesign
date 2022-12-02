@@ -103,7 +103,6 @@ const updateProfile = (event) => {
             </div>
                
             
-            
             {/*Here we have the div tag for the next 3 upcoming modules*/}
             <p className='next-up'>Next up</p>
 

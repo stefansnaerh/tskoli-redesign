@@ -1,0 +1,29 @@
+[{
+    "id": 1,
+    "task": "Gefa mjámjá nammnamm",
+    "complete": true
+  }, {
+    "id": 2,
+    "task": "Síðdegis blundur",
+    "complete": true
+  }, {
+    "id": 3,
+    "task": "Hlusta a sad tónlist og horfa út um gluggann",
+    "complete": false
+  }, {
+    "id": 4,
+    "task": "Finna hund",
+    "complete": true
+  }, {
+    "id": 5,
+    "task": "Klappa hund",
+    "complete": false
+  }, {
+    "id": 6,
+    "task": "Lesa gamla testamentið",
+    "complete": true
+  }, {
+    "id": 7,
+    "task": "Hoppa í poll",
+    "complete": false
+  }]
