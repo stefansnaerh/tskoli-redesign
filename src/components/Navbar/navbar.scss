@@ -182,16 +182,19 @@ header {
   
   
     @media (min-width: 1366px) {
+      header{
       input ~ nav {
         ul {
+          gap: 0rem;
           li{
-            width: 24rem;
+            width: 18rem;
             .link {
               font-size: $mediumFontSize;
             }
           }
         }
       }
+    }
     }
   
   
