@@ -18,10 +18,15 @@
         display: flex;
         gap: 4rem;
         h1{
-            font-size: $headerFontSize;
+            font-size: $mainHeaderFontSize;
             font-weight: $boldFW;
+            margin-bottom: 0;
+        }
+        .guide-title {
+            margin-bottom: 3rem;
         }
         h2{
+            margin-top: 0;
             font-size: $largeFontSize;
             font-weight: $boldFW;
         }
@@ -33,6 +38,7 @@
         }
         .guide-description-container{
             width: 70%;
+               
         }
         .guide-extra-info-container {
             display: flex;
