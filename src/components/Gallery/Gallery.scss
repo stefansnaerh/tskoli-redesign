@@ -74,7 +74,6 @@ select {
     width: clamp(35vh, 30rem, 100vh);
     height: 30vh;
     align-items: center;
-
 }
 
 .projectinfo{
@@ -84,7 +83,6 @@ select {
     justify-content: center;
     align-items: center;
     width: 100%;
-
 }
 .studentname, .projecttitle{
     color: white;
@@ -113,7 +111,7 @@ select {
   }
 .image:hover{
     filter: brightness(55%);
-    }
+}
 
 .main-gallery-container{
     display: flex;
