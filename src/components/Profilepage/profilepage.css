@@ -1,0 +1,19 @@
+.main-container {
+  justify-content: center;
+  height: 50%;
+  width: 350px;
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  z-index: 3;
+}
+
+.form-container {
+  gap: 20rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}/*# sourceMappingURL=profilepage.css.map */

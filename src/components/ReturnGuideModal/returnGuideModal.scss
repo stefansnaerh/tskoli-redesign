@@ -1,0 +1,72 @@
+@import '/src/variables.scss';
+
+
+
+
+
+.return-guide-modal-container {
+    padding-top: 3rem;
+    z-index: 3;
+    width: 70%;
+    max-width: 120rem;
+    height: 60%;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    display: flex;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 42px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        label {
+            font-size: 1.8rem;
+        }
+        input, textarea {
+            border-radius: 15px;
+            border: none;
+            background-color: #F1F1F1;
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+            font-size: $mediumFontSize;
+            resize:none
+        }
+        input {
+            height: 4rem;
+        }
+        textarea {
+            height: 16rem;
+        }
+        .project-name {
+            height: 8rem;
+        }
+        .submit-btn {
+            background: #6563EB;
+            box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+            border: none;
+            border-radius: 100px;
+            height: 4rem;
+            width: 10rem;
+            color: #FFFFFF;
+            font-size: $mediumFontSize;
+            font-weight: $boldFW;
+            align-self: center;
+            width: 14rem;
+        }
+        .cancel-btn {
+            background:none;
+            border: none;
+            font-size: $mediumFontSize;
+            color: #999999;
+            margin-top: 1.5rem;
+        }
+    }
+}

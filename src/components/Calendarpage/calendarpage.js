@@ -53,7 +53,7 @@ const Calendarpage = () => {
    console.log(weekDays)
     return ( 
         
-          <div className="calendarhome">
+          <section className="calendarhome">
             <div>
               <div className="myear">
                 <p className='month-year'>{name.toUpperCase()}</p>
@@ -74,7 +74,7 @@ const Calendarpage = () => {
             </ul>
           </div>
 
-          <div className='timeanddescription'>
+          <div className='schedule'>
             {weekDays.map((day, i) =>{
               const selectedClass = selectedDate===i+1? 'selected-style-day':''
               return (
@@ -93,7 +93,7 @@ const Calendarpage = () => {
     </div>*/}
     
 
-        </div>
+        </section>
      );
 }
  

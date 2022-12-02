@@ -9,6 +9,8 @@ font-size: $mediumFontSize;
 
 };
 
+
+
 .myear {
     justify-content: center;
     display: flex;
@@ -27,13 +29,20 @@ font-size: $mediumFontSize;
     font-weight: $bolderFW;
 }
 .calendarhome {
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    font-family: $mainFont;
+    background-color: $backgroundWhite;
+    border-radius: 42px;
+    padding-top: 2.5rem;
+    margin-left: $marginLeftRight;
+    margin-right: $marginLeftRight;
+    height: 100%;
+    align-items: center;
 }
 
 
-.day {
-position: relative;
-};
+
 
 .list-container {
     display: flex;
@@ -47,11 +56,9 @@ position: relative;
     display: flex;
     font-size: $smallFontSize;
     list-style: none;
-    width: 240px;
+    width: 15rem;
     height: 25px;
     padding-bottom: 1rem;
-    margin-left: 78px;
-   
     //background: #D1D0F9;
     border-radius: 1rem;
      p {
@@ -63,17 +70,19 @@ position: relative;
 .wrapper{
     display: flex;
     flex-wrap: wrap;
-    width: 240px;
-    margin-left: 78px;
-
+    justify-self: center;
+    width: 15rem;
+}
+.schedule {
+    width: auto;
+    display: flex;
 }
 
 .timeanddescription{
-    width: 100%;
-    justify-content: space-between;
     display: flex;
     flex-direction: row;
     padding: 0px;
+    gap: 1rem;
     .color {
         font-size: $smallFontSize;
         color: $whiteFontColor;
@@ -84,20 +93,17 @@ position: relative;
 .time {
     box-sizing: border-box;
     background: #6563EB;
-    width: 240px;
+    width: 20rem;
     border-radius: 8px 8px 0px 0px;
     margin-bottom: 0px;
-
-
-
 };
 
 
 
 .daydescription {
     box-sizing: border-box;
-    width: 240px;
-    height: 466px;
+    width: 20rem;
+    height: 40rem;
     background: #F1F1F1;
     border: 0.5px solid #D5D5D5;
     border-radius: 0px 0px 8px 8px;

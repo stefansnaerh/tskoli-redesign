@@ -1,29 +1,33 @@
 import './sidebar.scss';
-import { useState, useEffect} from 'react';
+import { useState, useEffect, useRef} from 'react';
 import Calendar from 'react-calendar';
 import dpp from '../../images/default-profile-picture.svg';
 import api from '../../utils/api'
-import sortModulesAndReviews from '../../utils/sortModulesAndReviews';
-import { useAuth } from '../../utils/authContext';
+import Profilepage from '../Profilepage/profilepage';
+import editprofile from '../../images/edit-profile.svg';
 
-import { ModuleToDisplay } from '../../App';
-import { SwitchToReturns } from '../../pages/modules/modules'
+
 
 
   const Sidebar = () => {
-    
-  const [date, setDate] = useState(new Date())
-/*
+  const menuRef = useRef();
+  const [date, setDate] = useState(new Date());
   const [student, setStudent] = useState({});
   const [guides, setGuides] = useState([]);
-  const [reviews, setReviews] = useState([]);
-  const {user} = useAuth();
+  const [profilePopup, setProfilePopup] = useState(false);
 
-  useEffect(() => {
+  
+  
 
-    const getData = async () => {
-        const userData = await api.get(`/users/${user._id}`);
-        setStudent(userData.data);
+ 
+ useEffect(() => {
+
+        const getData = async () => {
+        const user = await api.get('/auth/me');
+        const userData = await api.get(`/users/${user.data._id}`);
+
+       console.log(user)
+        setStudent(user.data)
 
         const guidesData = await api.get(`/guides`);
         //filter out hidden guides
@@ -50,27 +54,45 @@ import { SwitchToReturns } from '../../pages/modules/modules'
         const nextUpGuides = guidesNotReturned.filter(guide =>  guide.project.Title === guidesNotReturned[0].project.Title);
         setGuides(nextUpGuides);
 
-        const reviewsData = await api.get(`/reviews`);
-        setReviews(reviewsData.data);
+       // const reviewsData = await api.get(`/reviews`);
+        //setReviews(reviewsData.data);
     };
-    if(user) {
-        getData();
-    }
+    const handler = (e) => {
+        if(!menuRef.current.contains(e.target)){
+            setProfilePopup(false);
+        }
+    };
+    document.addEventListener("mousedown", handler);
+   
+    getData();
+    
 },
-[user]);*/
+[]);
+const updateProfile = (event) => {
+    event.preventDefault()
+    console.log(event.target.elements)
+     const {background,careerGoals,favoriteArtist,interests} = event.target.elements
+        api.patch("/auth/me", {
+        background: background.value,
+        careerGoals: careerGoals.value,
+        interests: interests.value,
+        favoriteArtist: favoriteArtist.value,
+      });
+}
+ 
 
 
     return (
         <>
         {/* Here we have the div tag for user info */}
-        <div className="sidebar-container">
+        <div className="sidebar-container" >
 
             <div className="user-pic/name">
                 <div>
-                    <img className='default-profile-picture' src={dpp} alt="user-pic"/>
+                    <img onClick={() => setProfilePopup(true)} className='default-profile-picture' src={dpp} alt="user-pic"/>
                 </div>
                 <div className="user-name">
-                    <p className='name'>Nemandi <br></br>Nemandasson</p>
+                    <h3 style={{fontSize: "1.8rem", fontWeight: "400"}} >{student?.name}</h3>
                 </div>
             </div>
 
@@ -83,31 +105,68 @@ import { SwitchToReturns } from '../../pages/modules/modules'
             
             {/*Here we have the div tag for the next 3 upcoming modules*/}
             <p className='next-up'>Next up</p>
+
             <div className="nextup-container">
+
+            {guides.map(guide => {
+                return (
+
                 <div >
-                    <a href = "#" className='next'>
-                        <p className='module'>Module 4</p>
+                    <a href = {`/guides/${guide._id}`} className='next'>
+                        <p className='module'>{guide.project.Title}</p>
+                        {guide.Title}
                         
                     </a>
                 </div>
+                )
+            })}
 
-                <div>
-                    <a href = "#" className='next' >
-                        <p className='module'>Module 5</p>
-                        <p>Guide 1 - Back-end 1</p>
-                    </a>
-                </div>
-
-                <div>
-                    <a href = "#" className='next'>
-                        <p className='module'>Module 5</p>
-                        <p>Guide 2 - Back-end 2</p>
-                    </a>
-                </div>
             </div>
 
         </div>
-        </>
+
+        <div style={{display:profilePopup?'block':'none'}} className='main-container' ref={menuRef}>
+
+            <div className="user-pic/name">
+                <div>
+                <img className='default-profile-picture' src={dpp} alt="user-pic"/>
+                <img className='edit' src={editprofile} alt="edit-profile" />
+                </div>
+                <div className="user-name">
+                <h3 style={{fontSize: "1.8rem", fontWeight: "400"}}>{student?.name}</h3>
+                <p style={{fontSize: "1.6rem"}}>{student?.email}</p>
+                </div>
+            </div>
+
+            <form onSubmit= {updateProfile} className='form-container'>
+
+                
+                <label>Background - What have you studied or worked with?</label>
+                <textarea name="background"  ></textarea>
+        
+               
+
+                
+                <label style={{marginLeft: "5"}}>Near future career goals?</label>
+                <textarea name="careerGoals" ></textarea>
+             
+          
+              
+                <label>Main interests?</label>
+                <textarea name="interests"  ></textarea>
+              
+              
+             
+                <label>Favourite band/s or artist/s</label>
+                <textarea name="favoriteArtist"></textarea>
+               
+                
+                    <button>SAVE</button>
+                 
+
+         </form>
+        </div>
+    </>
     )
 }
 

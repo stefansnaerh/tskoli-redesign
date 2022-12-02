@@ -6,9 +6,100 @@
 
 
 
-
-.guide-info-container {
-    width: 93%;
-    border-radius: 42px;
+.guide-section{
+    display: flex;
+    flex-direction: column;
     background-color: $backgroundWhite;
+    border-radius: 42px;
+    padding: 2rem 4.5rem 4.5rem 2rem;
+     margin: $marginLeftRight;
+     text-align: left;
+    .guide-info-container {
+        display: flex;
+        gap: 4rem;
+        h1{
+            font-size: $mainHeaderFontSize;
+            font-weight: $boldFW;
+            margin-bottom: 0;
+        }
+        .guide-title {
+            margin-bottom: 3rem;
+        }
+        h2{
+            margin-top: 0;
+            font-size: $largeFontSize;
+            font-weight: $boldFW;
+        }
+        p , ul , li {
+            font-size: $smallFontSize;
+        }
+        ul {
+          padding-left: 1rem;
+        }
+        .guide-description-container{
+            width: 70%;
+               
+        }
+        .guide-extra-info-container {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            gap: 2rem;
+            width: 30%;
+            a {
+                text-decoration: none;
+            }
+            .materials-container, .topics {
+       
+                align-items: center;
+                background-color: #F0EFFD;
+                width: 90%;
+                border-radius: 15px;
+                padding: 1rem 2rem 1rem 3rem;
+            }
+            
+        }
+       
+    }
+    .return-guide-btn{
+        background: #6563EB;
+        box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+        border-radius: 100px;
+        border: none;
+        color: $whiteFontColor;
+        width: 14rem;
+        height: 4rem;
+        font-size: $mediumFontSize;
+        font-weight: $boldFW;
+        align-self: flex-end;
+       
+    }
+    
+}
+
+
+
+@media (max-width: 850px) {
+    .return-guide-btn {
+        display: none;
+    }
+    .guide-info-container {
+        .guide-extra-info-container {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 530px){
+    .guide-section {
+        .guide-info-container{
+            .guide-description-container{
+                width: 100%;
+            }
+            .guide-extra-info-container {
+                display: none;
+            }
+        }
+    }
+   
 }
