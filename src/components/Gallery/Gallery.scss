@@ -10,22 +10,70 @@
     justify-content: center;
 }
 
+.topcontainer{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.0rem;
+}
+
 .gallerytxt{
     display: flex;
     margin-left: $marginLeftRight;
-    margin-bottom: 2.0rem;
-    font-size: $largeFontSize;
+    font-size: $mainHeaderFontSize;
     font-weight: normal;
-
+    margin-left:2rem;
 
 }
+.selectbutton{
+    display: flex;
+    float: right;
+    justify-content: right;
+    margin-right: 5rem;
+} 
+@media screen and (max-width: 840px){
+    .selectbutton{
+        display:flex;
+        justify-content: center;
+        margin-right: 0;
+    }
+}
+
+.dropbtn{
+    display: flex;
+    text-align: center;
+    width: auto;
+    height: 3.5rem;
+    border-radius: 10.0rem;
+    background-color: $btnpurple;
+    box-shadow: 1px 1px 5px 1px rgba(81, 81, 81, 0.25);
+    border-style: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.6rem;
+    text-decoration: none;
+    padding: 0.5rem;
+    float: inline-end;
+    margin-top: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+ @media screen and (max-width: 840px){
+    .dropbtn{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    }
+}
+select {
+    appearance: none;
+}
+
 .project{
     display: flex;
     position: relative;
     width: clamp(35vh, 30rem, 100vh);
     height: 30vh;
     align-items: center;
-
 }
 
 .projectinfo{
@@ -35,7 +83,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-
 }
 .studentname, .projecttitle{
     color: white;
@@ -49,7 +96,6 @@
 .studentname{
     font-size: 1.6rem; 
     text-align: center;
-
 }
 .projecttitle{
     font-size: 2.0rem; 
@@ -65,9 +111,9 @@
   }
 .image:hover{
     filter: brightness(55%);
-    }
+}
 
-.main-container{
+.main-gallery-container{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -77,21 +123,5 @@
     background-color: $backgroundWhite;
     border-radius: 42px;
     padding: $marginLeftRight $marginLeftRight $marginLeftRight $marginLeftRight;
- 
     }
 
-// .main-container{
-//     display: flex;
-//     flex-direction: column;
-//     padding: 10px;
-//     padding-left: 40px;
-//     padding-right: 40px;
-//     justify-content: center;
-//     font-family: $mainFont;
-//     margin-left: $marginLeftRight;
-//     margin-right: $marginLeftRight;
-//     background-color: $backgroundWhite;
-//     border-radius: 42px;
-//     padding: $marginLeftRight $marginLeftRight $marginLeftRight $marginLeftRight;
-//     position: relative;
-//   }
