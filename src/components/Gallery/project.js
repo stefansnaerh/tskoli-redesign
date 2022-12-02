@@ -11,7 +11,6 @@ const Project = ({project}) => {
     const handleMouseOut = () => {
         setIsHovering(false);
     };
-    console.log(project.url)
     //The image that appears when there's no image or error with the image 
   const skipImage = (e)=>{
     e.target.src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
@@ -22,6 +21,7 @@ const Project = ({project}) => {
 
     return (
         <>
+
         {/* Hovereffect over the images so text appears */}
         <div key={project._id} className="project">
 
@@ -31,8 +31,6 @@ const Project = ({project}) => {
                           whileTap={{ scale: 0.9}}>
                           </motion.img>
             </div>
-            
-
             {isHovering && (
                 <div className="projectinfo">
                     <p className="projecttitle">{project.assignment.Title}</p>
