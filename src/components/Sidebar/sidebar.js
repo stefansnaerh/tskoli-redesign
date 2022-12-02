@@ -4,6 +4,7 @@ import Calendar from 'react-calendar';
 import dpp from '../../images/default-profile-picture.svg';
 import api from '../../utils/api'
 import Profilepage from '../Profilepage/profilepage';
+import editprofile from '../../images/edit-profile.svg';
 
 
 
@@ -14,6 +15,7 @@ import Profilepage from '../Profilepage/profilepage';
   const [student, setStudent] = useState({});
   const [guides, setGuides] = useState([]);
   const [profilePopup, setProfilePopup] = useState(false);
+
   
   
 
@@ -66,7 +68,18 @@ import Profilepage from '../Profilepage/profilepage';
     
 },
 []);
-
+const updateProfile = (event) => {
+    event.preventDefault()
+    console.log(event.target.elements)
+     const {background,careerGoals,favoriteArtist,interests} = event.target.elements
+        api.patch("/auth/me", {
+        background: background.value,
+        careerGoals: careerGoals.value,
+        interests: interests.value,
+        favoriteArtist: favoriteArtist.value,
+      });
+}
+ 
 
 
     return (
@@ -79,7 +92,7 @@ import Profilepage from '../Profilepage/profilepage';
                     <img onClick={() => setProfilePopup(true)} className='default-profile-picture' src={dpp} alt="user-pic"/>
                 </div>
                 <div className="user-name">
-                    <h3 >{student?.name}</h3>
+                    <h3 style={{fontSize: "1.8rem", fontWeight: "400"}} >{student?.name}</h3>
                 </div>
             </div>
 
@@ -118,43 +131,43 @@ import Profilepage from '../Profilepage/profilepage';
             <div className="user-pic/name">
                 <div>
                 <img className='default-profile-picture' src={dpp} alt="user-pic"/>
+                <img className='edit' src={editprofile} alt="edit-profile" />
                 </div>
                 <div className="user-name">
-                <h3>{student?.name}</h3>
-                <p>{student?.email}</p>
+                <h3 style={{fontSize: "1.8rem", fontWeight: "400"}}>{student?.name}</h3>
+                <p style={{fontSize: "1.6rem"}}>{student?.email}</p>
                 </div>
             </div>
 
-            <div className='form-container'>
+            <form onSubmit= {updateProfile} className='form-container'>
 
-                <div className="container">
+                
                 <label>Background - What have you studied or worked with?</label>
-                <textarea name="background" maxLength="500" style={{ width: "80%" }} required></textarea>
-                </div >
+                <textarea name="background"  ></textarea>
+        
+               
 
-                <div class="container">
-                <label>Near future career goals?</label>
-                <textarea name="careerGoals" maxLength="500" style={{ width: "80%" }} required></textarea>
-                </div>
-
-                <div class="container">
+                
+                <label style={{marginLeft: "5"}}>Near future career goals?</label>
+                <textarea name="careerGoals" ></textarea>
+             
+          
+              
                 <label>Main interests?</label>
-                <textarea name="interests" maxLength="500" style={{ width: "80%" }} required></textarea>
-                </div>
-
-                <div class="container">
+                <textarea name="interests"  ></textarea>
+              
+              
+             
                 <label>Favourite band/s or artist/s</label>
-                <textarea name="favoriteArtist" maxLength="500" style={{ width: "80%" }}></textarea>
-                </div>
-                <br />
-                <div>
+                <textarea name="favoriteArtist"></textarea>
+               
+                
                     <button>SAVE</button>
-                </div>
+                 
 
-            </div>
-
-</div>
-        </>
+         </form>
+        </div>
+    </>
     )
 }
 

@@ -7,9 +7,10 @@ import Resources from "../pages/resources/resources"
 import Gallery from "../pages/galleryPage/galleryPage"
 import Modules from "../pages/modules/modules";
 import Guide from "../pages/guide/guide";
+import InsidereviewPage from "../components/Insidereviewpage/insidereviewPage";
 import LoginPage from "../pages/loginPage/loginPage";
 import Sidebar from "../components/Sidebar/sidebar";
-import Profilepage from "../components/Profilepage/profilepage";
+
 
 import './router.scss';
 
@@ -36,6 +37,8 @@ const RouterComponet = () => {
             <Route path="/calendar" element={<CalendarPage/>}/>
             <Route path="/guide" element={<Guide/>}/>
             <Route path="/modules" element={<Modules/>}/>
+            <Route path="/return" element={<InsidereviewPage/>}/>
+           
         </Routes>
         </section>
         </main>
