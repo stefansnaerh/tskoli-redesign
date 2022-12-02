@@ -33,7 +33,7 @@ const Gallery = ()=>{
   
   return (
     
-    <div className="main-container">
+    <div className="main-gallery-container">
         <div className="topcontainer">
          <div className="gallerytxt">
       <h1 className="gallerytxt">{"{ Gallery }"}</h1>
