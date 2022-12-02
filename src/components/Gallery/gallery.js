@@ -35,33 +35,27 @@ const Gallery = ()=>{
     
     <div className="main-gallery-container">
         <div className="topcontainer">
-         <div className="gallerytxt">
-      <h1 className="gallerytxt">{"{ Gallery }"}</h1>
-        </div>
-        <div className="selectbutton">
-            <select onChange={selectModule} className="dropbtn">
-             <option classname="dropdown" value="" selected disabled hidden>Choose Module</option>
-                {modules.map(module => <option value={module}>Module {module[0]}</option>)}
-            </select>
+            <div className="gallerytxt">
+                <h1 className="gallerytxt">{"{ Gallery }"}</h1>
             </div>
+            <div className="selectbutton">
+                <select onChange={selectModule} className="dropbtn">
+                    <option classname="dropdown" value="" selected disabled hidden>Choose Module</option>
+                    {modules.map(module => <option value={module}>Module {module[0]}</option>)}
+                </select>
             </div>
-
-                
+         </div> 
       <div className="gallery-container">
        
-       {filteredProjects.map(project=>{
-            if(!modules.includes(project.assignment.project.Title)) {
-                setModules([...modules, project.assignment.project.Title])
-            }
+        {filteredProjects.map(project=>{
+                if(!modules.includes(project.assignment.project.Title)) {
+                    setModules([...modules, project.assignment.project.Title])
+                }
         return (
-            
            <Project project={project}>
-
            </Project>
-
         )
        })}
-
       </div>
       </div>
   );
