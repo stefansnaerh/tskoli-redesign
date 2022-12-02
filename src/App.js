@@ -13,7 +13,8 @@ export const GuideToDisplay = createContext()
 function App() {
 
   const [displayModule, setDisplayModule] = useState(0)
-  const [displayGuide, setDisplayGuide] = useState(false)
+  const [displayGuide, setDisplayGuide] = useState("5f133418b279dc27c467cad4")
+  
 
   return (
   

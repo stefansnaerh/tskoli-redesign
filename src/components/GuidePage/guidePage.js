@@ -21,28 +21,27 @@ const GuidePage = () => {
     const {displayGuide, setDisplayGuide} = useContext(GuideToDisplay)
     const [returnModal, setReturnModal] = useState(false)
 
-    useEffect(() => {
-      const lastGuideData = window.localStorage.getItem("GUIDE-ID")
-     if(displayGuide === false){
-        setDisplayGuide(JSON.parse(lastGuideData))
-        setLoading(false)
-     }
-    })
-
+  
     useEffect(()=>{
         const getGuide = async ()=>{
           const g = await api.get(`/guides/${displayGuide}`)
           setGuide(g.data)
-          if (displayGuide !== false){
-            setLoading(false)
-          }
+          setLoading(false)
         }
         getGuide()
       },[])
       useEffect(() => {
         window.localStorage.setItem("GUIDE-ID", JSON.stringify({displayGuide}))
       })
-   
+      useEffect(() => {
+        const lastGuideData = window.localStorage.getItem("GUIDE-ID")
+        console.log(JSON.parse(lastGuideData))
+       if(displayGuide === false){
+          setDisplayGuide(JSON.parse(lastGuideData.displayGuide))
+       }
+      })
+
+      
 
       console.log(guide)
     return (
