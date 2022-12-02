@@ -48,12 +48,12 @@ const Profilepage = (props) => {
 
                 <div className="container">
                   <label>Background - What have you studied or worked with?</label>
-                  <textarea name="background" maxLength="500" style={{ width: "80%" }} required></textarea>
+                  <textarea name="background" maxLength="500" required></textarea>
                 </div >
 
                 <div class="container">
                   <label>Near future career goals?</label>
-                  <textarea name="careerGoals" maxLength="500" style={{ width: "80%" }} required></textarea>
+                  <textarea className="text" name="careerGoals" maxLength="500" style={{ width: "80%" }} required></textarea>
                 </div>
 
                 <div class="container">
