@@ -1,13 +1,17 @@
-import { useState, useEffect, useContext } from "react";
+import React from 'react';
 
+const ToDo = ({todo, handleToggle}) => {
 
-const ToDo = ({todo}) => {
+    const handleClick = (e) => {
+        e.preventDefault()
+        handleToggle(e.currentTarget.id)
+    }
+
     return (
-        <div className={todo.complete ? "strike" : ""}>
+        <div id={todo.id} key={todo.id + todo.task} name="todo" value={todo.id} onClick={handleClick} className={todo.complete ? "todo strike" : "todo"}>
             {todo.task}
         </div>
-    )
-}
-
+    );
+};
 
 export default ToDo;

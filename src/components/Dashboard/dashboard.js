@@ -7,7 +7,7 @@ import ToDoList from '../Dashboard/todolist';
 import data from "../../data.json";
 import ToDoListOne from "../../ToDoList";
 import "./todolist.scss";
-
+import ToDoForm from "../../ToDoForm";
 
 // Dashboard for homepage:
 const Dashboard = () => {
@@ -18,6 +18,28 @@ const Dashboard = () => {
   const [modules, setModules] = useState([]);
   const [countModules, setCountModules] = useState({});
   const [ toDoList, setToDoList ] = useState(data);
+
+  // toggle for the todolist
+  const handleToggle = (id) => {
+    let mapped = toDoList.map(task => {
+      return task.id == id ? { ...task, complete: !task.complete } : { ...task};
+    });
+    setToDoList(mapped);
+  }
+
+  // button for the todolist
+  const handleFilter = () => {
+    let filtered = toDoList.filter(task => {
+      return !task.complete;
+    });
+    setToDoList(filtered);
+  }
+
+  const addTask = (userInput) => {
+    let copy = [...toDoList];
+    copy = [...copy, { id: toDoList.length + 1, task: userInput, complete: false }];
+    setToDoList(copy);
+  }
 
   // bera saman id við assignment inni i my assignment
   useEffect(() => {
@@ -136,13 +158,16 @@ const Dashboard = () => {
         </div>
       </div>
 
-
       <div className="tdl">
-        <ToDoList />
-        <ToDoListOne toDoList={toDoList}/>
+        <ToDoList/>
+        <div className="todolistone">
+          <ToDoListOne toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter}/>
+        </div>
+        <div className="todoform">
+          <ToDoForm addTask={addTask}/>
+        </div>
       </div>
-
-
+      
     </div>
   );
 };
