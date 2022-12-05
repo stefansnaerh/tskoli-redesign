@@ -6,6 +6,7 @@ import api from '../../utils/api';
 import './guidePage.scss';
 import { GuideToDisplay, ModuleToDisplay } from '../../App';
 import ReturnGuideModal from '../ReturnGuideModal/returnGuideModal'
+import WellDoneModal from '../WellDoneModal/wellDoneModal';
 
 
 

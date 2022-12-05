@@ -19,8 +19,11 @@
     .main-wrapper{
         .content-wrapper {
             grid-column: 1 / 3;
+            z-index: 1;
             align-content: center;
         }
-       
+        .sidebar-display{
+            z-index: 0;
+        }
     }  
 }
