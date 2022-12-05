@@ -25,7 +25,7 @@ const ToDoForm = ({ addTask }) => {
          >
             <div className='formstyle'>
                 <motion.input className='todoform' value={userInput} type="text" onChange={handleChange} placeholder="To do...."/>
-                <motion.button className='todoformbutton' >ADD</motion.button>
+                <motion.button className='todoformbutton'>ADD</motion.button>
             </div>
         </motion.form>
     );

@@ -8,13 +8,17 @@ const ToDoListOne = ({toDoList, handleToggle, handleFilter}) => {
 
    return (
        <div>
-           {toDoList.map(todo => {
-               return (
-                   <ToDo todo={todo} handleToggle={handleToggle} handleFilter={handleFilter}/>
-               )
-           })}
-           <motion.button className='todobutton' style={{margin: '20px'}} onClick={handleFilter}>CLEAR COMPLETED</motion.button>
-       </div>
+            <div>
+                {toDoList.map(todo => {
+                    return (
+                        <ToDo todo={todo} handleToggle={handleToggle} handleFilter={handleFilter}/>
+                    )
+            })}
+            </div>
+                <div>
+                <motion.button className='todobutton' onClick={handleFilter}>CLEAR</motion.button>
+            </div>
+        </div>
    );
 
 }

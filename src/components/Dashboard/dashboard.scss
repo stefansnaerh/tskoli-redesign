@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     background-color: $backgroundWhite;
-    border-radius: 42px;
+    border-radius: 4.2rem;
     padding: 2rem 4.5rem 4.5rem 2rem;
     margin: $marginLeftRight;
     text-align: left;
@@ -90,11 +90,19 @@
     }
 }
 
+@media (max-width: 850px) {
+    .dashboard {
+        display: none;
+    }
+}
+
 .toDoListBox {
+
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    width: 70%;
-    height: 200px;
+    width: 50vw;
+    height: 20vh;
     margin-top: 6rem;
     margin-left: 4.5rem;
     border-radius: 1.5rem;
@@ -102,17 +110,15 @@
 }
 
 .toDoListOneDashboard {
-    display: flex;
-    flex-wrap: wrap;
+    position: absolute;
+    height: 10vh;
+    overflow: hidden;
+    width: 70rem;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+
 }
 
 .toDoListFormDashboard {
-    display: flex;
-    flex-direction: row;
-}
 
-@media (max-width: 850px) {
-    .dashboard {
-        display: none;
-    }
 }
