@@ -31,7 +31,7 @@ const RouterComponet = () => {
         </div>
         <section className="content-wrapper">
         <Routes>
-            <Route path="/homepage" element={<MainPage/>}/>
+            <Route path="/" element={<MainPage/>}/>
             <Route path="/loginpage" element={<LoginPage/>}/>
             <Route path="/allmodules" element={<AllModules/>}/>
             <Route path="/resources" element={<Resources/>}/>

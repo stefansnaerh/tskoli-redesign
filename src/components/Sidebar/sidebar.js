@@ -1,10 +1,13 @@
 import './sidebar.scss';
-import { useState, useEffect, useRef} from 'react';
+import { useState, useEffect, useRef, useContext} from 'react';
+import { Link } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import dpp from '../../images/default-profile-picture.svg';
 import api from '../../utils/api'
 import Profilepage from '../Profilepage/profilepage';
 import editprofile from '../../images/edit-profile.svg';
+
+import { GuideToDisplay } from '../../App';
 
 
 
@@ -17,7 +20,7 @@ import editprofile from '../../images/edit-profile.svg';
   const [profilePopup, setProfilePopup] = useState(false);
 
   
-  
+  const {displayGuide, setDisplayGuide} = useContext(GuideToDisplay)
 
  
  useEffect(() => {
@@ -112,11 +115,11 @@ const updateProfile = (event) => {
                 return (
 
                 <div >
-                    <a href = {`/guides/${guide._id}`} className='next'>
+                    <Link to="/guide" onClick={() => setDisplayGuide(guide._id)} className='next'>
                         <p className='module'>{guide.project.Title}</p>
                         {guide.Title}
                         
-                    </a>
+                    </Link>
                 </div>
                 )
             })}
