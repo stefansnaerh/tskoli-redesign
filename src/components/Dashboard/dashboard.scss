@@ -1,17 +1,16 @@
 @import '/src/variables.scss';
 
 // Styling for the status bars on homepage
+
 .dashboard {
-    font-family: $mainFont;
+    display: flex;
+    flex-direction: column;
     background-color: $backgroundWhite;
-    position: absolute;
-    right: 0;
-    padding: 0rem;
-    margin: 2rem;
-    border-radius: 2.625rem;
-    top: 9rem;
-    width: 110rem;
-    height: 100%;
+    border-radius: 42px;
+    padding: 2rem 4.5rem 4.5rem 2rem;
+    margin: $marginLeftRight;
+    text-align: left;
+    font-family: $mainFont;
 }
 
 .welcome-back {
@@ -23,6 +22,7 @@
     padding-top: 3rem;
     padding-left: 4.5rem;
 }
+
 .status-header {
     z-index: 1;
     font-size: $headerFontSize;
@@ -88,4 +88,25 @@
         background: #F1F1F1;
         border-radius: 1.8rem;
     }
+}
+
+.toDoListBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    height: 200px;
+    margin-top: 6rem;
+    margin-left: 4.5rem;
+    border-radius: 1.5rem;
+    background-color: #F1F1F1;
+}
+
+.toDoListOneDashboard {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.toDoListFormDashboard {
+    display: flex;
+    flex-direction: row;
 }

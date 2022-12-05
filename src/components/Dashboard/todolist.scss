@@ -1,48 +1,18 @@
 @import '/src/variables.scss';
 
+
 // Styling for the "to do list" on homepage
-
-.dashboard {
-    font-family: $mainFont;
-    background-color: $backgroundWhite;
-    position: absolute;
-    right: 0;
-    padding: 0rem;
-    margin: 2rem;
-    border-radius: 2.625rem;
-    top: 9rem;
-    width: 110rem;
-    height: 100%;
-}
-
-.tdl {
-    font-family: $mainFont;
-    font-size: $mediumFontSize;
-    font-weight: $regularFW;
-}
-
-.listheader {
-    font-family: $mainFont;
-    z-index: 1;
-    font-size: $smallFontSize;
-    font-weight: $boldFW;
-    display: flex;
-    padding-left: 4.5rem;
-    padding-top: 4rem;
-}
 
 .strike {
     text-decoration:line-through;
 }
 
-.todolistmain {
-
-}
-
 .todolistone {
     text-align: left;
     padding-left: 4.5rem;
-
+    font-family: $mainFont;
+    font-size: $mediumFontSize;
+    font-weight: $regularFW;
 }
 
 .todobutton {
