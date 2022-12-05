@@ -20,7 +20,7 @@ export const GuideToDisplay = createContext()
 function App() {
   const lastGuideData = window.localStorage.getItem("GUIDE-ID")
   const [displayModule, setDisplayModule] = useState(0)
-  const [displayGuide, setDisplayGuide] = useState(JSON.parse(lastGuideData).displayGuide)
+  const [displayGuide, setDisplayGuide] = useState(lastGuideData ? JSON.parse(lastGuideData).displayGuide: null)
 
   return (
       <div className="App">
