@@ -1,9 +1,13 @@
+import Resources from "../../components/Resources/Resources"
 
-const Resources = () => {
+const ResourcesPage = () => {
+
     return (
-        <></>
+        <>
+        <Resources/>
+        </>
     )
 }
 
 
-export default Resources
+export default ResourcesPage;

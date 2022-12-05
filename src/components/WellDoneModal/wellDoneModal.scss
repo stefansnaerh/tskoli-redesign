@@ -1,0 +1,57 @@
+@import '/src/variables.scss';
+
+
+.modaldone{
+    padding-top: 3rem;
+    z-index: 3;
+    width: 35%;
+    max-width: 70rem;
+    height: 30%;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    display: flex;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 42px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+ }
+
+ .player{
+
+}
+
+ .projectreturnedtxt, .continuebtn{
+    position: absolute;
+ }
+ .projectreturnedtxt{
+    height: 15rem;
+    font-size: $headerFontSize;
+    
+
+ }
+ .continuebtn{
+    display: flex;
+    text-align: center;
+    width: auto;
+    height: 3.5rem;
+    border-radius: 10.0rem;
+    background-color: $btnpurple;
+    box-shadow: 1px 1px 5px 1px rgba(81, 81, 81, 0.25);
+    border-style: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.6rem;
+    text-decoration: none;
+    padding: 0.5rem;
+    float: inline-end;
+    margin-top: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 13rem;
+ }

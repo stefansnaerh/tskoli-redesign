@@ -3,6 +3,7 @@ import './Gallery.scss';
 import Project from  './project' ;
 import {motion} from "framer-motion"
 import { Link } from "react-router-dom"
+import WellDoneModal from "../WellDoneModal/wellDoneModal";
 
 const Gallery = ()=>{
 
@@ -33,6 +34,7 @@ const Gallery = ()=>{
   
   return (
     
+
     <div className="main-gallery-container">
         <div className="topcontainer">
             <div className="gallerytxt">
@@ -40,7 +42,7 @@ const Gallery = ()=>{
             </div>
             <div className="selectbutton">
                 <select onChange={selectModule} className="dropbtn">
-                    <option classname="dropdown" value="" selected disabled hidden>Choose Module</option>
+                    <option className="dropdown" value="" selected disabled hidden>Choose Module</option>
                     {modules.map(module => <option value={module}>Module {module[0]}</option>)}
                 </select>
             </div>

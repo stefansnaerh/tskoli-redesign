@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar/navbar";
 import MainPage from "../pages/mainPage/mainPage";
 import CalendarPage from "../pages/calendarPage/calendarPage"
 import AllModules from "../pages/allModules/allModules";
-import Resources from "../pages/resources/resources"
+import Resources from "../pages/resources/resources";
 import Gallery from "../pages/galleryPage/galleryPage"
 import Modules from "../pages/modules/modules";
 import Guide from "../pages/guide/guide";
@@ -16,7 +16,9 @@ import './router.scss';
 
 
 
+
 const RouterComponet = () => {
+
     return (
         <>
         <BrowserRouter>
@@ -29,10 +31,10 @@ const RouterComponet = () => {
         </div>
         <section className="content-wrapper">
         <Routes>
-            <Route path="/homepage" element={<MainPage/>}/>
+            <Route path="/" element={<MainPage/>}/>
             <Route path="/loginpage" element={<LoginPage/>}/>
             <Route path="/allmodules" element={<AllModules/>}/>
-            <Route path="/recources" element={<Resources/>}/>
+            <Route path="/resources" element={<Resources/>}/>
             <Route path="/gallery" element={<Gallery/>}/>
             <Route path="/calendar" element={<CalendarPage/>}/>
             <Route path="/guide" element={<Guide/>}/>

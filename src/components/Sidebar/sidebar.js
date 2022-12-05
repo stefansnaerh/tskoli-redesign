@@ -1,10 +1,14 @@
 import './sidebar.scss';
-import { useState, useEffect, useRef} from 'react';
+import { useState, useEffect, useRef, useContext} from 'react';
+import { Link } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import dpp from '../../images/default-profile-picture.svg';
 import api from '../../utils/api'
 import Profilepage from '../Profilepage/profilepage';
 import editprofile from '../../images/edit-profile.svg';
+import {useLocation } from "react-router-dom"
+
+import { GuideToDisplay } from '../../App';
 
 
 
@@ -15,9 +19,13 @@ import editprofile from '../../images/edit-profile.svg';
   const [student, setStudent] = useState({});
   const [guides, setGuides] = useState([]);
   const [profilePopup, setProfilePopup] = useState(false);
+  const location = useLocation();
+
 
   
-  
+  const {displayGuide, setDisplayGuide} = useContext(GuideToDisplay)
+
+
 
  
  useEffect(() => {
@@ -81,7 +89,7 @@ const updateProfile = (event) => {
 }
  
 
-
+    if (location.pathname === "/loginpage") return (<div></div>)
     return (
         <>
         {/* Here we have the div tag for user info */}
@@ -112,11 +120,11 @@ const updateProfile = (event) => {
                 return (
 
                 <div >
-                    <a href = {`/guides/${guide._id}`} className='next'>
+                    <Link to="/guide" onClick={() => setDisplayGuide(guide._id)} className='next'>
                         <p className='module'>{guide.project.Title}</p>
                         {guide.Title}
                         
-                    </a>
+                    </Link>
                 </div>
                 )
             })}

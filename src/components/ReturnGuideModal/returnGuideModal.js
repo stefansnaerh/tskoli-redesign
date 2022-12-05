@@ -3,9 +3,11 @@ import { useState, useContext } from 'react';
 import './returnGuideModal.scss';
 import api from '../../utils/api';
 import { GuideToDisplay } from '../../App';
+import WellDoneModal from '../WellDoneModal/wellDoneModal';
 
 const ReturnGuideModal = (props) => {
     const [cancelDisplay, setCancelDisplay] = useState("inital")
+    const [openModal, setOpenModal] = useState(false);
     // getting the id of the guide
     const {displayGuide, setDisplayGuide} = useContext(GuideToDisplay)
     const [comment, setComment] = useState("");
@@ -28,8 +30,12 @@ const ReturnGuideModal = (props) => {
         coAuthors: "[]"
       }
       api.post("/assignmentReturns",project)
+      setCancelDisplay("none")
+      setOpenModal(true)
+
     }
     return (
+    <div>
      <section className='return-guide-modal-container' style={{display: {cancelDisplay}}}>
         <form>
         <label htmlFor="code">Code/ Design URL (Give access to your code and/or design files)</label>
@@ -46,6 +52,8 @@ const ReturnGuideModal = (props) => {
           <button onClick={() => setCancelDisplay("none")} className='cancel-btn'>Cancel</button>
           </form>
      </section>
+     {openModal ? <WellDoneModal/> : null}
+     </div>
     )
   }
 
