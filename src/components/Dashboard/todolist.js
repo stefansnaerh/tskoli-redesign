@@ -1,12 +1,12 @@
-import "./todolist.scss";
-import { useState, useEffect, useContext } from "react";
+import '../ToDoList/todo.scss';
+import { motion } from "framer-motion";
 
 
 const ToDoList = () => {
     return (
         <div className="listheader">
             <header>
-                <h1>To Do List:</h1>
+                <motion.h1 className='todolistheader' >To Do List</motion.h1>
             </header>
         </div>
     )

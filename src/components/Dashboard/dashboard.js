@@ -3,11 +3,11 @@ import { useState, useEffect, useContext } from "react";
 import api from "../../utils/api";
 import { Link } from "react-router-dom";
 import { ModuleToDisplay } from "../../App";
-import ToDoList from '../Dashboard/todolist';
-import data from "../../data.json";
-import ToDoListOne from "../../ToDoList";
+import ToDoList from './todolist';
+import ToDoListOne from "../ToDoList/ToDoList";
 import "./todolist.scss";
-import ToDoForm from "../../ToDoForm";
+import ToDoForm from "../ToDoList/ToDoForm";
+import { motion } from "framer-motion";
 
 // Dashboard for homepage:
 const Dashboard = () => {
@@ -17,7 +17,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [modules, setModules] = useState([]);
   const [countModules, setCountModules] = useState({});
-  const [ toDoList, setToDoList ] = useState(data);
+  const [ toDoList, setToDoList ] = useState([]);
 
   // toggle for the todolist
   const handleToggle = (id) => {
@@ -158,13 +158,11 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="tdl">
+      <div>
         <ToDoList/>
-        <div className="todolistone">
-          <ToDoListOne toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter}/>
-        </div>
-        <div className="todoform">
-          <ToDoForm addTask={addTask}/>
+        <div className="toDoListBox">
+          <div className="toDoListOneDashboard"> <ToDoListOne toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter}/></div>
+          <div className="toDoListFormDashboard"><ToDoForm addTask={addTask}/></div>
         </div>
       </div>
       
