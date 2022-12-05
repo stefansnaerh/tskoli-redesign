@@ -1,0 +1,13 @@
+@import '/src/variables.scss';
+
+.resourcescontainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: $mainFont;
+    margin-left: $marginLeftRight;
+    margin-right: $marginLeftRight;
+    background-color: $backgroundWhite;
+    border-radius: 42px;
+    padding: $marginLeftRight $marginLeftRight $marginLeftRight $marginLeftRight;
+}
