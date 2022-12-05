@@ -36,9 +36,6 @@ const Gallery = ()=>{
     
 
     <div className="main-gallery-container">
-        <WellDoneModal>
-            
-        </WellDoneModal>
         <div className="topcontainer">
             <div className="gallerytxt">
                 <h1 className="gallerytxt">{"{ Gallery }"}</h1>
