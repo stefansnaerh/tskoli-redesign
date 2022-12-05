@@ -33,8 +33,6 @@ import { GuideToDisplay } from '../../App';
         const getData = async () => {
         const user = await api.get('/auth/me');
         const userData = await api.get(`/users/${user.data._id}`);
-
-       console.log(user)
         setStudent(user.data)
 
         const guidesData = await api.get(`/guides`);

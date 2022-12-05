@@ -19,10 +19,10 @@ const ModulesPage = () => {
     useEffect(()=>{
       const getGuides = async ()=>{
         const g = await api.get('/guides');
+        // get all assignments current user has returned
         const a = await api.get('/assignmentreturns')
         // filter away hidden guides and update to state
         setGuides(g.data.filter(g => !g.hidden))
-        console.log(g)
         setMyAssignments(a.data)
        
       }
@@ -35,22 +35,26 @@ const ModulesPage = () => {
         //map through guides and make objects with module name and guide id's under each module
        const newModules = guides.map(guide => {
          return {
+        // array of object with module title and guide-ids
             title: guide.project.Title,
             id: guide._id,
          }
        });
 
        const newReturns = myAssignemnts.map(assignment => {
+        // all guide ids current user has returned
         return assignment.assignment}
     )
-       // count how many guides under each module
+       //For of loop to build the count object so that it includes module name as properties
+       // and each module name holds an object ids array and number of completed guides called completed
        for (const element of newModules){
-        if (count[element.title]){
+      
+        if (count[element.title]){// if the module title extists in count, add guide id to ids array
             count[element.title].ids.push(element.id)
-        } else {
+        } else { // else create new object with guide ids and initialize completed with 0
             count[element.title] = {ids:[element.id], completed: 0}
         }
-        if (newReturns.includes(element.id)){
+        if (newReturns.includes(element.id)){ // if newreturns includes guide id add 1 completed to this module
             count[element.title].completed++
         }
         // sort the guides title so they appear in right order
