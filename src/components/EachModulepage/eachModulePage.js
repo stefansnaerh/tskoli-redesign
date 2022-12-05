@@ -106,7 +106,10 @@ const EachModulepage = () => {
             return (
                 <div className='guide-review-wrapper'>
                 <div key={key} className="guide-container" style={!hasReturned ? {backgroundColor: "#F1F1F1"} : {backgroundColor: "#B5E2A8"}}>
-                  <Link to="/guide" onClick={() => setDisplayGuide(name[4])} className='guide-link' href="">
+                  <Link to="/guide" onClick={() => { 
+                      window.localStorage.setItem("GUIDE-ID", JSON.stringify({displayGuide:name[4]}))
+                     setDisplayGuide(name[4])
+                     }}className='guide-link' href="">
                       <h1>Guide {key +1}</h1>
                       <h3>{name[0]}</h3>
                   </Link>

@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar/navbar";
 import Sidebar from "./components/Sidebar/sidebar";
 import ModulesPage from "./components/ModulesPage/ModulesPage";
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import { AuthProvider } from "./utils/authContext";
 import "./App.css";
 import Calendar from "react-calendar";
@@ -18,10 +18,10 @@ export const ModuleToDisplay = createContext()
 export const GuideToDisplay = createContext()
 
 function App() {
-
+  const lastGuideData = window.localStorage.getItem("GUIDE-ID")
   const [displayModule, setDisplayModule] = useState(0)
-  const [displayGuide, setDisplayGuide] = useState("5f133418b279dc27c467cad4")
-  
+  const [displayGuide, setDisplayGuide] = useState(JSON.parse(lastGuideData).displayGuide)
+
   return (
       <div className="App">
        <ModuleToDisplay.Provider value={{displayModule, setDisplayModule}}>
