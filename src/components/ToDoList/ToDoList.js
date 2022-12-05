@@ -7,18 +7,16 @@ import '../ToDoList/todo.scss';
 const ToDoListOne = ({toDoList, handleToggle, handleFilter}) => {
 
    return (
+       <>
        <div>
-            <div>
-                {toDoList.map(todo => {
-                    return (
-                        <ToDo todo={todo} handleToggle={handleToggle} handleFilter={handleFilter}/>
-                    )
-            })}
-            </div>
-                <div>
-                <motion.button className='todobutton' onClick={handleFilter}>CLEAR</motion.button>
-            </div>
+           {toDoList.map(todo => {
+               return (
+                   <ToDo todo={todo} handleToggle={handleToggle} handleFilter={handleFilter}/>
+               )
+           })}
         </div>
+        <button className='todobutton' onClick={handleFilter}>CLEAR</button>
+   </>
    );
 
 }

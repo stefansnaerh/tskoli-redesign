@@ -30,7 +30,9 @@
     font-weight: $boldFW;
     font-family: $mainFont;
     margin-top: 2rem;
-    left: 70%;
+    left: 85%;
+    position: absolute;
+    top: 0px;
 }
 
 .todoform {
@@ -39,11 +41,21 @@
     font-weight: $regularFW;
     font-family: $mainFont;
     height: 3.5rem;
-    width: 20rem;
+    width: 100%;
     border: none;
     margin-left: 3rem;
-    margin-top: 40%;
     border-radius: 3rem;
+    z-index: 20px;
+    margin-right: 15px;
+    padding-left: 20px;
+}
+
+.formstyle {
+    display: flex;
+    align-items: flex-end;
+    vertical-align: bottom;
+    justify-content: space-between;
+    height: 92%;
 }
 
 .todoformbutton {
@@ -53,22 +65,29 @@
     width: 9rem;
     border: none;
     justify-content: center;
-    margin: 1rem;
     align-items: center;
     height: 3.5rem;
     font-size: $smallFontSize;
     font-weight: $boldFW;
     font-family: $mainFont;
     box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(0, 0, 0, 0.25);
+    margin-right: 25px;
 }
 
-
 .todoinput {
-    padding-left: 1rem;
+    padding-left: 20px;
     padding-top: 2rem;
     font-size: $mediumFontSize;
     font-weight: $regularFW;
     font-family: $mainFont;
     border: none;
     outline: none;
+}
+
+.list-form {
+    height: 100%;
+}
+
+.toDoListFormDashboard {
+    height: 100%;
 }
