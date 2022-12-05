@@ -6,6 +6,7 @@ import dpp from '../../images/default-profile-picture.svg';
 import api from '../../utils/api'
 import Profilepage from '../Profilepage/profilepage';
 import editprofile from '../../images/edit-profile.svg';
+import { Link, useLocation } from "react-router-dom"
 
 import { GuideToDisplay } from '../../App';
 
@@ -18,9 +19,13 @@ import { GuideToDisplay } from '../../App';
   const [student, setStudent] = useState({});
   const [guides, setGuides] = useState([]);
   const [profilePopup, setProfilePopup] = useState(false);
+  const location = useLocation();
+
 
   
   const {displayGuide, setDisplayGuide} = useContext(GuideToDisplay)
+
+
 
  
  useEffect(() => {
@@ -84,7 +89,7 @@ const updateProfile = (event) => {
 }
  
 
-
+    if (location.pathname === "/loginpage") return (<div></div>)
     return (
         <>
         {/* Here we have the div tag for user info */}
