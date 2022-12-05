@@ -6,7 +6,7 @@ import dpp from '../../images/default-profile-picture.svg';
 import api from '../../utils/api'
 import Profilepage from '../Profilepage/profilepage';
 import editprofile from '../../images/edit-profile.svg';
-import { Link, useLocation } from "react-router-dom"
+import {useLocation } from "react-router-dom"
 
 import { GuideToDisplay } from '../../App';
 
