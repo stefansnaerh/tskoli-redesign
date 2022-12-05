@@ -11,3 +11,35 @@
     border-radius: 42px;
     padding: $marginLeftRight $marginLeftRight $marginLeftRight $marginLeftRight;
 }
+
+.drivebtn{
+    width: 10.0rem;
+    height: 3.5rem;
+    border-radius: 10.0rem;
+    background-color: $btnpurple;
+    box-shadow: 1px 1px 5px 1px rgba(81, 81, 81, 0.25);
+    border-style: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.6rem;
+    text-decoration: none;
+    float: left;
+    margin-left: 2.3rem;
+}
+.restxt{
+    display: flex;
+    margin-left: $marginLeftRight;
+    font-size: $mainHeaderFontSize;
+    font-weight: normal;
+    margin-left:2rem;
+}
+.comingsoon{
+    display: flex;
+    justify-content: center;
+    font-size: $largeFontSize;
+    font-family: $mainFont;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    font-weight: $regularFW;
+
+}
