@@ -25,7 +25,7 @@ const Loginpage = ()=>{
         });
         if (result.status === 200) {
             //when form is submitted it goes into dashboard
-                    history.push("/.dashboard") 
+                    history.push("/homepage") 
           console.log("You are logged in!")
         } else {
           console.log("You did not manage to log in")
