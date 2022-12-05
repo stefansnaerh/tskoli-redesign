@@ -248,3 +248,13 @@ a {
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #e6e6e6;
 }
+
+@media (max-width: 850px) {
+  .sidebar-container {
+    width: 100vw;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
