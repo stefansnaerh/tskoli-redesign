@@ -17,7 +17,8 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [modules, setModules] = useState([]);
   const [countModules, setCountModules] = useState({});
-  const [ toDoList, setToDoList ] = useState([]);
+  const localList= JSON.parse(localStorage.getItem("todolist"));
+  const [ toDoList, setToDoList ] = useState(localList || []);
 
   // toggle for the todolist
   const handleToggle = (id) => {
@@ -27,7 +28,7 @@ const Dashboard = () => {
     setToDoList(mapped);
   }
 
-  // button for the todolist
+  // clear button for the todolist
   const handleFilter = () => {
     let filtered = toDoList.filter(task => {
       return !task.complete;
@@ -35,11 +36,18 @@ const Dashboard = () => {
     setToDoList(filtered);
   }
 
+
+  // add button for the todolist
   const addTask = (userInput) => {
     let copy = [...toDoList];
     copy = [...copy, { id: toDoList.length + 1, task: userInput, complete: false }];
     setToDoList(copy);
   }
+
+  useEffect(() => {
+    localStorage.setItem("todolist", JSON.stringify(toDoList))
+  },[toDoList]
+ )
 
   // bera saman id við assignment inni i my assignment
   useEffect(() => {

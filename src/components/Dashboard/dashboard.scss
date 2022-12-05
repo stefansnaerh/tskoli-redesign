@@ -97,7 +97,6 @@
 }
 
 .toDoListBox {
-
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -111,14 +110,10 @@
 
 .toDoListOneDashboard {
     position: absolute;
-    height: 10vh;
+    height: 14vh;
     overflow: hidden;
-    width: 70rem;
+    width: 49vw;
     scroll-behavior: smooth;
     overflow-y: auto;
-
-}
-
-.toDoListFormDashboard {
-
+    padding-left: 2rem;
 }
