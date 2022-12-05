@@ -1,6 +1,7 @@
 {
   "name": "tskoli-redesign",
   "version": "0.1.0",
+  "homepage": "https://stefansnaerh.github.io/tskoli-redesign",
   "private": true,
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.4.9",
@@ -16,11 +17,14 @@
     "react-router": "^6.4.3",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
+    "sass": "^1.56.1",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "PORT=3002 react-scripts start",
     "build": "react-scripts build",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
