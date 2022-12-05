@@ -30,20 +30,7 @@ const GuidePage = () => {
         }
         getGuide()
       },[])
-      useEffect(() => {
-        window.localStorage.setItem("GUIDE-ID", JSON.stringify({displayGuide}))
-      })
-      useEffect(() => {
-        const lastGuideData = window.localStorage.getItem("GUIDE-ID")
-        console.log(JSON.parse(lastGuideData))
-       if(displayGuide === false){
-          setDisplayGuide(JSON.parse(lastGuideData.displayGuide))
-       }
-      })
-
-      
-
-      console.log(guide)
+ 
     return (
         <section className="guide-section">
           {returnModal ? (<>
