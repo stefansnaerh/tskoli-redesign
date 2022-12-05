@@ -1,7 +1,8 @@
 import { useState } from "react";
 import api from '../utils/api';
 
-const AddReview = ()=>{
+const AddReview = ({params})=>{
+  console.log(params)
   const [feedback, setFeedback] = useState("");
   const [vote, setVote] = useState("");
 
@@ -24,3 +25,45 @@ const AddReview = ()=>{
 }
 
 export default AddReview;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
