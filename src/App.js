@@ -10,7 +10,6 @@ import Calendarpage from "./components/Calendarpage/calendarpage";
 import GuidePage from "./components/GuidePage/guidePage";
 import MyReturns from "./components/MyReturnspage/myReturns";
 import Loginpage from "./components/Loginpage/logIn";
-import Dashboard from "./components/Dashboard/dashboard";
 
 import RouterComponet from "./Router/Router";
 
