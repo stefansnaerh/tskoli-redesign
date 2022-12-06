@@ -1,12 +1,12 @@
 
 
 import { useState ,useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
+
 import api from '../../utils/api';
 import './guidePage.scss';
-import { GuideToDisplay, ModuleToDisplay } from '../../App';
+import { GuideToDisplay } from '../../App';
 import ReturnGuideModal from '../ReturnGuideModal/returnGuideModal'
-import WellDoneModal from '../WellDoneModal/wellDoneModal';
+
 
 
 
