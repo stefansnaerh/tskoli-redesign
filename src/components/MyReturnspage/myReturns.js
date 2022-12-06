@@ -34,7 +34,6 @@ const MyReturns = () => {
         const newReturns = returns.map(assignment => {
             return assignment.assignment}
         )
-        console.log(newReturns)
 
         const newModules = assignments.map(guide => {
             return {
@@ -78,7 +77,6 @@ const MyReturns = () => {
     if (loading === false){
         const zip = (a1, a2) => a1.map((x, i) => [x, a2[i]]);
         sortReturnWithTitle= zip(currentGuides.guideTitle, currentGuides.isReturned)
-        console.log(sortReturnWithTitle)
         }
     return (
         <section className='guides-section-container'>
