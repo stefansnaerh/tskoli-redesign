@@ -49,7 +49,9 @@ const ModulesPage = () => {
     )
        //For of loop to build the count object so that it includes module name as properties
        // and each module name holds an object ids array and number of completed guides called completed
+
        for (const elementOfModules of allGuides){
+
       
         if (modules[elementOfModules.title]){// if the module title extists in count, add guide id to ids array
             modules[elementOfModules.title].ids.push(elementOfModules.id)
@@ -59,6 +61,7 @@ const ModulesPage = () => {
         if (myReturns.includes(elementOfModules.id)){ // if newreturns includes guide id add 1 completed to this module
             modules[elementOfModules.title].completed++
         }
+        
         // sort the guides title so they appear in right order
         const ordered = Object.keys(modules).sort().reduce(
             (obj, key) => { 
@@ -111,4 +114,5 @@ const ModulesPage = () => {
 
 
 
-export default ModulesPage
+export default ModulesPage;
+
