@@ -32,7 +32,7 @@ const Profilepage = (props) => {
 
     return ( 
         <>
-          <div style={{display:profilePopup?'block':'none'}}  className='main-container'>
+          <div style={{display:profilePopup?'block':'none'}}>
 
             <div className="user-pic/name">
                 <div>

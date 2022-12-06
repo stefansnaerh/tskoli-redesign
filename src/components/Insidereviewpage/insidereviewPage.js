@@ -26,7 +26,8 @@ import { useAuth } from '../../utils/authContext';
 const InsidereviewPage = () => {
 const params = useParams ()
 //console.log(params)
-
+const [feedback, setFeedback] = useState('');
+const [vote, setVote] = useState('')
 
 
     const {login} = useAuth();
@@ -65,23 +66,28 @@ const params = useParams ()
                             <p>{project.guide}</p> 
                         </p>
                         <br />    
-                        <a href = {``} className='return'>
+                        <p href = {``} className='return'>
+                            <h1>Return date</h1>
                             <p>{returns.createdAt}</p> 
-                        </a>
+                        </p>
                         <br />  
                         <a href = {returns.url} className='return'>
+                            <h1>URL</h1>
                             <p>{returns.url}</p> 
                         </a>
                         <br />  
                         <a href = {returns.liveVersion} className='return'>
+                            <h1>Live Version</h1>
                             <p>{returns.liveVersion}</p> 
                         </a>
                         <br />  
                         <a href = {``} className='return'>
+                            <h1>Comment</h1>
                             <p>{returns.comment}</p> 
                         </a>
                         <br />  
                         <p className='return-image'>
+                            <h1>Image</h1>
                             <img src={returns.imageOrGif} /> 
                         </p>
                 </div>
@@ -100,12 +106,30 @@ const params = useParams ()
                         <li>What was inpiring about it?</li>
                     </ul>
                     <p className='in-review'>Vote</p>
-                    <p>Pass and Recommended to Gallery ( shows good knpwledge and skills)</p>
-                    <p>Pass (shows knowledge and skills)</p>
-                    <p>No pass (It is broken/unavailable or does not show knowledge and skills)</p>
-                    <label htmlFor=""></label>
+                
+                        <div className='round'>
+                            <input type="radio" name='vote'/>
+                            <p>Pass and Recommended to Gallery ( shows good knpwledge and skills)</p>
+                        </div>
+        
+
+                   
+                        <div className='round'>
+                            <input type="radio" name='vote'/>
+                        <p>Pass (shows knowledge and skills)</p>   
+                        </div>
+                   
+
+                    
+                        <div className='round'>
+                            <input type="radio" name='vote'  />
+                            <p>No pass (It is broken/unavailable or does not show knowledge and skills)</p>   
+                        </div>
+                
+                    
+                    <label for="text"></label>
                     <textarea name="" ></textarea>
-                    <button>RETURN</button>  
+                    <button onClick={() => api.patch(`/reviews/${reviewId}`,{vote, feedback})}>RETURN</button>  
                 </div>
              </section>
         </div>
