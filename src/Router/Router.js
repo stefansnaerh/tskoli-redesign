@@ -10,6 +10,7 @@ import Guide from "../pages/guide/guide";
 import InsidereviewPage from "../components/Insidereviewpage/insidereviewPage";
 import LoginPage from "../pages/loginPage/loginPage";
 import Sidebar from "../components/Sidebar/sidebar";
+import Feedbackpage from "../components/Feedbackpage/feedbackPage";
 
 
 import './router.scss';
@@ -40,7 +41,7 @@ const RouterComponet = () => {
             <Route path="/guide" element={<Guide/>}/>
             <Route path="/modules" element={<Modules/>}/>
             <Route path="/return/:returnId" element={<InsidereviewPage/>}/>
-           
+            <Route path="/feedback" element={<Feedbackpage/>}/>
         </Routes>
         </section>
         </main>
