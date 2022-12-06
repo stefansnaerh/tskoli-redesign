@@ -91,7 +91,7 @@ const updateProfile = (event) => {
     return (
         <>
         {/* Here we have the div tag for user info */}
-        <div className="profile-container" >
+        <div className="sidebar-container" >
 
             <div className="user-pic/name">
                 <div>
