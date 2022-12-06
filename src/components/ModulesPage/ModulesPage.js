@@ -29,6 +29,8 @@ const ModulesPage = () => {
       getGuides();
       
     },[])
+    console.log(guides)
+    console.log(myAssignemnts)
     // initialise count variable and use it in line 36 to count guides
     const modules = {}
     useEffect(() => {
