@@ -40,7 +40,7 @@ const RouterComponet = () => {
             <Route path="/calendar" element={<CalendarPage/>}/>
             <Route path="/guide" element={<Guide/>}/>
             <Route path="/modules" element={<Modules/>}/>
-            <Route path="/return/:returnId" element={<InsidereviewPage/>}/>
+            <Route path="/insidereview" element={<InsidereviewPage/>}/>
             <Route path="/feedback" element={<Feedbackpage/>}/>
         </Routes>
         </section>
