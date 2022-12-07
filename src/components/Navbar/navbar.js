@@ -17,7 +17,7 @@ const Navbar = () => {
     return (
         <>
         <header>
-        <a aria-label="button to homepage" href="/">
+        <a aria-label="button to homepage" href="/dashboard">
           <div className="logo-container">
             <h1 className="logo">tskoli.dev</h1>
           </div>
