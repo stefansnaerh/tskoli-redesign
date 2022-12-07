@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Navbar from "../components/Navbar/navbar";
 import MainPage from "../pages/mainPage/mainPage";
 import CalendarPage from "../pages/calendarPage/calendarPage"
@@ -22,7 +22,7 @@ const RouterComponet = () => {
 
     return (
         <>
-        <BrowserRouter>
+        <HashRouter>
         <main className="main-wrapper">
             
         <Navbar/>
@@ -45,7 +45,7 @@ const RouterComponet = () => {
         </Routes>
         </section>
         </main>
-        </BrowserRouter>
+        </HashRouter>
         </>
     )
 }

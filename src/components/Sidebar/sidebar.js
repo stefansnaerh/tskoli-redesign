@@ -7,7 +7,7 @@ import api from '../../utils/api'
 import Profilepage from '../Profilepage/profilepage';
 import editprofile from '../../images/edit-profile.svg';
 import {useLocation } from "react-router-dom"
-
+import {useAuth} from "../../utils/authContext"
 import { GuideToDisplay } from '../../App';
 
 
@@ -20,7 +20,7 @@ import { GuideToDisplay } from '../../App';
   const [guides, setGuides] = useState([]);
   const [profilePopup, setProfilePopup] = useState(false);
   const location = useLocation();
-
+  const x = useAuth()
 
   
   const {displayGuide, setDisplayGuide} = useContext(GuideToDisplay)
@@ -111,6 +111,9 @@ const updateProfile = (event) => {
             
             {/*Here we have the div tag for the next 3 upcoming modules*/}
             <p className='next-up'>Next up</p>
+            <p onClick={x.logout}>Logout</p>
+            <Link to="/loginpage">Login</Link>
+
 
             <div className="nextup-container">
 
