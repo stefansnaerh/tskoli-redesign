@@ -1,17 +1,19 @@
 
 
-
+const url=window.location.href
+const apiurl=url.includes("localhost")?"http://localhost:3001/api/v1":"https://tskoli-intranet-api-h7.vercel.app/api/v1"
+console.log(url)
 const api = {
   
   get: (path) =>
-    fetch(`${process.env.REACT_APP_PUBLIC_API_URL}${path}`, {
+    fetch(`${apiurl}${path}`, {
       method: "GET",
       credentials: "include",
       headers: {},
     }).then(async (res) => ({ data: await res.json(), status: res.status })),
 
   post: (path, body) =>
-    fetch(`${process.env.REACT_APP_PUBLIC_API_URL}${path}`, {
+    fetch(`${apiurl}${path}`, {
       method: "POST",
       credentials: "include",
       headers: {
@@ -26,7 +28,7 @@ const api = {
     }),
 
   patch: (path, body) =>
-    fetch(`${process.env.REACT_APP_PUBLIC_API_URL}${path}`, {
+    fetch(`${apiurl}${path}`, {
       method: "PATCH",
       credentials: "include",
       headers: {
@@ -36,7 +38,7 @@ const api = {
     }).then(async (res) => ({ data: await res.json(), status: res.status })),
 
   delete: (path, body) =>
-    fetch(`${process.env.REACT_APP_PUBLIC_API_URL}${path}`, {
+    fetch(`${apiurl}${path}`, {
       method: "DELETE",
       credentials: "include",
       headers: {
