@@ -76,7 +76,8 @@ font-size: $mediumFontSize;
 .schedule {
     width: auto;
     display: flex;
-}
+    gap: 0.5rem;
+   }
 
 .timeanddescription{
     display: flex;
