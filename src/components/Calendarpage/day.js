@@ -7,8 +7,6 @@ import './calendarpage.scss';
 
 
 const Day = ({calendar, plan}) => {
-console.log(calendar)
-console.log(plan)
         return (
         <>
         {calendar.filter(event => {

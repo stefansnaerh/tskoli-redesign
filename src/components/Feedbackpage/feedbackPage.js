@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import './feedbackPage.scss';
 import api from '../../utils/api';
 import { Link, useParams } from 'react-router-dom';
-import GetReturns from '../getReturns';
+import GetReturns from  "../../api/getReturns";
 import { useAuth } from '../../utils/authContext';
 
 

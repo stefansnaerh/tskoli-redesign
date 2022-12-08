@@ -33,7 +33,7 @@ const GuidePage = () => {
       },[])
  
     return (
-        <section className="guide-section">
+        <section aria-label='info for guide' className="guide-section">
           {returnModal ? (<>
           <ReturnGuideModal/>
           </>): null}
@@ -55,7 +55,7 @@ const GuidePage = () => {
                   {guide.Classes.map((name) => {
                     return (
                       <>
-                      <a href={name.Link} rel="noreferer" target="_blank">
+                      <a aria-label='link to materials' href={name.Link} rel="noreferer" target="_blank">
                       <li>{name.Title}</li>
                       </a>
                       </>
@@ -65,7 +65,7 @@ const GuidePage = () => {
               </div>
               <div className='topics'>
                   <h2>Topics</h2>
-                <div dangerouslySetInnerHTML={{__html:guide.topicsList}}></div>
+                <div aria-label='topics for this guide' dangerouslySetInnerHTML={{__html:guide.topicsList}}></div>
                 </div>
             </div>
             </>

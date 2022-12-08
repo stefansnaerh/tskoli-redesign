@@ -122,7 +122,7 @@ const Dashboard = () => {
                     <>
                     <div className="module-wrapper">
                       <div className="module-info-container">
-                        <Link
+                        <Link aria-label={`link to module ${index}`}
                           onClick={() => setDisplayModule(index)}
                           to="/modules"
                           className="link"
@@ -132,10 +132,10 @@ const Dashboard = () => {
                           </h1>
                         </Link>
                         <div className="module-statistics">
-                          <h1>
+                          <h1 aria-label="number of guides finished in module">
                             {Object.values(countModules)[index].completed}/
                           </h1>
-                          <h1>
+                          <h1 aria-label="number of guides in module">
                             {Object.values(countModules)[index].ids.length}
                           </h1>
                         </div>
@@ -168,7 +168,7 @@ const Dashboard = () => {
 
       <div>
         <ToDoList/>
-        <div className="toDoListBox">
+        <div aria-label="to do list" className="toDoListBox">
           <div className="toDoListOneDashboard"> <ToDoListOne toDoList={toDoList} handleToggle={handleToggle} handleFilter={handleFilter}/></div>
           <div className="toDoListFormDashboard"><ToDoForm addTask={addTask}/></div>
         </div>
