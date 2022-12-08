@@ -56,7 +56,6 @@ const Dashboard = () => {
       const a = await api.get("/assignmentreturns");
       // filter away hidden guides and update to state
       setGuides(g.data.filter((g) => !g.hidden));
-      console.log(a);
       if(a.data.length) setMyAssignments(a.data);
     };
     getGuides();

@@ -30,7 +30,6 @@ const MyReturns = () => {
         getGuides()
     }, [])
 
-    console.log(assignments)
     const count = {}
     useEffect(() => {
         const newReturns = returns.map(assignment => {

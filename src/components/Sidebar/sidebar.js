@@ -79,8 +79,6 @@ const handleUpload = (e) => {
 
 const updateProfile = async (event) => {
     event.preventDefault()
-    
-    console.log(event.target.elements)
     //Here we're getting and saving the info about the user into the api
      const {background,careerGoals,favoriteArtist,interests} = event.target.elements
         api.patch("/auth/me", {
@@ -123,7 +121,7 @@ const updateProfile = async (event) => {
 
                 <div >
                     <Link to="/guide" onClick={() => setDisplayGuide(guide._id)} className='next'>
-                        <p className='module'>{guide.project.Title}</p>
+                        <p  className='module'>{guide.project.Title}</p>
                         {guide.Title}
                         
                     </Link>

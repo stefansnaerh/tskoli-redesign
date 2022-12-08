@@ -29,8 +29,6 @@ const ModulesPage = () => {
       getGuides();
       
     },[])
-    console.log(guides)
-    console.log(myAssignments)
     // initialise count variable and use it in line 36 to count guides
     const modules = {}
     useEffect(() => {
@@ -47,8 +45,6 @@ const ModulesPage = () => {
         // all guide ids current user has returned
         return assignment.assignment}
     )
-    console.log(myReturns)
-    console.log(guidesModuleNames)
        //For of loop to build the count object so that it includes module name as properties
        // and each module name holds an object ids array and number of completed guides called completed
 
@@ -71,7 +67,7 @@ const ModulesPage = () => {
           }, 
           {}
           );  
-          console.log(modules)
+
           //updating state with the sorted modules and number of guides in each module
           setCountModules(ordered)
           setLoading(false)

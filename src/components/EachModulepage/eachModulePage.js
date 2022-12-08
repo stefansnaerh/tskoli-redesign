@@ -35,8 +35,6 @@ const EachModulepage = () => {
         }
         getGuides()
       },[])
-      console.log(myAssignemnts)
-
       // refactor this to one useEffect with the one above??
       useEffect(()=>{
         const getReviews = async ()=>{
@@ -45,7 +43,6 @@ const EachModulepage = () => {
         }
         getReviews();
       },[login])
-    console.log(reviews)
       useEffect(() => {
           //map through guides and make objects with all properties i need. I then
           // use these objects in as parameters in the sortModulesAndReviews function to 
