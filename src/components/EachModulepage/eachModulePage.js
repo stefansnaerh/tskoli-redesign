@@ -120,7 +120,7 @@ const EachModulepage = () => {
                   {name[1] === false ? (
                     <h4>Guide not returned</h4>
                   ) : name[2] === false ? (
-                    <Link to={`/return/${name[4]}`}>
+                    <Link to={`/insidereview/${name[4]}`}>
                        <h4>Please review</h4> </Link>
                   ): 
                     <div className='grade-review'>

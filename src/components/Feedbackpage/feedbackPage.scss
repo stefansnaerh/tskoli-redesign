@@ -1,6 +1,24 @@
 @import '/src/variables.scss';
 
 
+.grade-meaning {
+  background-color: white;
+  height:35vh;
+  border-radius: 3rem;
+  width: 55rem;
+  position: absolute;
+  left: 40%;
+  top: 15%;
+  z-index: 3;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+    .edit {
+      margin-right: 10px;
+      z-index:3;
+    }
+    p{
+      text-align: center;
+    }
+};
 
 .whole-page{
     height: 100%;
@@ -54,10 +72,6 @@
 
   .feedback-container{
     text-align: left;
-    a{
-        text-decoration: none;
-        color: #6563EB;
-    }
   }
 .feedback-grade{
    
@@ -67,5 +81,15 @@
     flex-direction: row;
     margin-left: 48rem;
     
+  }
+  .grade-meaning{
+    font-size: 2rem;
+    p {
+      align-items: left;
+    }
+    
+  }
+  .change-color{
+    color: #6563EB;
   }
   

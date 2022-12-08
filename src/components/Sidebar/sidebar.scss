@@ -1,8 +1,10 @@
 @import '/src/variables.scss';
 .main-container {
+  background-color: white;
   justify-content: center;
-  height: 55%;
-  width: 40rem;
+  height:65vh;
+  border-radius: 5rem;
+  width: 45rem;
   position: absolute;
   left: 40%;
   top: 15%;

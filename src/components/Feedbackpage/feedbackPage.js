@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './feedbackPage.scss';
 import api from '../../utils/api';
 import { Link, useParams } from 'react-router-dom';
@@ -15,8 +15,9 @@ import { useAuth } from '../../utils/authContext';
 const Feedbackpage = () => {
     const params = useParams ()
 //console.log(params)
-const [feedback, setFeedback] = useState('');
-const [vote, setVote] = useState('')
+
+    const [meaningPopup, setMeaningPopup] = useState(false);
+    const meaningRef = useRef();
 
 
     const {login} = useAuth();
@@ -97,11 +98,21 @@ const [vote, setVote] = useState('')
             <div className='feedback-grade'>
             <h3>Grade this feeback:</h3>
             </div>
-            
-            <a href="">What do these numbers mean?</a>
+            <div>
+                <input type="range" min='0' max='10' step='1'></input>
+            </div>
+            <p onClick={() => setMeaningPopup(true)} className="change-color">What do these numbers mean?</p>
          </section>
     </div>
  </div>
+    <div style={{display:meaningPopup?'block':'none'}} className='grade-meaning' ref={meaningRef}>
+        <p>0-2: The Review was rude or disrespectful, or no useful comments were made.</p>
+        <p>3-4: The Review is too vague or generic, not really mentioning your work.</p>   
+        <p>5-6: The Review shows knowledge of your work but does not contribute much to improvements.</p>
+        <p>7-8: The Review is precise/specific when talking about your work, indicating ways you could improve.</p>
+        <p>9-10: The Review describes in detail different ways your work could be improved,<br />
+          including valuable information like resources you might want to know about.</p>
+    </div>
     </>
     );
 }

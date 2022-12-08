@@ -36,8 +36,10 @@ const [vote, setVote] = useState('')
     const [reviewId, setReviewId] = useState('')
     useEffect(()=>{
       const getReturns = async ()=>{
+        console.log(params)
         //await login({email:"test3@test.is", password:"123456"})
         const g = await api.post(`/reviews`, {assignmentId:params.returnId});
+        console.log(g)
         const reviewId = g.data.data.reviewId
         setReviewId(reviewId)
         const r = await api.get(`/reviews/${reviewId}`)
@@ -49,7 +51,11 @@ const [vote, setVote] = useState('')
     },[])
     console.log(project)
 
-
+    if(!reviewId){
+        return(
+            <h1>No review available</h1>
+        )
+    }
 
 
     return ( 
@@ -108,27 +114,25 @@ const [vote, setVote] = useState('')
                     <p className='in-review'>Vote</p>
                 
                         <div className='round'>
-                            <input type="radio" name='vote'/>
-                            <p>Pass and Recommended to Gallery ( shows good knpwledge and skills)</p>
+                            <input type="radio" name='vote' onChange={(e)=>setVote(e.target.value)} value="recommend"/>
+                            <p>Pass and Recommended to Gallery ( shows good knowledge and skills)</p>
                         </div>
         
 
                    
                         <div className='round'>
-                            <input type="radio" name='vote'/>
+                            <input type="radio" name='vote' onChange={(e)=>setVote(e.target.value)} value="pass"/>
                         <p>Pass (shows knowledge and skills)</p>   
                         </div>
                    
 
                     
                         <div className='round'>
-                            <input type="radio" name='vote'  />
+                            <input type="radio" name='vote' onChange={(e)=>setVote(e.target.value)} value="no-pass"  />
                             <p>No pass (It is broken/unavailable or does not show knowledge and skills)</p>   
                         </div>
                 
-                    
-                    <label for="text"></label>
-                    <textarea name="" ></textarea>
+                    <textarea className='feedback-box' type="text" onChange={(e)=>setFeedback(e.target.value)} value={feedback}></textarea>
                     <button onClick={() => api.patch(`/reviews/${reviewId}`,{vote, feedback})}>RETURN</button>  
                 </div>
              </section>

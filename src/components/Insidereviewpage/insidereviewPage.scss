@@ -75,7 +75,7 @@
         box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
       }
       button {
-        margin-left: 34.5rem;
+        margin-left: 31.5rem;
         width: 9rem;
         color: #FFFFFF;
         background: #6563EB;
@@ -113,4 +113,14 @@
   
 }
 
-
+.feedback-box{
+  text-align: start;
+  width:400px;
+  height:40rem;
+  border: 0.5px solid #FFFFFF;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  padding: 10px;
+  background: white;
+}

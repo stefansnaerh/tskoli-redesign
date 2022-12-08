@@ -12,7 +12,7 @@ const ModulesPage = () => {
     const {displayModule, setDisplayModule} = useContext(ModuleToDisplay)
     
     const [guides, setGuides] = useState([]);
-    const [myAssignemnts, setMyAssignments] = useState([])
+    const [myAssignments, setMyAssignments] = useState([])
     const [countModules, setCountModules] = useState({})
     const [loading,setLoading] = useState (true)
     // bera saman id við assignment inni i myassignemnt
@@ -30,52 +30,55 @@ const ModulesPage = () => {
       
     },[])
     console.log(guides)
-    console.log(myAssignemnts)
+    console.log(myAssignments)
     // initialise count variable and use it in line 36 to count guides
     const modules = {}
     useEffect(() => {
         //map through guides and make objects with module name and guide id's under each module
-       const allGuides = guides.map(guide => {
+       const guidesModuleNames = guides.map(guide => {
          return {
         // array of object with module title and guide-ids
-            title: guide.project.Title,
+            moduleName: guide.project.Title,
             id: guide._id,
          }
        });
 
-       const myReturns = myAssignemnts.map(assignment => {
+       const myReturns = myAssignments.map(assignment => {
         // all guide ids current user has returned
         return assignment.assignment}
     )
+    console.log(myReturns)
+    console.log(guidesModuleNames)
        //For of loop to build the count object so that it includes module name as properties
        // and each module name holds an object ids array and number of completed guides called completed
 
-       for (const elementOfModules of allGuides){
+       for (const guideModule of guidesModuleNames){
 
       
-        if (modules[elementOfModules.title]){// if the module title extists in count, add guide id to ids array
-            modules[elementOfModules.title].ids.push(elementOfModules.id)
+        if (modules[guideModule.moduleName]){// if the module name exists in modules, add guide id to ids array
+            modules[guideModule.moduleName].ids.push(guideModule.id)
         } else { // else create new object with guide ids and initialize completed with 0
-            modules[elementOfModules.title] = {ids:[elementOfModules.id], completed: 0}
+            modules[guideModule.moduleName] = {ids:[guideModule.id], completed: 0}
         }
-        if (myReturns.includes(elementOfModules.id)){ // if newreturns includes guide id add 1 completed to this module
-            modules[elementOfModules.title].completed++
+        if (myReturns.includes(guideModule.id)){ // if newreturns includes guide id add 1 completed to this module
+            modules[guideModule.moduleName].completed++
         }
-        
         // sort the guides title so they appear in right order
         const ordered = Object.keys(modules).sort().reduce(
-            (obj, key) => { 
-              obj[key] = modules[key]; 
-              return obj;
-            }, 
-            {}
+          (obj, key) => { 
+            obj[key] = modules[key]; 
+            return obj;
+          }, 
+          {}
           );  
+          console.log(modules)
           //updating state with the sorted modules and number of guides in each module
-        setCountModules(ordered)
-        setLoading(false)
-        
-       }
-    }, [guides])
+          setCountModules(ordered)
+          setLoading(false)
+          
+        }
+      }, [guides, myAssignments]);
+
 
     return (
         <>
@@ -115,4 +118,3 @@ const ModulesPage = () => {
 
 
 export default ModulesPage;
-
