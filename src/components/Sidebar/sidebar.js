@@ -115,7 +115,6 @@ const updateProfile = async (event) => {
             
             {/*Here we have the div tag for the next 3 upcoming modules*/}
             <p className='next-up'>Next up</p>
-            <Link to="/loginpage">Login</Link>
 
             <div className="nextup-container">
 
@@ -141,16 +140,15 @@ const updateProfile = async (event) => {
             <div className="user-pic/name">
             <Link className="logout" onClick={x.logout} to="/loginpage">Logout</Link>
                 <div>
-                <img className='default-profile-picture' src={image} alt="user-pic"/>
-
-                </div>
-                <div className="user-name">
-                <h3 style={{fontSize: "1.8rem", fontWeight: "400"}}>{student?.name}</h3>
-                <p style={{fontSize: "1.6rem"}}>{student?.email}</p>
-                </div>
-                <div className='pictureurl'>
-                <p className='pictureurltxt'>Picture URL</p>
-                <input className="URLpicinput" type="text" name="image" onChange={handleUpload}></input>
+                    <img className='default-profile-picture' src={image} alt="user-pic"/>
+                    </div>
+                    <div className="user-name">
+                        <h3 style={{fontSize: "1.8rem", fontWeight: "400"}}>{student?.name}</h3>
+                        <p style={{fontSize: "1.6rem"}}>{student?.email}</p>
+                    </div>
+                    <div className='pictureurl'>
+                        <p className='pictureurltxt'>Picture URL</p>
+                        <input className="URLpicinput" type="text" name="image" onChange={handleUpload}></input>
                 </div>
 
             </div>
