@@ -35,6 +35,8 @@ const EachModulepage = () => {
         }
         getGuides()
       },[])
+      console.log(myAssignemnts)
+
       // refactor this to one useEffect with the one above??
       useEffect(()=>{
         const getReviews = async ()=>{
@@ -43,7 +45,7 @@ const EachModulepage = () => {
         }
         getReviews();
       },[login])
-    
+    console.log(reviews)
       useEffect(() => {
           //map through guides and make objects with all properties i need. I then
           // use these objects in as parameters in the sortModulesAndReviews function to 
@@ -95,8 +97,8 @@ const EachModulepage = () => {
             <div className='name-button-container'>
             <h1 className='guide-header'>{currentModule}</h1>
         <div className='guide-btns-container'>
-            <button href = "#" className='guides-btn' style={{background: "#6563EB" }}>GUIDES</button>
-            <button onClick={() => setDisplayReturns(false)} href = "#" className='myreturn-btn'>MY RETURNS</button>
+            <button aria-label='click to see guides' href = "#" className='guides-btn' style={{background: "#6563EB" }}>GUIDES</button>
+            <button aria-label='click to see returns' onClick={() => setDisplayReturns(false)} href = "#" className='myreturn-btn'>MY RETURNS</button>
         </div>
         </div>
         <div className='all-guides-container'>
@@ -106,7 +108,7 @@ const EachModulepage = () => {
             return (
                 <div className='guide-review-wrapper'>
                 <div key={key} className="guide-container" style={!hasReturned ? {backgroundColor: "#F1F1F1"} : {backgroundColor: "#B5E2A8"}}>
-                  <Link to="/guide" onClick={() => { 
+                  <Link aria-label={`click to see guide${key +1}, ${name[0]}`} to="/guide" onClick={() => { 
                       window.localStorage.setItem("GUIDE-ID", JSON.stringify({displayGuide:name[4]}))
                      setDisplayGuide(name[4])
                      }}className='guide-link' href="">
