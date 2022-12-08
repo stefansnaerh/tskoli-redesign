@@ -35,6 +35,13 @@ const Feedbackpage = () => {
         setReturns (r.data.assignmentReturn)
        setProject (r.data.assignment)
       }
+
+      const handler = (e) => {
+        if(!meaningRef.current.contains(e.target)){
+            setMeaningPopup(false);
+        }
+    };
+    document.addEventListener("mousedown", handler);
       getReturns();
     },[])
     console.log(project)
@@ -101,7 +108,8 @@ const Feedbackpage = () => {
             <div>
                 <input type="range" min='0' max='10' step='1'></input>
             </div>
-            <p onClick={() => setMeaningPopup(true)} className="change-color">What do these numbers mean?</p>
+            <p onMouseOver={() => setMeaningPopup(true)} className="change-color">What do these numbers mean?</p>
+            <button>SUBMIT</button>
          </section>
     </div>
  </div>

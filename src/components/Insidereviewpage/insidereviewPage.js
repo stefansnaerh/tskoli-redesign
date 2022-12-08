@@ -99,7 +99,6 @@ const [vote, setVote] = useState('')
                 </div>
              </section>
 
-
              <section className='review-container'>
                 <div className='inside-review'>
                     <p className='header-text'>Review</p>
