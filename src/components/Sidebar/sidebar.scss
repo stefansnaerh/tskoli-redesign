@@ -2,13 +2,14 @@
 .main-container {
   background-color: white;
   justify-content: center;
-  height:63vh;
+  height:auto;
   border-radius: 5rem;
   width: 45rem;
   position: absolute;
   left: 40%;
   top: 15%;
   z-index: 3;
+  padding: 2rem 2rem 2rem 2rem;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
     .edit {
       margin-right: 10px;
@@ -271,12 +272,13 @@ a {
 }
 
 .URLpicinput{
-  border-radius: 30px;
-  height:2.2rem;
+  height:3.5rem;
   border-style: none;
   background-color: #f0efef;
   display: flex;
   justify-content: center;
+  width: 60%;
+  border-radius: 10px;
 }
 .profileinput{
   margin-left: 1rem;
@@ -289,13 +291,17 @@ a {
 .pictureurl{
   display: flex;
   margin-bottom: 2rem;
+  gap: 1rem;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: $smallFontSize;
 }
 
 .pictureurltxt{
-  margin-right: 1rem;
-  margin-left: 4rem;
+  
 }
+
 
 .logout{
   display: flex;
