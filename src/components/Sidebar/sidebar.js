@@ -11,8 +11,6 @@ import {useAuth} from "../../utils/authContext"
 import { GuideToDisplay } from '../../App';
 
 
-
-
   const Sidebar = () => {
   const menuRef = useRef();
   const [date, setDate] = useState(new Date());
@@ -22,11 +20,7 @@ import { GuideToDisplay } from '../../App';
   const location = useLocation();
   const x = useAuth()
   const [image, setImage] = useState(dpp);
-
-  
   const {displayGuide, setDisplayGuide} = useContext(GuideToDisplay)
-
-
 
  
  useEffect(() => {
@@ -35,8 +29,10 @@ import { GuideToDisplay } from '../../App';
         const user = await api.get('/auth/me/long');
         const userData = await api.get(`/users/${user.data._id}`);
         setStudent(user.data); 
-        console.log(user)
-        setImage(user.data.picture);
+        //Here I put the default profile picture and picture that the user has chosen. 
+        //This code says is the first is true then the user has a picture and the code stops reading
+        //But if the first one is false/falsy the second line reads and makes the default picture appear 
+        user.data.picture && setImage(user.data.picture);
         const guidesData = await api.get(`/guides`);
         //filter out hidden guides
         const guides = guidesData.data.filter(guide => guide.hidden !== true);
@@ -76,18 +72,16 @@ import { GuideToDisplay } from '../../App';
     
 },
 []);
-
+//Handle upload on the picture that the user chooses
 const handleUpload = (e) => {
     setImage((e.target.value));
-
 }
 
 const updateProfile = async (event) => {
     event.preventDefault()
-
-    console.log(image)
     
     console.log(event.target.elements)
+    //Here we're getting and saving the info about the user into the api
      const {background,careerGoals,favoriteArtist,interests} = event.target.elements
         api.patch("/auth/me", {
         background: background.value,
@@ -97,8 +91,7 @@ const updateProfile = async (event) => {
         picture: image,
       });
 }
- 
-
+    //To hide sidebar from navigation page
     if (location.pathname === "/loginpage") return (<div></div>)
     return (
         <>
@@ -119,13 +112,10 @@ const updateProfile = async (event) => {
             <div calendar-container>
                 <Calendar onChange={setDate} value={date}/>
             </div>
-               
             
             {/*Here we have the div tag for the next 3 upcoming modules*/}
             <p className='next-up'>Next up</p>
-            <p onClick={x.logout}>Logout</p>
             <Link to="/loginpage">Login</Link>
-
 
             <div className="nextup-container">
 
@@ -143,47 +133,43 @@ const updateProfile = async (event) => {
             })}
 
             </div>
-
         </div>
-
+        
+            {/* Here the pop up modal starts */}
         <div style={{display:profilePopup?'block':'none'}} className='main-container' ref={menuRef}>
 
             <div className="user-pic/name">
+            <Link className="logout" onClick={x.logout} to="/loginpage">Logout</Link>
                 <div>
                 <img className='default-profile-picture' src={image} alt="user-pic"/>
-                {/* <img className='edit' src={editprofile} alt="edit-profile" /> */}
-                <input type="text" name="image" onChange={handleUpload}></input>
+
                 </div>
                 <div className="user-name">
                 <h3 style={{fontSize: "1.8rem", fontWeight: "400"}}>{student?.name}</h3>
                 <p style={{fontSize: "1.6rem"}}>{student?.email}</p>
                 </div>
+                <div className='pictureurl'>
+                <p className='pictureurltxt'>Picture URL</p>
+                <input className="URLpicinput" type="text" name="image" onChange={handleUpload}></input>
+                </div>
+
             </div>
 
             <form onSubmit= {updateProfile} className='form-container'>
 
+                <label className="profiletxt">Background - What have you studied or worked with?</label>
+                <textarea className="profileinput" name="background"  ></textarea>
                 
-                <label>Background - What have you studied or worked with?</label>
-                <textarea name="background"  ></textarea>
-        
-               
-
-                
-                <label style={{marginLeft: "5"}}>Near future career goals?</label>
-                <textarea name="careerGoals" ></textarea>
+                <label className="profiletxt" >Near future career goals?</label>
+                <textarea className="profileinput" name="careerGoals" ></textarea>
+              
+                <label className="profiletxt">Main interests?</label>
+                <textarea className="profileinput" name="interests"  ></textarea>
              
-          
-              
-                <label>Main interests?</label>
-                <textarea name="interests"  ></textarea>
-              
-              
-             
-                <label>Favourite band/s or artist/s</label>
-                <textarea name="favoriteArtist"></textarea>
-               
+                <label className="profiletxt">Favourite band/s or artist/s</label>
+                <textarea className="profileinput" name="favoriteArtist"></textarea>
                 
-                    <button>SAVE</button>
+                <button className='savebtn'>SAVE</button>
                  
 
          </form>
