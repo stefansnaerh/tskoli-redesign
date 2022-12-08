@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/tskoli-redesign/static/css/main.abdd74c7.css",
+    "main.js": "/tskoli-redesign/static/js/main.078fc212.js",
+    "static/media/login-graphic-light.svg": "/tskoli-redesign/static/media/login-graphic-light.1c08f58b86e621ce487a.svg",
+    "static/media/edit-profile.svg": "/tskoli-redesign/static/media/edit-profile.9b4edbf96c4ae8cc418d1206351601f4.svg",
+    "static/media/arrowIcon.svg": "/tskoli-redesign/static/media/arrowIcon.f9cd9707ad08c8e4a1467501ac668165.svg",
+    "index.html": "/tskoli-redesign/index.html",
+    "static/media/default-profile-picture.svg": "/tskoli-redesign/static/media/default-profile-picture.9ba65f89711d275b64cf8ac60f0214a7.svg",
+    "main.abdd74c7.css.map": "/tskoli-redesign/static/css/main.abdd74c7.css.map",
+    "main.078fc212.js.map": "/tskoli-redesign/static/js/main.078fc212.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abdd74c7.css",
+    "static/js/main.078fc212.js"
+  ]
+}
