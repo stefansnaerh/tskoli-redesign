@@ -22,7 +22,11 @@
     font-size: $mainHeaderFontSize;
     font-weight: normal;
     margin-left:2rem;
-
+}
+@media screen and (max-width: 840px){
+    .gallerytxt{
+        font-size: $largeFontSize;
+    }
 }
 .selectbutton{
     display: flex;
