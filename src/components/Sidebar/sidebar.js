@@ -21,6 +21,7 @@ import { GuideToDisplay } from '../../App';
   const [profilePopup, setProfilePopup] = useState(false);
   const location = useLocation();
   const x = useAuth()
+  const [image, setImage] = useState(dpp);
 
   
   const {displayGuide, setDisplayGuide} = useContext(GuideToDisplay)
@@ -31,10 +32,11 @@ import { GuideToDisplay } from '../../App';
  useEffect(() => {
 
         const getData = async () => {
-        const user = await api.get('/auth/me');
+        const user = await api.get('/auth/me/long');
         const userData = await api.get(`/users/${user.data._id}`);
-        setStudent(user.data)
-
+        setStudent(user.data); 
+        console.log(user)
+        setImage(user.data.picture);
         const guidesData = await api.get(`/guides`);
         //filter out hidden guides
         const guides = guidesData.data.filter(guide => guide.hidden !== true);
@@ -44,8 +46,8 @@ import { GuideToDisplay } from '../../App';
         ) && (
             !["2 - Community & Networking", "0 - Preparation"].includes(guide.project.Title)
             )
-
         );
+
         //sort guidesNotReturned by the first letter of the project (Module) title
         guidesNotReturned.sort((a, b) => {
             if (a.project.Title[0] < b.project.Title[0]) {
@@ -74,8 +76,17 @@ import { GuideToDisplay } from '../../App';
     
 },
 []);
-const updateProfile = (event) => {
+
+const handleUpload = (e) => {
+    setImage((e.target.value));
+
+}
+
+const updateProfile = async (event) => {
     event.preventDefault()
+
+    console.log(image)
+    
     console.log(event.target.elements)
      const {background,careerGoals,favoriteArtist,interests} = event.target.elements
         api.patch("/auth/me", {
@@ -83,6 +94,7 @@ const updateProfile = (event) => {
         careerGoals: careerGoals.value,
         interests: interests.value,
         favoriteArtist: favoriteArtist.value,
+        picture: image,
       });
 }
  
@@ -95,7 +107,7 @@ const updateProfile = (event) => {
 
             <div className="user-pic/name">
                 <div>
-                    <img onClick={() => setProfilePopup(true)} className='default-profile-picture' src={dpp} alt="user-pic"/>
+                    <img onClick={() => setProfilePopup(true)} className='default-profile-picture' src={image} alt="user-pic"/>
                 </div>
                 <div className="user-name">
                     <h3 style={{fontSize: "1.8rem", fontWeight: "400"}} >{student?.name}</h3>
@@ -138,8 +150,9 @@ const updateProfile = (event) => {
 
             <div className="user-pic/name">
                 <div>
-                <img className='default-profile-picture' src={dpp} alt="user-pic"/>
-                <img className='edit' src={editprofile} alt="edit-profile" />
+                <img className='default-profile-picture' src={image} alt="user-pic"/>
+                {/* <img className='edit' src={editprofile} alt="edit-profile" /> */}
+                <input type="text" name="image" onChange={handleUpload}></input>
                 </div>
                 <div className="user-name">
                 <h3 style={{fontSize: "1.8rem", fontWeight: "400"}}>{student?.name}</h3>
