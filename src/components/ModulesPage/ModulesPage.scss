@@ -62,3 +62,13 @@
         border-radius: 30px;
     }
 }
+
+@media (min-width: 850px) {
+    .modules-container {
+        .modules-header {
+            text-align: left;
+            font-size: $mainHeaderFontSize;
+        }
+    }
+   
+}
