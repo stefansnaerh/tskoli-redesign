@@ -83,7 +83,11 @@ a {
   flex-direction: column;
   gap: 1rem;
   justify-content: space-between;
+  div:nth-child(n+4){
+    display: none;
+  }
 }
+
 
 .next {
   display: flex;
