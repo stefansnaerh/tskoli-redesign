@@ -6,14 +6,15 @@ import AllModules from "../pages/allModules/allModules";
 import Resources from "../pages/resources/resources";
 import Gallery from "../pages/galleryPage/galleryPage"
 import Modules from "../pages/modules/modules";
-import Guide from "../pages/guide/guide";
 import InsidereviewPage from "../components/Insidereviewpage/insidereviewPage";
 import LoginPage from "../pages/loginPage/loginPage";
 import Sidebar from "../components/Sidebar/sidebar";
 import Feedbackpage from "../components/Feedbackpage/feedbackPage";
+import People from "../pages/people/people";
 
 
 import './router.scss';
+import GuidePage from "../pages/guidePage/guidePage";
 
 
 
@@ -23,10 +24,8 @@ const RouterComponet = () => {
     return (
         <>
         <HashRouter>
-        <main className="main-wrapper">
-            
+        <main className="main-wrapper">   
         <Navbar/>
-        
         <div className="sidebar-display">
             <Sidebar/>
         </div>
@@ -38,10 +37,11 @@ const RouterComponet = () => {
             <Route path="/resources" element={<Resources/>}/>
             <Route path="/gallery" element={<Gallery/>}/>
             <Route path="/calendar" element={<CalendarPage/>}/>
-            <Route path="/guide" element={<Guide/>}/>
+            <Route path="/guide" element={<GuidePage/>}/>
             <Route path="/modules" element={<Modules/>}/>
             <Route path="/insidereview/:returnId" element={<InsidereviewPage/>}/>
             <Route path="/feedback" element={<Feedbackpage/>}/>
+            <Route path="/people" element={<People/>}/>
         </Routes>
         </section>
         </main>

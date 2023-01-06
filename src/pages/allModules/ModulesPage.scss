@@ -7,7 +7,7 @@
     margin-right: $marginLeftRight;
     background-color: $backgroundWhite;
     border-radius: 42px;
-    padding: $marginLeftRight $marginLeftRight $marginLeftRight $marginLeftRight;
+    padding: $marginLeftRight 2rem $marginLeftRight 2rem;
 
     .modules-header {
         z-index: 1;
@@ -28,14 +28,15 @@
 
         .module {
             font-weight: $regularFW;
+            font-size: $mediumFontSize;
         }
 
         .module-statistics {
             display: flex;
-
             h1 {
                 font-weight: $regularFW;
                 color: $grayFontColor;
+                font-size: $mediumFontSize;
             }
         }
     }
@@ -48,13 +49,13 @@
     }
 
     .progress-bar-finished {
-        height: 30px;
+        height: 35px;
         border-radius: 30px;
         z-index: 2;
     }
 
     .progress-bar-left {
-        height: 30px;
+        height: 35px;
         z-index: 1;
         position: absolute;
         width: 100%;

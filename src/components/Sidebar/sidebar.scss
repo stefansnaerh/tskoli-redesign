@@ -1,128 +1,82 @@
 @import '/src/variables.scss';
-.main-container {
-  background-color: white;
-  justify-content: center;
-  height:auto;
-  border-radius: 5rem;
-  width: 45rem;
-  position: absolute;
-  left: 40%;
-  top: 15%;
-  z-index: 3;
-  padding: 2rem 2rem 2rem 2rem;
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
-    .edit {
-      margin-right: 10px;
-      z-index:3;
-    }
-};
 
-.form-container {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  label {
-    font-size: 1.4rem;
-  }
-  textarea {
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    border: none;
-    background-color: #F1F1F1;
-    resize: none;
-    margin-bottom: 1rem;
-  }
-  button {
-    align-self: center;
-    width: 7rem;
-    color: #FFFFFF;
-    background: #6563EB;
-    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
-    border-radius: 100px; 
-    font-size: 1.6rem;
-    border-style: none;
-    margin-top: 2rem;
-  }
-  
+.default-profile-picture{
+  width: 16rem;
+  height: 15rem;
+  object-fit: cover;
+}
+
+a {
+  color:black;
 }
 
 
 .sidebar-container {
   width: 30rem;
-  position: fixed;
+  position: absolute;
   top: 10rem;
-  left: 0;
-  padding-top: 1.25rem;
   text-align: center;
   align-items: center;
   display: flex;
   flex-direction: column;
-}
 
-a {
-  color: black;
-}
-
-.name {
-  font-size: $mediumFontSize;
-}
-
-/* The code lines below are used to style the "next up" section */
-.next-up {
-  font-size: $mediumFontSize;
-  position: relative;
-  margin-left: 8rem;
-  margin-bottom: 0.5rem;
-  right: 13rem; 
-  width: 242px;  
-}
-
-.nextup-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  justify-content: space-between;
-  div:nth-child(n+4){
-    display: none;
+  h2{
+    font-size: $largeFontSize;
+    font-weight: $regularFW;
   }
+  .nextup-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: scroll;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    .next {
+      display: flex;
+      flex-direction: column;  
+      align-items: flex-start;
+      justify-content: center;
+      box-sizing: border-box;
+      width: clamp(15rem, 85%, 35rem);
+      height:7rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      color: black;
+      background: #FFFFFF;
+      border: 0.5px solid #FFFFFF;
+      box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+      border-radius: 15px;
+      text-decoration: none;
+      h3 {
+        font-size: $smallFontSize;
+        font-weight: $boldFW;
+        margin: 0;
+      }
+      h4 {
+        font-size: $smallFontSize;
+        font-weight: $lightFW;
+        margin: 0;
+      }
+    }
+   
+  }
+
 }
-
-
-.next {
-  display: flex;
-  flex-direction: column;  
-  align-items: flex-start;
-  box-sizing: border-box;
-  width:242px;
-  height:7.5rem;
-  margin-left:0.5rem;
-  padding-left: 3rem;
-  background: #FFFFFF;
-  border: 0.5px solid #FFFFFF;
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
-  border-radius: 1rem;
-  text-decoration: none;
-}
-
-.module {
-  font-size: $mediumFontSize;
-  font-weight: $bolderFW;
-  margin-bottom: 0;
-}
-
 
 /* The code lines below are used to style the calendar */
+.calendar {
+  display: flex;
+  justify-content: center;
+}
 .react-calendar {
-  width: 242px;
-  height: 250px;
+  width: clamp(15rem, 85%, 35rem);
   max-width: 100%;
-  background: white;
-  border: 1px solid #a0a096;
+  background-color: #FFFFFF;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 0rem;
-  border: 0.5px solid #FFFFFF;
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
 }
 
@@ -138,6 +92,7 @@ a {
 .react-calendar--doubleView .react-calendar__viewContainer > * {
   width: 50%;
   margin: 0.5em;
+
 }
 
 .react-calendar,
@@ -164,6 +119,7 @@ a {
   display: flex;
   height: 44px;
   margin-bottom: 1em;
+
 }
 
 .react-calendar__navigation button {
@@ -189,6 +145,7 @@ a {
 
 .react-calendar__month-view__weekdays__weekday {
   padding: 0.5em;
+  
 }
 
 .react-calendar__month-view__weekNumbers .react-calendar__tile {
@@ -256,25 +213,28 @@ a {
   background-color: #e6e6e6;
 }
 
-@media (max-width: 850px) {
-  .sidebar-container {
-    width: 100vw;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
-}
 
 //The profile popup
 
-.default-profile-picture{
-  width: 163px;
-  height: 163px;
-  object-fit: cover;
-  border-radius: 1000px;
-}
 
+
+.profile-modal {
+  background-color: white;
+  justify-content: center;
+  height:auto;
+  border-radius: 5rem;
+  width: 45rem;
+  position: absolute;
+  left: 40%;
+  top: 15%;
+  z-index: 3;
+  padding: 2rem 2rem 2rem 2rem;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+    .edit {
+      margin-right: 10px;
+      z-index:3;
+    }
+  }
 .URLpicinput{
   height:3.5rem;
   border-style: none;
@@ -302,19 +262,61 @@ a {
   font-size: $smallFontSize;
 }
 
-.pictureurltxt{
-  
-}
-
 
 .logout{
   display: flex;
   justify-content: flex-end;
   margin-right: 4rem;
   margin-top: 2rem;
+}
 
-@media (min-width: 1660px){
+
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  label {
+    font-size: 1.4rem;
+  }
+  textarea {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #F1F1F1;
+    resize: none;
+    margin-bottom: 1rem;
+  }
+  button {
+    align-self: center;
+    width: 7rem;
+    color: #FFFFFF;
+    background: #6563EB;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 100px; 
+    font-size: 1.6rem;
+    border-style: none;
+    margin-top: 2rem;
+  }
+  
+}
+
+@media (max-width: 990px) {
+  .sidebar-container {
+    width: 80vw;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+@media (min-width: 1600px){
   .sidebar-container {
     width: 35rem;
   }
-}}
+}
+
+

@@ -2,13 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import './feedbackPage.scss';
 import api from '../../utils/api';
 import { Link, useParams } from 'react-router-dom';
-import GetReturns from  "../../api/getReturns";
 import { useAuth } from '../../utils/authContext';
-
-
-
-
-
 
 
 
@@ -46,17 +40,9 @@ const Feedbackpage = () => {
     },[])
     console.log(project)
 
-
-
-
-
-
-
-
     return (  
         <>
         <div className='whole-page'>
-
             <h1>Module {project.project[0]}</h1>
             <p>{project.guide}</p>
             <div className='result'>
@@ -64,7 +50,6 @@ const Feedbackpage = () => {
             <p>Pass and Recommended</p>
             </div>
         <div className='mainn-section'>
-
         <section className=''>
             <div className=''>
                       
@@ -94,8 +79,6 @@ const Feedbackpage = () => {
                     </p>
             </div>
          </section>
-
-
          <section className='feedback-container'>
             <div className='inside-feedback'>
                 <h4>Feedback</h4>

@@ -1,19 +1,11 @@
 
 
-import { useState ,useEffect, useContext } from 'react';
 
+import { useState ,useEffect, useContext } from 'react';
 import api from '../../utils/api';
 import './guidePage.scss';
 import { GuideToDisplay } from '../../App';
-import ReturnGuideModal from '../ReturnGuideModal/returnGuideModal'
-
-
-
-
-
-
-
-
+import ReturnGuideModal from '../../components/ReturnGuideModal/returnGuideModal'
 
 const GuidePage = () => {
 
@@ -22,7 +14,6 @@ const GuidePage = () => {
     const {displayGuide, setDisplayGuide} = useContext(GuideToDisplay)
     const [returnModal, setReturnModal] = useState(false)
 
-  
     useEffect(()=>{
         const getGuide = async ()=>{
           const g = await api.get(`/guides/${displayGuide}`)

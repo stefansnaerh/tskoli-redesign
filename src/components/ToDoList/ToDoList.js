@@ -1,6 +1,5 @@
 import React from 'react';
 import ToDo from "./ToDo";
-import { motion } from 'framer-motion'; 
 import '../ToDoList/todo.scss';
 
  

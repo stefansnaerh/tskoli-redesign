@@ -1,0 +1,41 @@
+@import '/src/variables.scss';
+.circle {
+    grid-column: 3 / 3;
+    grid-row: 3 / 3;
+    display: flex;
+    flex-direction: column;
+    font-size: $headerFontSize;
+    align-items: center;
+    text-align: center;
+    h1 {
+        font-size: $headerFontSize;
+        font-weight: $regularFW;
+    }
+    svg {
+        width: 22rem;
+        height: 22rem;
+        .bg {
+            justify-self: center;
+            fill: none;
+            stroke-width: 2rem;
+            stroke:#F3FAF0;
+            width: 20rem;
+            height: 20rem;
+          }
+          .meter {
+            stroke: #B5E2A8;
+            stroke-dashoffset: 0;
+            fill: none;
+            stroke-dasharray: 500 500;
+            stroke-dashoffset: 0;
+            stroke-width: 2rem;
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+            width: 20rem;
+            height: 20rem;
+            
+          }
+      }
+      
+}

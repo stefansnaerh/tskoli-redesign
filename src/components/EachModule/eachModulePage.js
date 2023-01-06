@@ -20,7 +20,6 @@ const EachModulepage = () => {
     const [currentModule, setCurrentModule] = useState([])
 
     const [loading,setLoading] = useState (true)
-
     const {displayGuide, setDisplayGuide} = useContext(GuideToDisplay)
     const {displayModule, setDisplayModule} = useContext(ModuleToDisplay)
     const {displayReturns, setDisplayReturns} = useContext(SwitchToReturns)

@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import dpp from '../../images/default-profile-picture.svg';
 import api from '../../utils/api'
-import Profilepage from '../Profilepage/profilepage';
-import editprofile from '../../images/edit-profile.svg';
 import {useLocation } from "react-router-dom"
 import {useAuth} from "../../utils/authContext"
 import { GuideToDisplay } from '../../App';
@@ -34,7 +32,6 @@ import { GuideToDisplay } from '../../App';
         //But if the first one is false/falsy the second line reads and makes the default picture appear 
         user.data.picture && setImage(user.data.picture);
         const guidesData = await api.get(`/guides`);
-        //filter out hidden guides
         const guides = guidesData.data.filter(guide => guide.hidden !== true);
         //filter out guides that have not been returned by the user
         const guidesNotReturned = guides.filter(guide => (
@@ -67,9 +64,7 @@ import { GuideToDisplay } from '../../App';
         }
     };
     document.addEventListener("mousedown", handler);
-   
-    getData();
-    
+    getData(); 
 },
 []);
 //Handle upload on the picture that the user chooses
@@ -93,48 +88,29 @@ const updateProfile = async (event) => {
     if (location.pathname === "/loginpage") return (<div></div>)
     return (
         <>
-        {/* Here we have the div tag for user info */}
-        <div className="sidebar-container" >
-
+        <section className="sidebar-container" >
             <div className="user-pic/name">
-                <div>
-                    <img onClick={() => setProfilePopup(true)} className='default-profile-picture' src={image} alt="user-pic"/>
-                </div>
-                <div className="user-name">
-                    <h3 style={{fontSize: "1.8rem", fontWeight: "400"}} >{student?.name}</h3>
-                </div>
+                <img onClick={() => setProfilePopup(true)} className='default-profile-picture' src={image} alt="user-pic"/>
+                <h2>{student?.name}</h2>
             </div>
-
-            {/*Here is the div tag for the calendar */}
-            
-            <div calendar-container>
+            <div className='calendar'>
                 <Calendar onChange={setDate} value={date}/>
             </div>
-            
-            {/*Here we have the div tag for the next 3 upcoming modules*/}
-            <p className='next-up'>Next up</p>
-
+            <h2>Next up</h2>
             <div className="nextup-container">
-
-            {guides.map(guide => {
+            {guides.slice(0, 3).map((guide, index) => {
                 return (
-
-                <div >
+                <>
                     <Link to="/guide" onClick={() => setDisplayGuide(guide._id)} className='next'>
-                        <p  className='module'>{guide.project.Title}</p>
-                        {guide.Title}
-                        
+                        <h3>Module {guide.project.Title.slice(0,1)}</h3>
+                        <h4>{guide.Title}</h4>   
                     </Link>
-                </div>
+                </>
                 )
             })}
-
             </div>
-        </div>
-        
-            {/* Here the pop up modal starts */}
-        <div style={{display:profilePopup?'block':'none'}} className='main-container' ref={menuRef}>
-
+        </section>
+        <div style={{display:profilePopup?'block':'none'}} className='profile-modal' ref={menuRef}>
             <div className="user-pic/name">
             <Link className="logout" onClick={x.logout} to="/loginpage">Logout</Link>
                 <div>
@@ -148,26 +124,17 @@ const updateProfile = async (event) => {
                         <p className='pictureurltxt'>Picture URL</p>
                         <input className="URLpicinput" type="text" name="image" onChange={handleUpload}></input>
                 </div>
-
             </div>
-
             <form onSubmit= {updateProfile} className='form-container'>
-
                 <label className="profiletxt">Background - What have you studied or worked with?</label>
                 <textarea className="profileinput" name="background"  ></textarea>
-                
                 <label className="profiletxt" >Near future career goals?</label>
                 <textarea className="profileinput" name="careerGoals" ></textarea>
-              
                 <label className="profiletxt">Main interests?</label>
                 <textarea className="profileinput" name="interests"  ></textarea>
-             
                 <label className="profiletxt">Favourite band/s or artist/s</label>
                 <textarea className="profileinput" name="favoriteArtist"></textarea>
-                
                 <button className='savebtn'>SAVE</button>
-                 
-
          </form>
         </div>
     </>

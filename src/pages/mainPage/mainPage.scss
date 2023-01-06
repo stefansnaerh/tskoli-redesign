@@ -1,0 +1,175 @@
+@import '/src/variables.scss';
+
+// Styling for the status bars on homepage
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10rem 1fr 1fr;
+    flex-direction: column;
+    background-color: $backgroundWhite;
+    border-radius: 4.2rem;
+    padding: 2rem 4.5rem 4.5rem 2rem;
+    text-align: left;
+    font-family: $mainFont;
+    .welcome-back {
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
+        font-family: $mainFont;
+        font-size: $mainHeaderFontSize;
+        font-weight: $boldFW; 
+        z-index: 1;
+        display: flex;
+        padding-left: 2.5rem;
+    }
+    .status-bar {
+        grid-column: 1 / 4;
+        grid-row: 2 / 2;
+        margin-bottom: 5rem;
+         .status-header {
+        z-index: 1;
+        font-size: $headerFontSize;
+        font-weight: $boldFW;
+        display: flex;
+        padding-left: 2.5rem;
+        }
+        .status-container {
+        font-family: $mainFont;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        gap: 2rem;
+            .link {
+                text-decoration: none;
+            }
+            .module-info-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                
+                .module {
+                    font-size: $mediumFontSize;
+                    font-weight: $regularFW;
+                }
+
+                .module-statistics {
+                    display: flex;
+
+                    h1 {
+                        font-size: $smallFontSize;
+                        font-weight: $regularFW;
+                        color: $grayFontColor;
+                    }
+                }
+    }
+
+    .progress-bar-container {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .progress-bar-finished {
+        height: 3.1rem;
+        border-radius: 1.8rem;
+        z-index: 2;
+    }
+
+    .progress-bar-left {
+        height: 3.1rem;
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        background: #F1F1F1;
+        border-radius: 1.8rem;
+    }
+}
+    }
+   .todolist-container {
+    grid-column: 1 / 2;
+    grid-row: 3 / 3;
+   
+    .toDoListBox {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 45vw;
+        height: 20vh;
+     
+        margin-left: 2.5rem;
+        border-radius: 1.5rem;
+        background-color: #F1F1F1;
+    }
+
+    .toDoListOneDashboard {
+        position: absolute;
+        height: 14vh;
+        overflow: hidden;
+        width: clamp(20rem, 40rem, 60rem);
+        scroll-behavior: smooth;
+        overflow-y: auto;
+        padding-left: 2rem;
+    }
+
+   }
+}
+
+
+.circle {
+    grid-column: 3 / 3;
+    grid-row: 3 / 3;
+    display: flex;
+    flex-direction: column;
+    font-size: $headerFontSize;
+    align-items: center;
+    text-align: center;
+    h1 {
+        font-size: $headerFontSize;
+        font-weight: $regularFW;
+    }
+    svg {
+        width: 22rem;
+        height: 22rem;
+        .bg {
+            justify-self: center;
+            fill: none;
+            stroke-width: 2rem;
+            stroke:#F3FAF0;
+            width: 20rem;
+            height: 20rem;
+          }
+          .meter {
+            stroke: #B5E2A8;
+            stroke-dashoffset: 0;
+            fill: none;
+            stroke-dasharray: 500 500;
+            stroke-dashoffset: 0;
+            stroke-width: 2rem;
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+            width: 20rem;
+            height: 20rem;
+            
+          }
+      }
+      
+}
+@media (max-width: 990px) {
+    .dashboard {
+        display: none;
+    }
+}
+
+
+@media (max-width: 990px) {
+    .circle {
+        display: none;
+    }
+}
+
+

@@ -7,8 +7,7 @@
 const sortModulesAndReviews = (newModules, count, newReturns, setLoading, newReviews ) => {
     let order = {}
     let ordered = {}
-
-
+    
     for (const element of newModules){
       if (count[element.title]){
           count[element.title].ids.push(element.id)
